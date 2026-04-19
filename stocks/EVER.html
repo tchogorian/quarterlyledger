@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EVER · EverQuote, Inc. — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Equity research tearsheet for EverQuote, Inc. (EVER). Published by The Quarterly Ledger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Quarterly Ledger — shared stylesheet
+   A Surveyor of Public Securities
+   ========================================================================== */
+
+:root {
+  --paper: #F4EEDC;
+  --paper-2: #EEE6D0;
+  --ink: #0E0E0E;
+  --ink-soft: #3B3A36;
+  --ink-mute: #6E6A5F;
+  --rule: #2B2A26;
+  --rule-soft: rgba(43, 42, 38, 0.22);
+  --accent: #6E1A17;        /* oxblood */
+  --accent-ink: #3E0D0B;
+  --good: #1F4220;          /* forest */
+  --bad: #6E1A17;
+  --page-max: 1200px;
+
+  --serif: 'GT Super Display', 'GT Super', 'Caslon', 'EB Garamond', Georgia, serif;
+  --serif-text: 'GT Super Text', 'Caslon', 'EB Garamond', Georgia, serif;
+  --mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'Menlo', monospace;
+  --italic: 'Caslon', 'EB Garamond', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'kern', 'liga', 'onum';
+}
+
+/* Subtle paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.012) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.01) 0 1px, transparent 2px);
+  background-size: 140px 140px, 180px 180px, 220px 220px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* ===== Typography ===== */
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+.mono { font-family: var(--mono); }
+.italic { font-family: var(--italic); font-style: italic; }
+.small-caps {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: border-color 120ms ease;
+}
+a:hover { border-bottom-color: var(--ink); }
+
+a.muted {
+  color: var(--ink-mute);
+  border-bottom-color: transparent;
+}
+a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
+
+/* ===== Page chrome ===== */
+.page {
+  position: relative;
+  z-index: 2;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.masthead {
+  border-bottom: 3px double var(--rule);
+  padding: 32px 0 20px;
+  margin-bottom: 28px;
+}
+.masthead-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.masthead-left { display: flex; flex-direction: column; gap: 4px; }
+.masthead .wordmark {
+  font-size: 48px;
+}
+.masthead .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+.masthead-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav a {
+  border-bottom: none;
+  color: var(--ink-soft);
+}
+.nav a:hover, .nav a.active { color: var(--ink); }
+
+/* ===== Ruled boxes and dividers ===== */
+.hr-thin  { border: 0; border-top: 1px solid var(--rule-soft); margin: 24px 0; }
+.hr-rule  { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
+.hr-double { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
+
+.rule-box {
+  border: 1px solid var(--rule);
+  padding: 18px 22px;
+}
+
+/* ===== Ticker chip ===== */
+.ticker-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  text-transform: none;
+  transition: background 120ms ease, color 120ms ease;
+  border-bottom: 1px solid var(--rule);
+}
+.ticker-chip:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.ticker-chip .sym { font-weight: 600; }
+.ticker-chip .co {
+  font-family: var(--serif-text);
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ===== Tier list (homepage) ===== */
+.tier-section { margin: 44px 0; }
+.tier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.tier-head .num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.tier-head h2 {
+  font-size: 28px;
+}
+.tier-head .count {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.tier-desc {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  max-width: 62ch;
+}
+
+.ticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule-soft);
+  border-left: 1px solid var(--rule-soft);
+}
+
+.ticker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  border-top: none;
+  color: var(--ink);
+  transition: background 100ms ease;
+}
+.ticker-row:hover {
+  background: var(--paper-2);
+  border-bottom-color: var(--rule-soft);
+}
+.ticker-row .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ticker-row .sym .score {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+.ticker-row .co {
+  font-family: var(--serif-text);
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.ticker-row .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* ===== Search ===== */
+.search-wrap {
+  margin: 20px 0 10px;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.search-input:focus {
+  border-color: var(--accent);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  color: var(--ink-mute);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: none;
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 50;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-result {
+  display: flex;
+  gap: 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--serif-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+.search-result:hover { background: var(--paper-2); }
+.search-result .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 70px;
+}
+.search-result .co { flex: 1; }
+.search-result .tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ===== Tear sheet page ===== */
+.ts-head {
+  border-top: 3px double var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-top: 12px;
+}
+.ts-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.ts-eyebrow span { color: var(--ink); }
+.ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
+.ts-name {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.ts-sub {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  font-size: 16px;
+}
+.ts-price {
+  text-align: right;
+  border-left: 1px solid var(--rule-soft);
+  padding-left: 22px;
+  min-width: 200px;
+}
+.ts-price .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ts-price .val {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.ts-price .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+}
+
+/* Metric rail */
+.metric-rail {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
+  margin: 24px 0 8px;
+}
+.metric {
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+}
+.metric:last-child { border-right: none; }
+.metric .k {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 4px;
+}
+.metric .v {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Body layout */
+.ts-body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  margin-top: 28px;
+}
+.ts-body section { margin-bottom: 26px; }
+.ts-block-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.ts-prose p {
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  text-wrap: pretty;
+}
+.ts-prose p:first-letter-drop::first-letter {
+  font-family: var(--serif);
+  float: left;
+  font-size: 54px;
+  line-height: 0.9;
+  padding: 6px 10px 0 0;
+  font-weight: 500;
+}
+
+/* Chart placeholder / live chart */
+.chart-frame {
+  border: 1px solid var(--rule);
+  min-height: 300px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 49px, var(--rule-soft) 49px 50px),
+    repeating-linear-gradient(0deg, transparent 0 39px, var(--rule-soft) 39px 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px;
+}
+.chart-frame svg { display: block; width: 100%; height: auto; background: transparent; }
+.chart-frame:has(svg) { background: var(--paper); }
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-top: 0;
+  margin-top: 0;
+  font-family: var(--mono);
+}
+.chart-stats > div {
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chart-stats > div:last-child { border-right: 0; }
+.chart-stats .k {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.chart-stats .v {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .chart-stats { grid-template-columns: repeat(2, 1fr); }
+  .chart-stats > div:nth-child(2) { border-right: 0; }
+  .chart-stats > div:nth-child(1),
+  .chart-stats > div:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
+}
+.chart-frame .pending {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper);
+  padding: 8px 14px;
+  border: 1px solid var(--rule-soft);
+}
+.chart-caption {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* Tier chip + score */
+.tier-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+}
+.score-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 10px;
+  margin-left: 8px;
+}
+
+/* Footer */
+.footer {
+  margin: 72px 0 32px;
+  padding-top: 22px;
+  border-top: 3px double var(--rule);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  font-size: 14px;
+}
+.footer h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin: 6px 0; }
+.footer a { color: var(--ink-soft); border-bottom: none; }
+.footer a:hover { color: var(--ink); }
+.footer .about p {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.footer .colophon {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+/* ===== Registration gate ===== */
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 12, 0.72);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+.gate-overlay.open { display: flex; }
+.gate-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 40px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.gate-card .wordmark { font-size: 26px; }
+.gate-card .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 13px;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.gate-card h2 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.gate-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.gate-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.gate-input:focus { outline: none; border-color: var(--accent); }
+.gate-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.gate-button:hover { background: var(--accent); }
+.gate-fineprint {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* Trial banner */
+.trial-banner {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 900;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border: 1px solid var(--paper);
+  display: none;
+}
+.trial-banner.show { display: block; }
+.trial-banner strong { color: #E7C98F; }
+
+/* Disclaimer strip */
+.disclaimer-strip {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page { padding: 0 20px; }
+  .masthead .wordmark { font-size: 34px; }
+  .ts-head { grid-template-columns: 1fr; }
+  .ts-price { border-left: none; padding-left: 0; text-align: left; }
+  .ts-name { font-size: 38px; }
+  .metric-rail { grid-template-columns: repeat(3, 1fr); }
+  .metric:nth-child(3) { border-right: none; }
+  .metric:nth-child(n+4) { border-top: 1px solid var(--rule-soft); }
+  .ts-body { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .metric-rail { grid-template-columns: repeat(2, 1fr); }
+  .metric { border-right: 1px solid var(--rule-soft); }
+  .metric:nth-child(2n) { border-right: none; }
+  .metric:nth-child(n+3) { border-top: 1px solid var(--rule-soft); }
+  .footer { grid-template-columns: 1fr; }
+  .ts-name { font-size: 32px; }
+}
+
+
+/* Per-page additions */
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background 120ms ease, color 120ms ease;
+}
+.watch-btn:hover { background: var(--paper-2); }
+.watch-btn.on { background: var(--ink); color: var(--paper); }
+
+/* Munger checklist table */
+.munger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--serif-text);
+  font-size: 14px;
+  margin-top: 6px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.munger-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  background: var(--paper-2);
+}
+.munger-table td {
+  padding: 10px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule-soft);
+  line-height: 1.5;
+}
+.munger-table tr:last-child td { border-bottom: none; }
+.munger-table .col-0 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  min-width: 180px;
+  font-weight: 500;
+}
+.munger-table .col-1 {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  min-width: 80px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.ts-eyebrow .dot { color: var(--ink-mute); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left">
+        <a href="../index.html" style="border:none;"><div class="wordmark" style="font-size: 30px;">The Quarterly Ledger</div></a>
+        <div class="tagline">A Surveyor of Public Securities</div>
+      </div>
+      <div class="masthead-meta">
+        Vol. 1 · No. 1<br>
+        April 2026 Issue
+      </div>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="../index.html">The Register</a>
+    <a href="../watchlist.html">Watchlist</a>
+    <a href="../my-watchlist.html">My Saves</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../about.html">About</a>
+    <a href="../disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <div class="ts-head">
+    <div>
+      <div class="ts-eyebrow">
+        <span>EVER</span>
+        <span class="dot">·</span>
+        <span class="tier-chip" style="color:var(--ink-mute); border-color:var(--rule-soft)">Extended Watchlist</span>
+        
+        <button class="watch-btn" id="watch-btn" onclick="toggleWatch()" aria-label="Save to watchlist">☆ Save</button>
+      </div>
+      <h1 class="ts-name">EverQuote, Inc.</h1>
+      <p class="ts-sub">Market cap $583.0M · EV $414.1M</p>
+    </div>
+    <div class="ts-price">
+      <div class="label">Price data</div>
+      <div class="val" style="font-size:20px; color:var(--ink-mute);">Pending</div>
+      <div class="sub">Price feed loading</div>
+    </div>
+  </div>
+
+  <div class="metric-rail">
+      <div class="metric"><span class="k">Market Cap</span><span class="v">$583.0M</span></div><div class="metric"><span class="k">Revenue (TTM)</span><span class="v">$692.5M</span></div><div class="metric"><span class="k">Net Income (TTM)</span><span class="v">$99.3M</span></div><div class="metric"><span class="k">Free Cash Flow</span><span class="v">$63.9M</span></div><div class="metric"><span class="k">P/E (TTM)</span><span class="v">5.9x</span></div><div class="metric"><span class="k">EV/EBITDA</span><span class="v">6.1x</span></div>
+    </div>
+  <div class="metric-rail" style="border-top:0; margin-top:0;">
+      <div class="metric"><span class="k">Cash</span><span class="v">$171.4M</span></div><div class="metric"><span class="k">Total Debt</span><span class="v">$2.6M</span></div><div class="metric"><span class="k">Net Debt</span><span class="v">-$168.8M</span></div><div class="metric"><span class="k">Enterprise Value</span><span class="v">$414.1M</span></div><div class="metric"><span class="k">Gross Margin</span><span class="v">97.2%</span></div><div class="metric"><span class="k">Dividend Yield</span><span class="v">—</span></div>
+    </div>
+
+  <div class="ts-body">
+    <div>
+      
+      <section>
+        <div class="ts-block-title">Price History</div>
+        <div class="chart-frame" data-ticker="EVER"><div class="pending">Loading chart…</div></div>
+        <div class="chart-caption">Weekly candles · 14 months. Prices are illustrative (synthetic GBM seeded per ticker); swap in real OHLC by regenerating prices.json.</div>
+      </section>
+
+        <section>
+          <div class="ts-block-title">Analyst Summary</div>
+          <div class="ts-prose"><p>EverQuote is the leading online marketplace connecting auto-insurance shoppers with carriers and agents, monetizing per-referral via a real-time auction model where carriers bid for high-intent consumer leads. The 2025 10-K shows the recovery from the 2022-23 carrier-pullback shock is now fully in motion: revenue of $692.5 million for 2025, up 38.5% from $500.2 million in 2024, with the automotive vertical accounting for $183.7 million of the $192.3 million revenue increase as carriers reopened marketing budgets. Net income flipped to $99.3 million in 2025 versus $32.2 million in 2024 and a $51.3 million net loss in 2023. Adjusted EBITDA of $94.6 million ($58.2M in 2024, $0.5M in 2023) confirms the operating leverage. The board authorized a share repurchase program in July 2025; cash position is healthy with no long-term debt of consequence.</p><p>The bear case is two-pronged. First, customer concentration is severe and worsening: the largest customer was 38% of total revenue in 2025 and the second-largest 11%, meaning a single carrier withdrawal could erase ~40% of the top line — exactly what happened in 2022 when Allstate, Progressive, and others abruptly cut acquisition spend during the auto-insurance underwriting crisis. EverQuote exited its health-insurance vertical in 2023, so the business is now functionally a single-vertical (auto P&amp;C) lead-gen platform with limited diversification beyond home/renters as a small adjacency. Second, this is fundamentally a cyclical business tied to the auto-insurance underwriting cycle: when combined ratios spike, carriers slash acquisition spending and EverQuote&#39;s revenue craters with little of its own causation. Today&#39;s 38% growth is the upcycle; the next downturn looks much like 2022-23.</p><p>The bull case is that 2025 demonstrates the EverQuote business model still works structurally. The auto-insurance industry is shifting acquisition dollars from offline (TV, direct-mail) to online lead-gen at a secular rate, and EverQuote is positioned as the largest pure-play marketplace. Operating leverage is dramatic — 2025 adjusted EBITDA margin of 13.7% versus 11.6% in 2024 versus 0.1% in 2023 — and there&#39;s room to expand further as variable marketing dollars scale faster than fixed costs. The Class B controlling stake held by Link Ventures (controlled-company status) provides governance stability. With $326.9M total assets, no material debt, and a fresh repurchase authorization, capital allocation now turns from survival mode to shareholder return. P/E 6.1 and EV/EBITDA 5.8x bake in another carrier pullback that may not arrive for years.</p></div>
+        </section>
+
+        <section>
+          <div class="ts-block-title">What a Screen Can't See</div>
+          <div class="ts-prose"><p>The &quot;VMD/VMM&quot; non-GAAP metric (variable marketing dollars and margin) is the single most important operating KPI — it isolates revenue net of paid-media costs and tells you the unit economics of each acquired consumer. The 2023 carrier-pullback was driven by industry-wide auto loss ratios crossing 100%, not by EverQuote&#39;s competitive position; carriers are now writing profitably again and reopening online channels. The S-3 shelf registration permits up to $150 million of further capital-markets issuance, which could overhang the equity but also gives flexibility. Health-insurance vertical exit in 2023 was painful but de-risked the business from CMS ACA marketplace volatility. The dual-class structure means Link Ventures retains voting control even with low economic ownership — relevant if/when activists eye the cash on the balance sheet.</p></div>
+        </section>
+
+        <section>
+          <div class="ts-block-title">Munger Checklist Breakdown</div>
+          <div class="munger-wrap">
+        <table class="munger-table">
+          <thead><tr><th>Criterion</th><th>Score</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td class="col-0">Understanding</td><td class="col-1">8</td><td class="col-2">Auction marketplace for insurance leads — clear</td></tr><tr><td class="col-0">Moat</td><td class="col-1">6</td><td class="col-2">Network effects (carriers + consumers); some switching cost</td></tr><tr><td class="col-0">Balance Sheet</td><td class="col-1">8</td><td class="col-2">$326.9M assets, no meaningful debt, repo authorized</td></tr><tr><td class="col-0">Margin of Safety</td><td class="col-1">7</td><td class="col-2">P/E 6.1 on cyclical-recovery EPS; EV/EBITDA 5.8x</td></tr><tr><td class="col-0">Catalyst</td><td class="col-1">8</td><td class="col-2">Carrier spend re-acceleration; buyback execution</td></tr><tr><td class="col-0">Risk/Reward Asymmetry</td><td class="col-1">8</td><td class="col-2">Asymmetric: cyclical upside vs known carrier-pullback floor</td></tr><tr><td class="col-0">Business Quality</td><td class="col-1">7</td><td class="col-2">High operating leverage; capital-light</td></tr><tr><td class="col-0">Executability</td><td class="col-1">7</td><td class="col-2">Mid-cap liquidity; controlled-company structure</td></tr><tr><td class="col-0">Inversion (Bear Case)</td><td class="col-1">7</td><td class="col-2">Top-2 customers = 49% of rev; auto cycle re-rolls</td></tr><tr><td class="col-0">Macro Independence</td><td class="col-1">6</td><td class="col-2">Tied to auto insurance underwriting cycle</td></tr><tr><td class="col-0">**TOTAL**</td><td class="col-1">**72**</td><td class="col-2">Best Tier-2 cyclical-recovery name in the screen</td></tr>
+          </tbody>
+        </table></div>
+        </section>
+    </div>
+    <aside>
+      
+      <section>
+        <div class="ts-block-title">Classification</div>
+        <div class="ts-prose">
+          <p><strong>Ticker:</strong> EVER</p>
+          <p><strong>Tier:</strong> Extended Watchlist</p>
+          
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="about">
+      <h4>The Quarterly Ledger</h4>
+      <p>An independent quarterly reference for public securities.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="../index.html">The Register</a></li>
+        <li><a href="../watchlist.html">Full List</a></li>
+        <li><a href="../my-watchlist.html">My Saves</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Compliance</h4>
+      <ul>
+        <li><a href="../disclaimer.html">Disclaimer</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>This Sheet</h4>
+      <ul>
+        <li class="colophon">EVER · April 2026</li>
+      </ul>
+    </div>
+  </footer>
+  <div class="disclaimer-strip">
+    Not investment advice. For informational purposes only. <a href="../disclaimer.html" style="color:inherit; border-bottom-color: currentColor;">Full disclaimer</a>.
+  </div>
+</div>
+
+<script>window.TQL_STOCK_COUNT = 351; window.TQL_FREE = true;</script>
+<script id="ticker-prices" type="application/json">{"bars":[{"d":"2025-03-02","o":11.88,"h":12.68,"l":11.54,"c":12.52},{"d":"2025-03-09","o":12.52,"h":12.84,"l":12.06,"c":12.17},{"d":"2025-03-16","o":12.17,"h":12.8,"l":11.93,"c":12.45},{"d":"2025-03-23","o":12.45,"h":13.08,"l":12.15,"c":12.84},{"d":"2025-03-30","o":12.84,"h":13.54,"l":12.42,"c":13.23},{"d":"2025-04-06","o":13.23,"h":14.78,"l":12.43,"c":13.97},{"d":"2025-04-13","o":13.97,"h":14.21,"l":12.31,"c":13.21},{"d":"2025-04-20","o":13.21,"h":14.9,"l":12.15,"c":14.11},{"d":"2025-04-27","o":14.11,"h":14.49,"l":12.88,"c":13.38},{"d":"2025-05-04","o":13.38,"h":13.72,"l":13.16,"c":13.64},{"d":"2025-05-11","o":13.64,"h":15.02,"l":12.19,"c":12.61},{"d":"2025-05-18","o":12.61,"h":12.79,"l":12.59,"c":12.73},{"d":"2025-05-25","o":12.73,"h":13.18,"l":12.41,"c":13.03},{"d":"2025-06-01","o":13.03,"h":13.55,"l":12.01,"c":12.45},{"d":"2025-06-08","o":12.45,"h":13.04,"l":11.49,"c":12},{"d":"2025-06-15","o":12,"h":12.12,"l":11.73,"c":11.87},{"d":"2025-06-22","o":11.87,"h":12.7,"l":10.52,"c":11.16},{"d":"2025-06-29","o":11.16,"h":11.5,"l":10.97,"c":11.41},{"d":"2025-07-06","o":11.41,"h":11.92,"l":11.24,"c":11.63},{"d":"2025-07-13","o":11.63,"h":11.88,"l":11.51,"c":11.79},{"d":"2025-07-20","o":11.79,"h":11.91,"l":11.77,"c":11.84},{"d":"2025-07-27","o":11.84,"h":12.37,"l":11.57,"c":12.1},{"d":"2025-08-03","o":12.1,"h":12.42,"l":11.45,"c":11.58},{"d":"2025-08-10","o":11.58,"h":11.96,"l":10.29,"c":10.94},{"d":"2025-08-17","o":10.94,"h":11.19,"l":10.25,"c":10.54},{"d":"2025-08-24","o":10.54,"h":10.6,"l":10.5,"c":10.58},{"d":"2025-08-31","o":10.58,"h":11.23,"l":9.67,"c":10.11},{"d":"2025-09-07","o":10.11,"h":10.49,"l":9.62,"c":9.82},{"d":"2025-09-14","o":9.82,"h":9.89,"l":9.78,"c":9.85},{"d":"2025-09-21","o":9.85,"h":10.04,"l":9.8,"c":9.96},{"d":"2025-09-28","o":9.96,"h":10.19,"l":9.58,"c":9.75},{"d":"2025-10-05","o":9.75,"h":10.28,"l":8.9,"c":9.35},{"d":"2025-10-12","o":9.35,"h":9.6,"l":7.86,"c":8.27},{"d":"2025-10-19","o":8.27,"h":8.44,"l":7.38,"c":7.85},{"d":"2025-10-26","o":7.85,"h":8.44,"l":6.77,"c":6.98},{"d":"2025-11-02","o":6.98,"h":7.29,"l":6.78,"c":7.19},{"d":"2025-11-09","o":7.19,"h":7.61,"l":6.71,"c":6.83},{"d":"2025-11-16","o":6.83,"h":6.94,"l":6.8,"c":6.91},{"d":"2025-11-23","o":6.91,"h":6.96,"l":6.68,"c":6.8},{"d":"2025-11-30","o":6.8,"h":6.83,"l":6.8,"c":6.82},{"d":"2025-12-07","o":6.82,"h":6.9,"l":6.79,"c":6.85},{"d":"2025-12-14","o":6.85,"h":7.07,"l":6.82,"c":6.95},{"d":"2025-12-21","o":6.95,"h":7.24,"l":6.48,"c":6.69},{"d":"2025-12-28","o":6.69,"h":6.87,"l":6.54,"c":6.83},{"d":"2026-01-04","o":6.83,"h":7.09,"l":6.71,"c":6.97},{"d":"2026-01-11","o":6.97,"h":7.51,"l":6.89,"c":7.21},{"d":"2026-01-18","o":7.21,"h":7.3,"l":7.19,"c":7.26},{"d":"2026-01-25","o":7.26,"h":7.61,"l":7.12,"c":7.5},{"d":"2026-02-01","o":7.5,"h":8.13,"l":6.65,"c":6.97},{"d":"2026-02-08","o":6.97,"h":7.1,"l":6.92,"c":7.05},{"d":"2026-02-15","o":7.05,"h":8.36,"l":6.78,"c":7.62},{"d":"2026-02-22","o":7.62,"h":7.85,"l":7.54,"c":7.74},{"d":"2026-03-01","o":7.74,"h":8.13,"l":7.24,"c":7.43},{"d":"2026-03-08","o":7.43,"h":7.56,"l":7.1,"c":7.19},{"d":"2026-03-15","o":7.19,"h":7.35,"l":6.9,"c":6.96},{"d":"2026-03-22","o":6.96,"h":6.98,"l":6.79,"c":6.85},{"d":"2026-03-29","o":6.85,"h":7.08,"l":6.46,"c":6.63},{"d":"2026-04-05","o":6.63,"h":6.73,"l":6.42,"c":6.49},{"d":"2026-04-12","o":6.49,"h":6.73,"l":6.13,"c":6.3},{"d":"2026-04-19","o":6.3,"h":6.47,"l":5.66,"c":5.95}],"summary":{"last":5.95,"chg1d":-5.56,"chgYtd":-14.63,"chg1y":-55.53,"high52":15.02,"low52":5.66}}</script>
+<script>
+// Chart renderer — loads assets/prices.json and draws a candlestick SVG
+// into .chart-frame elements that carry data-ticker.
+//
+// Also updates the ts-price block in the header (last, 1d change)
+// and shows a 52-week range + YTD figure beneath the chart.
+
+(function () {
+  const PRICES_URL = (document.currentScript?.dataset.pricesUrl) || '../assets/prices.json';
+
+  const fmt$ = (n) => {
+    if (n == null) return '—';
+    if (n >= 1000) return '$' + n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return '$' + n.toFixed(2);
+  };
+  const fmtPct = (n) => {
+    if (n == null) return '—';
+    const sign = n > 0 ? '+' : '';
+    return sign + n.toFixed(2) + '%';
+  };
+
+  function drawCandles(svgEl, bars, opts) {
+    const W = opts.width;
+    const H = opts.height;
+    const pad = { t: 10, r: 54, b: 24, l: 10 };
+    const plotW = W - pad.l - pad.r;
+    const plotH = H - pad.t - pad.b;
+
+    const highs = bars.map(b => b.h);
+    const lows = bars.map(b => b.l);
+    const yMax = Math.max(...highs);
+    const yMin = Math.min(...lows);
+    const yRange = yMax - yMin || 1;
+    const yPad = yRange * 0.08;
+    const yLo = yMin - yPad;
+    const yHi = yMax + yPad;
+
+    const xAt = (i) => pad.l + (i + 0.5) * (plotW / bars.length);
+    const yAt = (price) => pad.t + (1 - (price - yLo) / (yHi - yLo)) * plotH;
+
+    const barWidth = Math.max(2, (plotW / bars.length) * 0.64);
+
+    const bgGrid = [];
+    // 4 horizontal grid lines
+    for (let i = 0; i <= 4; i++) {
+      const y = pad.t + (i / 4) * plotH;
+      const price = yHi - (i / 4) * (yHi - yLo);
+      bgGrid.push(
+        `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y}" y2="${y}" stroke="var(--rule-soft, #E5DFD3)" stroke-width="0.5"/>`
+      );
+      bgGrid.push(
+        `<text x="${W - pad.r + 6}" y="${y + 3}" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute, #6b6356)" text-anchor="start">${price.toFixed(2)}</text>`
+      );
+    }
+
+    const candles = bars.map((b, i) => {
+      const x = xAt(i);
+      const yH = yAt(b.h);
+      const yL = yAt(b.l);
+      const yO = yAt(b.o);
+      const yC = yAt(b.c);
+      const up = b.c >= b.o;
+      const fill = up ? '#3a6b3a' : '#8b2e2e';   // muted green / muted red
+      const stroke = up ? '#2d5c2d' : '#6e2525';
+      const bodyY = Math.min(yO, yC);
+      const bodyH = Math.max(1, Math.abs(yC - yO));
+      return `
+        <line x1="${x}" x2="${x}" y1="${yH}" y2="${yL}" stroke="${stroke}" stroke-width="0.8"/>
+        <rect x="${x - barWidth / 2}" y="${bodyY}" width="${barWidth}" height="${bodyH}" fill="${fill}" stroke="${stroke}" stroke-width="0.5"/>
+      `;
+    }).join('');
+
+    // X-axis labels — first, middle, last
+    const xLabels = [];
+    const pickIdx = [0, Math.floor(bars.length / 2), bars.length - 1];
+    for (const i of pickIdx) {
+      const x = xAt(i);
+      const label = bars[i].d.slice(0, 7); // YYYY-MM
+      xLabels.push(
+        `<text x="${x}" y="${H - 6}" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute, #6b6356)" text-anchor="middle">${label}</text>`
+      );
+    }
+
+    // Last price dashed guide
+    const lastPrice = bars[bars.length - 1].c;
+    const lastY = yAt(lastPrice);
+    const lastGuide = `
+      <line x1="${pad.l}" x2="${W - pad.r}" y1="${lastY}" y2="${lastY}" stroke="var(--ink, #1a1a1a)" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.5"/>
+      <rect x="${W - pad.r}" y="${lastY - 8}" width="50" height="16" fill="var(--ink, #1a1a1a)"/>
+      <text x="${W - pad.r + 25}" y="${lastY + 3}" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="10" fill="var(--paper, #f5f1e8)" text-anchor="middle">${lastPrice.toFixed(2)}</text>
+    `;
+
+    svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svgEl.setAttribute('width', '100%');
+    svgEl.setAttribute('height', H);
+    svgEl.innerHTML = `
+      <rect x="0" y="0" width="${W}" height="${H}" fill="transparent"/>
+      ${bgGrid.join('')}
+      ${candles}
+      ${lastGuide}
+      ${xLabels.join('')}
+    `;
+  }
+
+  function renderChart(container, ticker, data) {
+    if (!data) {
+      container.innerHTML = '<div class="pending">Chart · Historical OHLC data pending</div>';
+      return;
+    }
+    const bars = data.bars;
+    const sum = data.summary;
+    const W = container.clientWidth || 720;
+    const H = 300;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `Price chart for ${ticker}`);
+    container.innerHTML = '';
+    container.appendChild(svg);
+    drawCandles(svg, bars, { width: W, height: H });
+
+    // Redraw on resize
+    let resizeTimer;
+    const resizeHandler = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const newW = container.clientWidth || 720;
+        drawCandles(svg, bars, { width: newW, height: H });
+      }, 120);
+    };
+    window.addEventListener('resize', resizeHandler);
+  }
+
+  function updateHeader(ticker, data) {
+    const priceBlock = document.querySelector('.ts-price');
+    if (!priceBlock || !data) return;
+    const s = data.summary;
+    const up = s.chg1d >= 0;
+    priceBlock.innerHTML = `
+      <div class="label">Last price (synthetic)</div>
+      <div class="val">${fmt$(s.last)}</div>
+      <div class="sub" style="color:${up ? '#3a6b3a' : '#8b2e2e'}">
+        ${fmtPct(s.chg1d)} · 1d
+      </div>
+    `;
+  }
+
+  function injectStats(container, data) {
+    if (!data) return;
+    const s = data.summary;
+    const stats = document.createElement('div');
+    stats.className = 'chart-stats';
+    stats.innerHTML = `
+      <div><span class="k">52-Week High</span><span class="v">${fmt$(s.high52)}</span></div>
+      <div><span class="k">52-Week Low</span><span class="v">${fmt$(s.low52)}</span></div>
+      <div><span class="k">YTD</span><span class="v" style="color:${s.chgYtd >= 0 ? '#3a6b3a' : '#8b2e2e'}">${fmtPct(s.chgYtd)}</span></div>
+      <div><span class="k">1-Year</span><span class="v" style="color:${s.chg1y >= 0 ? '#3a6b3a' : '#8b2e2e'}">${fmtPct(s.chg1y)}</span></div>
+    `;
+    container.parentElement.insertBefore(stats, container.nextSibling);
+  }
+
+  async function init() {
+    const frames = document.querySelectorAll('.chart-frame[data-ticker]');
+    if (!frames.length) return;
+
+    // Prefer inline price data (avoids 401s in sandboxed previews + works offline)
+    const inlineEl = document.getElementById('ticker-prices');
+    let singleTickerData = null;
+    if (inlineEl && inlineEl.textContent.trim()) {
+      try { singleTickerData = JSON.parse(inlineEl.textContent); } catch (e) {}
+    }
+
+    let priceData = null;
+    if (!singleTickerData) {
+      try {
+        const res = await fetch(PRICES_URL);
+        if (res.ok) priceData = await res.json();
+      } catch (e) {
+        console.warn('[charts] failed to load prices', e);
+      }
+    }
+
+    for (const frame of frames) {
+      const tk = frame.dataset.ticker;
+      const data = singleTickerData || (priceData ? priceData[tk] : null);
+      renderChart(frame, tk, data);
+      if (data) {
+        updateHeader(tk, data);
+        injectStats(frame, data);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+<script>
+  const TK = "EVER";
+  function getWL(){ try { return JSON.parse(localStorage.getItem('tql_watchlist') || '[]'); } catch(e) { return []; } }
+  function setWL(v){ localStorage.setItem('tql_watchlist', JSON.stringify(v)); }
+  function updBtn(){
+    const wl = getWL();
+    const b = document.getElementById('watch-btn');
+    if (!b) return;
+    if (wl.includes(TK)) { b.classList.add('on'); b.innerHTML = '★ Saved'; }
+    else { b.classList.remove('on'); b.innerHTML = '☆ Save'; }
+  }
+  function toggleWatch(){
+    let wl = getWL();
+    if (wl.includes(TK)) wl = wl.filter(t => t !== TK);
+    else wl.push(TK);
+    setWL(wl);
+    updBtn();
+  }
+  document.addEventListener('DOMContentLoaded', updBtn);
+</script>
+</body>
+</html>

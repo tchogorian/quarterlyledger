@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My Saves — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/ledger.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --serif-text: 'EB Garamond', Georgia, serif;
+    --italic: 'EB Garamond', Georgia, serif;
+  }
+  .saves-empty {
+    text-align: center;
+    padding: 80px 20px;
+    border: 1px solid var(--rule-soft);
+    margin: 40px 0;
+  }
+  .saves-empty h2 { font-family: var(--serif); font-size: 32px; font-weight: 500; margin-bottom: 14px; }
+  .saves-empty p { font-family: var(--italic); font-style: italic; color: var(--ink-soft); max-width: 48ch; margin: 0 auto 24px; }
+  .saves-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 24px 0 20px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 10px;
+  }
+  .saves-count {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .saves-note {
+    font-family: var(--italic);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 54ch;
+    margin: 10px 0 0;
+  }
+  .btn-clear {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  .btn-clear:hover { background: var(--ink); color: var(--paper); }
+  .saves-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .saves-table thead th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+    border-top: 1px solid var(--rule);
+    background: var(--paper-2);
+  }
+  .saves-table tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--serif-text);
+    font-size: 15px;
+    vertical-align: top;
+  }
+  .saves-table tbody tr:hover { background: var(--paper-2); }
+  .saves-table .sym {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .saves-table .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0.08em;
+  }
+  .saves-table a { border-bottom: none; }
+  .saves-table a:hover { color: var(--accent); }
+  .btn-remove {
+    font-family: var(--mono);
+    font-size: 10px;
+    background: transparent;
+    border: 1px solid var(--rule-soft);
+    color: var(--ink-mute);
+    padding: 4px 8px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .btn-remove:hover { border-color: var(--accent); color: var(--accent); }
+  .notes-input {
+    width: 100%;
+    border: 1px solid transparent;
+    background: transparent;
+    font-family: var(--italic);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 14px;
+    padding: 4px 6px;
+    resize: vertical;
+    min-height: 28px;
+  }
+  .notes-input:focus, .notes-input:hover { border-color: var(--rule-soft); background: var(--paper); outline: none; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left">
+        <a href="index.html" style="border:none;"><div class="wordmark" style="font-size: 36px;">The Quarterly Ledger</div></a>
+        <div class="tagline">A Surveyor of Public Securities</div>
+      </div>
+      <div class="masthead-meta">
+        Vol. 1 · No. 1<br>April 2026 Issue
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">The Register</a>
+    <a href="watchlist.html">Full List</a>
+    <a href="my-watchlist.html" class="active">My Saves</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="about.html">About</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <div style="padding: 28px 0 12px; border-bottom: 3px double var(--rule);">
+    <div class="small-caps" style="margin-bottom: 8px;">Personal Register</div>
+    <h1 style="font-family: var(--serif); font-size: 56px; font-weight: 500; letter-spacing: -0.02em; line-height: 1;">My Saves</h1>
+    <p class="saves-note">Names you've hit <em>Save</em> on. Stored locally in your browser — no account, no sign-in, no tracking. Clearing your browser data will clear the list.</p>
+  </div>
+
+  <div id="saves-content"></div>
+
+  <footer class="footer">
+    <div class="about">
+      <h4>The Quarterly Ledger</h4>
+      <p>An independent survey of under-followed public securities, published quarterly.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">The Register</a></li>
+        <li><a href="watchlist.html">Full List</a></li>
+        <li><a href="my-watchlist.html">My Saves</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Editorial</h4>
+      <ul>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="disclaimer.html">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Compliance</h4>
+      <ul>
+        <li><a href="disclaimer.html">Not investment advice</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="disclaimer-strip">For informational purposes only. Not investment advice.</div>
+</div>
+
+<script src="assets/search-index.js"></script>
+<script>
+  function getWL(){try{return JSON.parse(localStorage.getItem('tql_watchlist')||'[]')}catch(e){return[]}}
+  function setWL(v){localStorage.setItem('tql_watchlist',JSON.stringify(v))}
+  function getNotes(){try{return JSON.parse(localStorage.getItem('tql_watchlist_notes')||'{}')}catch(e){return{}}}
+  function setNotes(v){localStorage.setItem('tql_watchlist_notes',JSON.stringify(v))}
+
+  function tierBadge(t, name) {
+    if (!t) return '<span class="meta" style="color:var(--ink-mute)">Extended</span>';
+    return `<span class="meta" style="color:var(--accent)">T${t} · ${(name||'').toUpperCase()}</span>`;
+  }
+
+  function render() {
+    const wl = getWL();
+    const notes = getNotes();
+    const root = document.getElementById('saves-content');
+    if (!wl.length) {
+      root.innerHTML = `
+        <div class="saves-empty">
+          <h2>No saves yet.</h2>
+          <p>Browse the register and hit the <strong>☆ Save</strong> button on any tear sheet. Saved names appear here for quick return visits.</p>
+          <a href="index.html" class="ticker-chip"><span class="sym">Browse the Register →</span></a>
+        </div>`;
+      return;
+    }
+    const idx = window.TQL_INDEX || [];
+    const byTicker = Object.fromEntries(idx.map(d => [d.ticker, d]));
+    const rows = wl.map(t => byTicker[t]).filter(Boolean);
+
+    root.innerHTML = `
+      <div class="saves-bar">
+        <div>
+          <div class="small-caps">In Your Register</div>
+          <div class="saves-count">${wl.length} name${wl.length===1?'':'s'}</div>
+        </div>
+        <button class="btn-clear" onclick="clearAll()">Clear all</button>
+      </div>
+      <table class="saves-table">
+        <thead><tr>
+          <th style="width: 90px;">Ticker</th>
+          <th>Company</th>
+          <th style="width: 160px;">Classification</th>
+          <th style="width: 110px;">Market Cap</th>
+          <th style="width: 30%;">Notes</th>
+          <th style="width: 80px;"></th>
+        </tr></thead>
+        <tbody>
+          ${rows.map(d => `
+            <tr data-ticker="${d.ticker}">
+              <td><a href="stocks/${d.ticker}.html" class="sym">${d.ticker}</a></td>
+              <td><a href="stocks/${d.ticker}.html">${d.name}</a></td>
+              <td>${tierBadge(d.tier, d.tierName)}</td>
+              <td class="meta">${d.marketCap||'—'}</td>
+              <td><textarea class="notes-input" placeholder="add a note…" onchange="saveNote('${d.ticker}', this.value)">${(notes[d.ticker]||'').replace(/</g,'&lt;')}</textarea></td>
+              <td><button class="btn-remove" onclick="removeOne('${d.ticker}')">Remove</button></td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin-top: 30px; text-align: center;">
+        Saved locally · Clearing browser data will clear this list
+      </p>`;
+  }
+
+  function removeOne(t) {
+    const wl = getWL().filter(x => x !== t);
+    setWL(wl);
+    const notes = getNotes(); delete notes[t]; setNotes(notes);
+    render();
+  }
+  function clearAll() {
+    if (!confirm('Clear all saved names?')) return;
+    setWL([]); setNotes({}); render();
+  }
+  function saveNote(t, v) {
+    const notes = getNotes(); notes[t] = v; setNotes(notes);
+  }
+  document.addEventListener('DOMContentLoaded', render);
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

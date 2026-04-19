@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/ledger.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --serif: 'Cormorant Garamond', Georgia, serif; --serif-text: 'EB Garamond', Georgia, serif; --italic: 'EB Garamond', Georgia, serif; }
+  .prose { max-width: 68ch; margin: 0 auto; padding: 40px 0; }
+  .prose h1 { font-family: var(--serif); font-size: 64px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; margin-bottom: 10px; }
+  .prose .lede { font-family: var(--italic); font-style: italic; font-size: 20px; color: var(--ink-soft); line-height: 1.5; margin: 16px 0 32px; }
+  .prose h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 36px 0 12px; letter-spacing: -0.01em; }
+  .prose p { font-family: var(--serif-text); font-size: 17px; line-height: 1.65; color: var(--ink); margin: 0 0 16px; text-wrap: pretty; }
+  .prose em { font-family: var(--italic); font-style: italic; }
+  .prose hr { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left"><a href="index.html" style="border:none;"><div class="wordmark" style="font-size: 36px;">The Quarterly Ledger</div></a><div class="tagline">A Surveyor of Public Securities</div></div>
+      <div class="masthead-meta">Vol. 1 · No. 1<br>April 2026 Issue</div>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="index.html">The Register</a><a href="watchlist.html">Full List</a><a href="my-watchlist.html">My Saves</a><a href="methodology.html">Methodology</a><a href="about.html" class="active">About</a><a href="disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <article class="prose">
+    <div class="small-caps" style="margin-bottom: 8px;">About</div>
+    <h1>What this is.</h1>
+    <p class="lede">The Quarterly Ledger is an independent reference work for public securities that fall outside the attention of Wall Street. It is published four times a year, free, without registration.</p>
+
+    <h2>The premise</h2>
+    <p>There are roughly ten thousand companies filing with the SEC. Fewer than a thousand receive meaningful sell-side coverage. The remainder — small-capital issuers, insider-controlled floats, orphaned spin-offs, quiet compounders in unsexy industries — are priced by whoever happens to be at the screen that day. That is where this publication looks.</p>
+    <p>Each quarter, we pull the full EDGAR XBRL universe, run it through a Munger-framework screen, and publish tear sheets on every name that passes. Names are sorted into four tiers and an extended register. Between issues we flag promotions, demotions, and special-situation clocks.</p>
+
+    <h2>The format</h2>
+    <p>One page per security. Ten-year financial history, fundamental metrics, a tier classification with a numerical score, an analyst summary written from the filings, a catalyst/risk ledger, and a section called <em>What a screen can't see</em> — the filing-level detail that doesn't surface in any screener.</p>
+
+    <h2>The editorial stance</h2>
+    <p>This is not a newsletter of hot picks. It is a reference. Tear sheets are meant to be revisited — the next issue will re-rank the same universe, and most names will still be there. A stock that is cheap in April is often still cheap in July; conviction comes from watching a thesis survive four quarters of fresh filings, not from the first call.</p>
+    <p>We do not sell trading signals. We do not predict quarterly earnings. We do not publish price targets. What we publish is a <em>standing register</em> — the kind of reference Value Line produced for generations, updated for the small-capital universe the majors no longer cover.</p>
+
+    <h2>Who reads this</h2>
+    <p>Long-duration individual investors, small partnerships, family offices, and professionals in adjacent seats who want a standing reference without a Bloomberg subscription. If you measure holding periods in years and read 10-Ks on weekends, this is for you.</p>
+
+    <h2>Who writes this</h2>
+    <p>The editorial team is small and anonymous by design. No positions are disclosed on individual names. The disciplines applied — the screen, the scoring framework, the filing-level verification — are the product; the byline is not.</p>
+
+    <hr>
+
+    <p style="font-family: var(--italic); font-style: italic; color: var(--ink-soft); text-align: center;">For informational purposes only. Not investment advice. See the <a href="disclaimer.html">full disclaimer</a>.</p>
+  </article>
+
+  <footer class="footer">
+    <div class="about"><h4>The Quarterly Ledger</h4><p>An independent survey of under-followed public securities.</p></div>
+    <div><h4>Navigate</h4><ul><li><a href="index.html">The Register</a></li><li><a href="watchlist.html">Full List</a></li><li><a href="my-watchlist.html">My Saves</a></li></ul></div>
+    <div><h4>Editorial</h4><ul><li><a href="methodology.html">Methodology</a></li><li><a href="about.html">About</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div>
+    <div><h4>Compliance</h4><ul><li><a href="disclaimer.html">Not investment advice</a></li></ul></div>
+  </footer>
+  <div class="disclaimer-strip">For informational purposes only. Not investment advice.</div>
+</div>
+<script src="assets/search-index.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

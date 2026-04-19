@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Full List — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/ledger.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --serif-text: 'EB Garamond', Georgia, serif;
+    --italic: 'EB Garamond', Georgia, serif;
+  }
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .filter-btn {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: transparent;
+    border: 1px solid var(--rule-soft);
+    color: var(--ink-soft);
+    padding: 7px 12px;
+    cursor: pointer;
+  }
+  .filter-btn.active, .filter-btn:hover { border-color: var(--ink); color: var(--ink); background: var(--paper-2); }
+  .list-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+  .list-table thead th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule);
+    border-top: 1px solid var(--rule);
+    background: var(--paper-2);
+  }
+  .list-table tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--rule-soft);
+    font-family: var(--serif-text);
+    font-size: 14px;
+  }
+  .list-table tbody tr:hover { background: var(--paper-2); }
+  .list-table .sym { font-family: var(--mono); font-weight: 600; font-size: 13px; }
+  .list-table a { border-bottom: none; }
+  .meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left">
+        <a href="index.html" style="border:none;"><div class="wordmark" style="font-size: 36px;">The Quarterly Ledger</div></a>
+        <div class="tagline">A Surveyor of Public Securities</div>
+      </div>
+      <div class="masthead-meta">Vol. 1 · No. 1<br>April 2026 Issue</div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a href="index.html">The Register</a>
+    <a href="watchlist.html" class="active">Full List</a>
+    <a href="my-watchlist.html">My Saves</a>
+    <a href="methodology.html">Methodology</a>
+    <a href="about.html">About</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <div style="padding: 28px 0 12px; border-bottom: 3px double var(--rule);">
+    <div class="small-caps" style="margin-bottom: 8px;">The Complete Register</div>
+    <h1 style="font-family: var(--serif); font-size: 56px; font-weight: 500; letter-spacing: -0.02em; line-height: 1;">All 351 Names</h1>
+    <p style="font-family: var(--italic); font-style: italic; color: var(--ink-soft); font-size: 16px; max-width: 56ch; margin-top: 8px;">Every name in the April 2026 issue. Sort by tier, search by ticker or company, click to open the tear sheet.</p>
+  </div>
+
+  <div class="search-wrap" style="margin-top: 24px;">
+    <span class="search-icon">⌕</span>
+    <input id="ticker-search" class="search-input" type="text" placeholder="Filter by ticker or company name" autocomplete="off">
+    <div id="search-results" class="search-results"></div>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="filter-btn active" data-tier="all">All (<span id="count-all">0</span>)</button>
+    <button class="filter-btn" data-tier="1">Tier 1 · Orphans</button>
+    <button class="filter-btn" data-tier="2">Tier 2 · Situations</button>
+    <button class="filter-btn" data-tier="3">Tier 3 · Quality</button>
+    <button class="filter-btn" data-tier="4">Tier 4 · Survivors</button>
+    <button class="filter-btn" data-tier="5">Tier 5 · Additional</button>
+    <button class="filter-btn" data-tier="ext">Extended</button>
+  </div>
+
+  <table class="list-table">
+    <thead><tr>
+      <th style="width: 90px;">Ticker</th>
+      <th>Company</th>
+      <th style="width: 180px;">Tier</th>
+      <th style="width: 120px;">Market Cap</th>
+      <th style="width: 70px;">Score</th>
+    </tr></thead>
+    <tbody id="list-body"></tbody>
+  </table>
+
+  <footer class="footer">
+    <div class="about"><h4>The Quarterly Ledger</h4><p>An independent survey of under-followed public securities.</p></div>
+    <div><h4>Navigate</h4><ul><li><a href="index.html">The Register</a></li><li><a href="my-watchlist.html">My Saves</a></li></ul></div>
+    <div><h4>Editorial</h4><ul><li><a href="methodology.html">Methodology</a></li><li><a href="about.html">About</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div>
+    <div><h4>Compliance</h4><ul><li><a href="disclaimer.html">Not investment advice</a></li></ul></div>
+  </footer>
+
+  <div class="disclaimer-strip">For informational purposes only. Not investment advice.</div>
+</div>
+
+<script src="assets/search-index.js"></script>
+<script>
+  const idx = window.TQL_INDEX || [];
+  document.getElementById('count-all').textContent = idx.length;
+  let currentFilter = 'all';
+  let currentQuery = '';
+
+  function render() {
+    const q = currentQuery.toLowerCase();
+    let rows = idx.slice();
+    if (currentFilter !== 'all') {
+      if (currentFilter === 'ext') rows = rows.filter(r => !r.tier);
+      else rows = rows.filter(r => String(r.tier) === currentFilter);
+    }
+    if (q) rows = rows.filter(r => r.ticker.toLowerCase().includes(q) || r.name.toLowerCase().includes(q));
+    rows.sort((a,b) => {
+      if (a.tier && b.tier && a.tier !== b.tier) return a.tier - b.tier;
+      if (a.tier && !b.tier) return -1;
+      if (!a.tier && b.tier) return 1;
+      return (b.score||0) - (a.score||0) || a.ticker.localeCompare(b.ticker);
+    });
+    document.getElementById('list-body').innerHTML = rows.map(d => `
+      <tr>
+        <td><a href="stocks/${d.ticker}.html" class="sym">${d.ticker}</a></td>
+        <td><a href="stocks/${d.ticker}.html">${d.name}</a></td>
+        <td class="meta">${d.tier?'T'+d.tier+' · '+(d.tierName||''):'Extended'}</td>
+        <td class="meta">${d.marketCap||'—'}</td>
+        <td class="meta">${d.score?d.score+'/100':'—'}</td>
+      </tr>`).join('');
+  }
+
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      currentFilter = b.dataset.tier;
+      render();
+    });
+  });
+  // Override default search behavior: filter list instead of navigate
+  document.addEventListener('DOMContentLoaded', () => {
+    const input = document.getElementById('ticker-search');
+    const results = document.getElementById('search-results');
+    input.addEventListener('input', e => {
+      currentQuery = e.target.value.trim();
+      render();
+      results.classList.remove('open');
+    });
+    render();
+  });
+</script>
+</body>
+</html>

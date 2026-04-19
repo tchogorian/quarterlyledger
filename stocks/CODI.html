@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CODI · Compass Diversified Holdings (Berkshire-style — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Equity research tearsheet for Compass Diversified Holdings (Berkshire-style (CODI). Published by The Quarterly Ledger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Quarterly Ledger — shared stylesheet
+   A Surveyor of Public Securities
+   ========================================================================== */
+
+:root {
+  --paper: #F4EEDC;
+  --paper-2: #EEE6D0;
+  --ink: #0E0E0E;
+  --ink-soft: #3B3A36;
+  --ink-mute: #6E6A5F;
+  --rule: #2B2A26;
+  --rule-soft: rgba(43, 42, 38, 0.22);
+  --accent: #6E1A17;        /* oxblood */
+  --accent-ink: #3E0D0B;
+  --good: #1F4220;          /* forest */
+  --bad: #6E1A17;
+  --page-max: 1200px;
+
+  --serif: 'GT Super Display', 'GT Super', 'Caslon', 'EB Garamond', Georgia, serif;
+  --serif-text: 'GT Super Text', 'Caslon', 'EB Garamond', Georgia, serif;
+  --mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'Menlo', monospace;
+  --italic: 'Caslon', 'EB Garamond', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'kern', 'liga', 'onum';
+}
+
+/* Subtle paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.012) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.01) 0 1px, transparent 2px);
+  background-size: 140px 140px, 180px 180px, 220px 220px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* ===== Typography ===== */
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+.mono { font-family: var(--mono); }
+.italic { font-family: var(--italic); font-style: italic; }
+.small-caps {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: border-color 120ms ease;
+}
+a:hover { border-bottom-color: var(--ink); }
+
+a.muted {
+  color: var(--ink-mute);
+  border-bottom-color: transparent;
+}
+a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
+
+/* ===== Page chrome ===== */
+.page {
+  position: relative;
+  z-index: 2;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.masthead {
+  border-bottom: 3px double var(--rule);
+  padding: 32px 0 20px;
+  margin-bottom: 28px;
+}
+.masthead-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.masthead-left { display: flex; flex-direction: column; gap: 4px; }
+.masthead .wordmark {
+  font-size: 48px;
+}
+.masthead .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+.masthead-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav a {
+  border-bottom: none;
+  color: var(--ink-soft);
+}
+.nav a:hover, .nav a.active { color: var(--ink); }
+
+/* ===== Ruled boxes and dividers ===== */
+.hr-thin  { border: 0; border-top: 1px solid var(--rule-soft); margin: 24px 0; }
+.hr-rule  { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
+.hr-double { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
+
+.rule-box {
+  border: 1px solid var(--rule);
+  padding: 18px 22px;
+}
+
+/* ===== Ticker chip ===== */
+.ticker-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  text-transform: none;
+  transition: background 120ms ease, color 120ms ease;
+  border-bottom: 1px solid var(--rule);
+}
+.ticker-chip:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.ticker-chip .sym { font-weight: 600; }
+.ticker-chip .co {
+  font-family: var(--serif-text);
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ===== Tier list (homepage) ===== */
+.tier-section { margin: 44px 0; }
+.tier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.tier-head .num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.tier-head h2 {
+  font-size: 28px;
+}
+.tier-head .count {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.tier-desc {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  max-width: 62ch;
+}
+
+.ticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule-soft);
+  border-left: 1px solid var(--rule-soft);
+}
+
+.ticker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  border-top: none;
+  color: var(--ink);
+  transition: background 100ms ease;
+}
+.ticker-row:hover {
+  background: var(--paper-2);
+  border-bottom-color: var(--rule-soft);
+}
+.ticker-row .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ticker-row .sym .score {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+.ticker-row .co {
+  font-family: var(--serif-text);
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.ticker-row .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* ===== Search ===== */
+.search-wrap {
+  margin: 20px 0 10px;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.search-input:focus {
+  border-color: var(--accent);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  color: var(--ink-mute);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: none;
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 50;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-result {
+  display: flex;
+  gap: 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--serif-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+.search-result:hover { background: var(--paper-2); }
+.search-result .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 70px;
+}
+.search-result .co { flex: 1; }
+.search-result .tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ===== Tear sheet page ===== */
+.ts-head {
+  border-top: 3px double var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-top: 12px;
+}
+.ts-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.ts-eyebrow span { color: var(--ink); }
+.ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
+.ts-name {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.ts-sub {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  font-size: 16px;
+}
+.ts-price {
+  text-align: right;
+  border-left: 1px solid var(--rule-soft);
+  padding-left: 22px;
+  min-width: 200px;
+}
+.ts-price .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ts-price .val {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.ts-price .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+}
+
+/* Metric rail */
+.metric-rail {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
+  margin: 24px 0 8px;
+}
+.metric {
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+}
+.metric:last-child { border-right: none; }
+.metric .k {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 4px;
+}
+.metric .v {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Body layout */
+.ts-body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  margin-top: 28px;
+}
+.ts-body section { margin-bottom: 26px; }
+.ts-block-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.ts-prose p {
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  text-wrap: pretty;
+}
+.ts-prose p:first-letter-drop::first-letter {
+  font-family: var(--serif);
+  float: left;
+  font-size: 54px;
+  line-height: 0.9;
+  padding: 6px 10px 0 0;
+  font-weight: 500;
+}
+
+/* Chart placeholder / live chart */
+.chart-frame {
+  border: 1px solid var(--rule);
+  min-height: 300px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 49px, var(--rule-soft) 49px 50px),
+    repeating-linear-gradient(0deg, transparent 0 39px, var(--rule-soft) 39px 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px;
+}
+.chart-frame svg { display: block; width: 100%; height: auto; background: transparent; }
+.chart-frame:has(svg) { background: var(--paper); }
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-top: 0;
+  margin-top: 0;
+  font-family: var(--mono);
+}
+.chart-stats > div {
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chart-stats > div:last-child { border-right: 0; }
+.chart-stats .k {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.chart-stats .v {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .chart-stats { grid-template-columns: repeat(2, 1fr); }
+  .chart-stats > div:nth-child(2) { border-right: 0; }
+  .chart-stats > div:nth-child(1),
+  .chart-stats > div:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
+}
+.chart-frame .pending {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper);
+  padding: 8px 14px;
+  border: 1px solid var(--rule-soft);
+}
+.chart-caption {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* Tier chip + score */
+.tier-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+}
+.score-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 10px;
+  margin-left: 8px;
+}
+
+/* Footer */
+.footer {
+  margin: 72px 0 32px;
+  padding-top: 22px;
+  border-top: 3px double var(--rule);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  font-size: 14px;
+}
+.footer h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin: 6px 0; }
+.footer a { color: var(--ink-soft); border-bottom: none; }
+.footer a:hover { color: var(--ink); }
+.footer .about p {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.footer .colophon {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+/* ===== Registration gate ===== */
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 12, 0.72);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+.gate-overlay.open { display: flex; }
+.gate-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 40px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.gate-card .wordmark { font-size: 26px; }
+.gate-card .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 13px;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.gate-card h2 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.gate-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.gate-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.gate-input:focus { outline: none; border-color: var(--accent); }
+.gate-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.gate-button:hover { background: var(--accent); }
+.gate-fineprint {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* Trial banner */
+.trial-banner {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 900;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border: 1px solid var(--paper);
+  display: none;
+}
+.trial-banner.show { display: block; }
+.trial-banner strong { color: #E7C98F; }
+
+/* Disclaimer strip */
+.disclaimer-strip {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page { padding: 0 20px; }
+  .masthead .wordmark { font-size: 34px; }
+  .ts-head { grid-template-columns: 1fr; }
+  .ts-price { border-left: none; padding-left: 0; text-align: left; }
+  .ts-name { font-size: 38px; }
+  .metric-rail { grid-template-columns: repeat(3, 1fr); }
+  .metric:nth-child(3) { border-right: none; }
+  .metric:nth-child(n+4) { border-top: 1px solid var(--rule-soft); }
+  .ts-body { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .metric-rail { grid-template-columns: repeat(2, 1fr); }
+  .metric { border-right: 1px solid var(--rule-soft); }
+  .metric:nth-child(2n) { border-right: none; }
+  .metric:nth-child(n+3) { border-top: 1px solid var(--rule-soft); }
+  .footer { grid-template-columns: 1fr; }
+  .ts-name { font-size: 32px; }
+}
+
+
+/* Per-page additions */
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background 120ms ease, color 120ms ease;
+}
+.watch-btn:hover { background: var(--paper-2); }
+.watch-btn.on { background: var(--ink); color: var(--paper); }
+
+/* Munger checklist table */
+.munger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--serif-text);
+  font-size: 14px;
+  margin-top: 6px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.munger-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  background: var(--paper-2);
+}
+.munger-table td {
+  padding: 10px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule-soft);
+  line-height: 1.5;
+}
+.munger-table tr:last-child td { border-bottom: none; }
+.munger-table .col-0 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  min-width: 180px;
+  font-weight: 500;
+}
+.munger-table .col-1 {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  min-width: 80px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.ts-eyebrow .dot { color: var(--ink-mute); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left">
+        <a href="../index.html" style="border:none;"><div class="wordmark" style="font-size: 30px;">The Quarterly Ledger</div></a>
+        <div class="tagline">A Surveyor of Public Securities</div>
+      </div>
+      <div class="masthead-meta">
+        Vol. 1 · No. 1<br>
+        April 2026 Issue
+      </div>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="../index.html">The Register</a>
+    <a href="../watchlist.html">Watchlist</a>
+    <a href="../my-watchlist.html">My Saves</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../about.html">About</a>
+    <a href="../disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <div class="ts-head">
+    <div>
+      <div class="ts-eyebrow">
+        <span>CODI</span>
+        <span class="dot">·</span>
+        <span class="tier-chip" style="color:var(--ink-mute); border-color:var(--rule-soft)">Extended Watchlist</span>
+        
+        <button class="watch-btn" id="watch-btn" onclick="toggleWatch()" aria-label="Save to watchlist">☆ Save</button>
+      </div>
+      <h1 class="ts-name">Compass Diversified Holdings (Berkshire-style</h1>
+      <p class="ts-sub">Market cap $790.7M · EV $3.38B</p>
+    </div>
+    <div class="ts-price">
+      <div class="label">Price data</div>
+      <div class="val" style="font-size:20px; color:var(--ink-mute);">Pending</div>
+      <div class="sub">Price feed loading</div>
+    </div>
+  </div>
+
+  <div class="metric-rail">
+      <div class="metric"><span class="k">Market Cap</span><span class="v">$790.7M</span></div><div class="metric"><span class="k">Revenue (TTM)</span><span class="v">$1.87B</span></div><div class="metric"><span class="k">Net Income (TTM)</span><span class="v">-$273.1M</span></div><div class="metric"><span class="k">Free Cash Flow</span><span class="v">-$13.6M</span></div><div class="metric"><span class="k">P/E (TTM)</span><span class="v">—</span></div><div class="metric"><span class="k">EV/EBITDA</span><span class="v">17.6x</span></div>
+    </div>
+  <div class="metric-rail" style="border-top:0; margin-top:0;">
+      <div class="metric"><span class="k">Cash</span><span class="v">$68.0M</span></div><div class="metric"><span class="k">Total Debt</span><span class="v">$2.05B</span></div><div class="metric"><span class="k">Net Debt</span><span class="v">$1.98B</span></div><div class="metric"><span class="k">Enterprise Value</span><span class="v">$3.38B</span></div><div class="metric"><span class="k">Gross Margin</span><span class="v">43.5%</span></div><div class="metric"><span class="k">Dividend Yield</span><span class="v">9.4%</span></div>
+    </div>
+
+  <div class="ts-body">
+    <div>
+      
+      <section>
+        <div class="ts-block-title">Price History</div>
+        <div class="chart-frame" data-ticker="CODI"><div class="pending">Loading chart…</div></div>
+        <div class="chart-caption">Weekly candles · 14 months. Prices are illustrative (synthetic GBM seeded per ticker); swap in real OHLC by regenerating prices.json.</div>
+      </section>
+
+        <section>
+          <div class="ts-block-title">Analyst Summary</div>
+          <div class="ts-prose"><p>CODI owns a portfolio of branded-consumer and industrial businesses with collective adjusted EBITDA of roughly $430M+. Branded-consumer holdings include BOA Technology (the Boa lacing system used in athletic and outdoor footwear), 5.11 Tactical (tactical apparel and gear), Marucci Sports (premium baseball bats), Velocity Outdoor (just sold), Ergobaby (baby carriers), PrimaLoft (synthetic insulation), and Lugano Diamonds (under restatement). Industrials include Altor Solutions (cold-chain packaging), Sterno, Arnold Magnetics, and Honey Pot Co. The model is to buy private mid-market businesses in the $200M-$2B range, hold them, and pay a quarterly distribution to shareholders.</p><p>The bear case is the overhang. Lugano was the highest-growth, highest-margin subsidiary by reported numbers — and those numbers turned out to be inflated. SEC investigation is ongoing and could result in fines, restated financials going further back, or executive accountability actions. The distribution was suspended/cut, removing the income-buyer base. HoldCo-level debt sits around $1.8B, and the conversion from a partnership (K-1) to a C-corp added tax friction. New leadership is unproven. Even excluding Lugano, the remaining EBITDA contribution depends on consumer health for several of the largest pieces (5.11, Marucci, Ergobaby) — all sensitive to discretionary spend.</p><p>The bull case is the math. Strip Lugano entirely from the model, assume ~$330M of clean EBITDA from the rest, apply 8x — a defensible multiple for a basket of branded niche leaders — and you get ~$2.6B EV. Net of HoldCo debt, equity value clears the current $781M cap with room to spare. BOA, 5.11, and Marucci alone arguably justify the entire market cap. The Velocity divestiture (announced March 2026) demonstrates active portfolio rationalization, generates cash to delever, and proves the SOTP exercise works in real life. New CEO + refreshed board have signaled intent to crystallize value through additional sales. Insider buying has appeared at recent prices.</p></div>
+        </section>
+
+        <section>
+          <div class="ts-block-title">What a Screen Can't See</div>
+          <div class="ts-prose"><p>A screen can&#39;t see segment-level economics that aren&#39;t disclosed. CODI reports adjusted EBITDA by segment in the 10-Q, but valuable detail — like BOA&#39;s licensing-vs-product mix, 5.11&#39;s government-channel revenue, or Marucci&#39;s gross margin progression — sits in MD&amp;A footnotes and earnings call transcripts. The Velocity sale price (when disclosed) becomes a real-money read on what mid-market private buyers will pay for CODI&#39;s portfolio companies, calibrating the SOTP. Also: HoldCo debt covenants and any Lugano-related representation/warranty exposure — buried in credit-agreement amendments — could constrain capital allocation if the restatement worsens.</p><p>### CATALYSTS (next 6-12 months) - Lugano restated financials and SEC resolution — expected H2 2026 - Additional subsidiary divestitures following Velocity sale (March 2026) - Reinstatement of distribution following balance-sheet clean-up</p></div>
+        </section>
+    </div>
+    <aside>
+      
+        <section>
+          <div class="ts-block-title">Catalysts</div>
+          <div class="ts-prose"><p>• Resolution of Lugano restatement and SEC inquiry • Subsidiary divestitures (Velocity sold March 2026) • Reinstatement of distribution • New CEO strategy update</p></div>
+        </section>
+
+      <section>
+        <div class="ts-block-title">Classification</div>
+        <div class="ts-prose">
+          <p><strong>Ticker:</strong> CODI</p>
+          <p><strong>Tier:</strong> Extended Watchlist</p>
+          
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="about">
+      <h4>The Quarterly Ledger</h4>
+      <p>An independent quarterly reference for public securities.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="../index.html">The Register</a></li>
+        <li><a href="../watchlist.html">Full List</a></li>
+        <li><a href="../my-watchlist.html">My Saves</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Compliance</h4>
+      <ul>
+        <li><a href="../disclaimer.html">Disclaimer</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>This Sheet</h4>
+      <ul>
+        <li class="colophon">CODI · April 2026</li>
+      </ul>
+    </div>
+  </footer>
+  <div class="disclaimer-strip">
+    Not investment advice. For informational purposes only. <a href="../disclaimer.html" style="color:inherit; border-bottom-color: currentColor;">Full disclaimer</a>.
+  </div>
+</div>
+
+<script>window.TQL_STOCK_COUNT = 351; window.TQL_FREE = true;</script>
+<script id="ticker-prices" type="application/json">{"bars":[{"d":"2025-03-02","o":41.5,"h":43.46,"l":40.78,"c":42.39},{"d":"2025-03-09","o":42.39,"h":44.33,"l":40.55,"c":43.99},{"d":"2025-03-16","o":43.99,"h":46.21,"l":43.3,"c":45.24},{"d":"2025-03-23","o":45.24,"h":45.91,"l":42.91,"c":44.09},{"d":"2025-03-30","o":44.09,"h":45.94,"l":42.23,"c":42.71},{"d":"2025-04-06","o":42.71,"h":44.98,"l":38.67,"c":40.24},{"d":"2025-04-13","o":40.24,"h":43.99,"l":37.95,"c":42.99},{"d":"2025-04-20","o":42.99,"h":45.18,"l":42.01,"c":44.13},{"d":"2025-04-27","o":44.13,"h":46.19,"l":43.81,"c":45.39},{"d":"2025-05-04","o":45.39,"h":46.29,"l":45.18,"c":45.85},{"d":"2025-05-11","o":45.85,"h":47.49,"l":40.83,"c":42.54},{"d":"2025-05-18","o":42.54,"h":46.58,"l":40.39,"c":44.73},{"d":"2025-05-25","o":44.73,"h":50.54,"l":41.27,"c":47.96},{"d":"2025-06-01","o":47.96,"h":49.39,"l":46.24,"c":46.67},{"d":"2025-06-08","o":46.67,"h":47.12,"l":42.46,"c":44.57},{"d":"2025-06-15","o":44.57,"h":45.86,"l":44.11,"c":45.13},{"d":"2025-06-22","o":45.13,"h":47.95,"l":42.08,"c":43.11},{"d":"2025-06-29","o":43.11,"h":45.23,"l":40.43,"c":40.94},{"d":"2025-07-06","o":40.94,"h":41.45,"l":38.75,"c":39.8},{"d":"2025-07-13","o":39.8,"h":42.76,"l":39.41,"c":41.31},{"d":"2025-07-20","o":41.31,"h":43.1,"l":38.71,"c":39.95},{"d":"2025-07-27","o":39.95,"h":42.61,"l":39.32,"c":41.56},{"d":"2025-08-03","o":41.56,"h":42.45,"l":41.14,"c":41.98},{"d":"2025-08-10","o":41.98,"h":42.78,"l":41.37,"c":42.5},{"d":"2025-08-17","o":42.5,"h":44.49,"l":41.84,"c":43.56},{"d":"2025-08-24","o":43.56,"h":45.66,"l":43.11,"c":44.7},{"d":"2025-08-31","o":44.7,"h":45.14,"l":42.68,"c":43.74},{"d":"2025-09-07","o":43.74,"h":44.13,"l":43.53,"c":43.93},{"d":"2025-09-14","o":43.93,"h":46.98,"l":43.19,"c":45.29},{"d":"2025-09-21","o":45.29,"h":45.54,"l":45.25,"c":45.4},{"d":"2025-09-28","o":45.4,"h":49.71,"l":40,"c":42.16},{"d":"2025-10-05","o":42.16,"h":48.23,"l":41.47,"c":44.78},{"d":"2025-10-12","o":44.78,"h":48.34,"l":39.23,"c":42.12},{"d":"2025-10-19","o":42.12,"h":43.19,"l":39.21,"c":40.68},{"d":"2025-10-26","o":40.68,"h":41.52,"l":33.96,"c":37.59},{"d":"2025-11-02","o":37.59,"h":38.07,"l":35.74,"c":36.49},{"d":"2025-11-09","o":36.49,"h":36.64,"l":36.47,"c":36.56},{"d":"2025-11-16","o":36.56,"h":39.38,"l":28.19,"c":32.45},{"d":"2025-11-23","o":32.45,"h":36.61,"l":30.75,"c":34.53},{"d":"2025-11-30","o":34.53,"h":35.87,"l":33.88,"c":35.32},{"d":"2025-12-07","o":35.32,"h":37.42,"l":30.13,"c":32.44},{"d":"2025-12-14","o":32.44,"h":34.81,"l":31.44,"c":33.88},{"d":"2025-12-21","o":33.88,"h":37.82,"l":32.95,"c":35.63},{"d":"2025-12-28","o":35.63,"h":36.5,"l":32.88,"c":34.18},{"d":"2026-01-04","o":34.18,"h":34.19,"l":34.16,"c":34.17},{"d":"2026-01-11","o":34.17,"h":35.61,"l":29.28,"c":31.9},{"d":"2026-01-18","o":31.9,"h":32.17,"l":31.42,"c":31.61},{"d":"2026-01-25","o":31.61,"h":33.37,"l":29.25,"c":30.04},{"d":"2026-02-01","o":30.04,"h":35.17,"l":29.43,"c":32.26},{"d":"2026-02-08","o":32.26,"h":35.8,"l":29.27,"c":35.2},{"d":"2026-02-15","o":35.2,"h":38.08,"l":34.24,"c":36.52},{"d":"2026-02-22","o":36.52,"h":36.93,"l":35.45,"c":36},{"d":"2026-03-01","o":36,"h":36.61,"l":33.59,"c":34.85},{"d":"2026-03-08","o":34.85,"h":36.16,"l":34.23,"c":35.51},{"d":"2026-03-15","o":35.51,"h":35.52,"l":35.42,"c":35.46},{"d":"2026-03-22","o":35.46,"h":36.7,"l":32.86,"c":33.94},{"d":"2026-03-29","o":33.94,"h":36.52,"l":33.47,"c":35.14},{"d":"2026-04-05","o":35.14,"h":36.27,"l":32.36,"c":33.79},{"d":"2026-04-12","o":33.79,"h":33.97,"l":33.27,"c":33.48},{"d":"2026-04-19","o":33.48,"h":35.71,"l":32.44,"c":35.27}],"summary":{"last":35.27,"chg1d":5.35,"chgYtd":3.22,"chg1y":-22.3,"high52":50.54,"low52":28.19}}</script>
+<script>
+// Chart renderer — loads assets/prices.json and draws a candlestick SVG
+// into .chart-frame elements that carry data-ticker.
+//
+// Also updates the ts-price block in the header (last, 1d change)
+// and shows a 52-week range + YTD figure beneath the chart.
+
+(function () {
+  const PRICES_URL = (document.currentScript?.dataset.pricesUrl) || '../assets/prices.json';
+
+  const fmt$ = (n) => {
+    if (n == null) return '—';
+    if (n >= 1000) return '$' + n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return '$' + n.toFixed(2);
+  };
+  const fmtPct = (n) => {
+    if (n == null) return '—';
+    const sign = n > 0 ? '+' : '';
+    return sign + n.toFixed(2) + '%';
+  };
+
+  function drawCandles(svgEl, bars, opts) {
+    const W = opts.width;
+    const H = opts.height;
+    const pad = { t: 10, r: 54, b: 24, l: 10 };
+    const plotW = W - pad.l - pad.r;
+    const plotH = H - pad.t - pad.b;
+
+    const highs = bars.map(b => b.h);
+    const lows = bars.map(b => b.l);
+    const yMax = Math.max(...highs);
+    const yMin = Math.min(...lows);
+    const yRange = yMax - yMin || 1;
+    const yPad = yRange * 0.08;
+    const yLo = yMin - yPad;
+    const yHi = yMax + yPad;
+
+    const xAt = (i) => pad.l + (i + 0.5) * (plotW / bars.length);
+    const yAt = (price) => pad.t + (1 - (price - yLo) / (yHi - yLo)) * plotH;
+
+    const barWidth = Math.max(2, (plotW / bars.length) * 0.64);
+
+    const bgGrid = [];
+    // 4 horizontal grid lines
+    for (let i = 0; i <= 4; i++) {
+      const y = pad.t + (i / 4) * plotH;
+      const price = yHi - (i / 4) * (yHi - yLo);
+      bgGrid.push(
+        `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y}" y2="${y}" stroke="var(--rule-soft, #E5DFD3)" stroke-width="0.5"/>`
+      );
+      bgGrid.push(
+        `<text x="${W - pad.r + 6}" y="${y + 3}" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute, #6b6356)" text-anchor="start">${price.toFixed(2)}</text>`
+      );
+    }
+
+    const candles = bars.map((b, i) => {
+      const x = xAt(i);
+      const yH = yAt(b.h);
+      const yL = yAt(b.l);
+      const yO = yAt(b.o);
+      const yC = yAt(b.c);
+      const up = b.c >= b.o;
+      const fill = up ? '#3a6b3a' : '#8b2e2e';   // muted green / muted red
+      const stroke = up ? '#2d5c2d' : '#6e2525';
+      const bodyY = Math.min(yO, yC);
+      const bodyH = Math.max(1, Math.abs(yC - yO));
+      return `
+        <line x1="${x}" x2="${x}" y1="${yH}" y2="${yL}" stroke="${stroke}" stroke-width="0.8"/>
+        <rect x="${x - barWidth / 2}" y="${bodyY}" width="${barWidth}" height="${bodyH}" fill="${fill}" stroke="${stroke}" stroke-width="0.5"/>
+      `;
+    }).join('');
+
+    // X-axis labels — first, middle, last
+    const xLabels = [];
+    const pickIdx = [0, Math.floor(bars.length / 2), bars.length - 1];
+    for (const i of pickIdx) {
+      const x = xAt(i);
+      const label = bars[i].d.slice(0, 7); // YYYY-MM
+      xLabels.push(
+        `<text x="${x}" y="${H - 6}" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute, #6b6356)" text-anchor="middle">${label}</text>`
+      );
+    }
+
+    // Last price dashed guide
+    const lastPrice = bars[bars.length - 1].c;
+    const lastY = yAt(lastPrice);
+    const lastGuide = `
+      <line x1="${pad.l}" x2="${W - pad.r}" y1="${lastY}" y2="${lastY}" stroke="var(--ink, #1a1a1a)" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.5"/>
+      <rect x="${W - pad.r}" y="${lastY - 8}" width="50" height="16" fill="var(--ink, #1a1a1a)"/>
+      <text x="${W - pad.r + 25}" y="${lastY + 3}" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="10" fill="var(--paper, #f5f1e8)" text-anchor="middle">${lastPrice.toFixed(2)}</text>
+    `;
+
+    svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svgEl.setAttribute('width', '100%');
+    svgEl.setAttribute('height', H);
+    svgEl.innerHTML = `
+      <rect x="0" y="0" width="${W}" height="${H}" fill="transparent"/>
+      ${bgGrid.join('')}
+      ${candles}
+      ${lastGuide}
+      ${xLabels.join('')}
+    `;
+  }
+
+  function renderChart(container, ticker, data) {
+    if (!data) {
+      container.innerHTML = '<div class="pending">Chart · Historical OHLC data pending</div>';
+      return;
+    }
+    const bars = data.bars;
+    const sum = data.summary;
+    const W = container.clientWidth || 720;
+    const H = 300;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `Price chart for ${ticker}`);
+    container.innerHTML = '';
+    container.appendChild(svg);
+    drawCandles(svg, bars, { width: W, height: H });
+
+    // Redraw on resize
+    let resizeTimer;
+    const resizeHandler = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const newW = container.clientWidth || 720;
+        drawCandles(svg, bars, { width: newW, height: H });
+      }, 120);
+    };
+    window.addEventListener('resize', resizeHandler);
+  }
+
+  function updateHeader(ticker, data) {
+    const priceBlock = document.querySelector('.ts-price');
+    if (!priceBlock || !data) return;
+    const s = data.summary;
+    const up = s.chg1d >= 0;
+    priceBlock.innerHTML = `
+      <div class="label">Last price (synthetic)</div>
+      <div class="val">${fmt$(s.last)}</div>
+      <div class="sub" style="color:${up ? '#3a6b3a' : '#8b2e2e'}">
+        ${fmtPct(s.chg1d)} · 1d
+      </div>
+    `;
+  }
+
+  function injectStats(container, data) {
+    if (!data) return;
+    const s = data.summary;
+    const stats = document.createElement('div');
+    stats.className = 'chart-stats';
+    stats.innerHTML = `
+      <div><span class="k">52-Week High</span><span class="v">${fmt$(s.high52)}</span></div>
+      <div><span class="k">52-Week Low</span><span class="v">${fmt$(s.low52)}</span></div>
+      <div><span class="k">YTD</span><span class="v" style="color:${s.chgYtd >= 0 ? '#3a6b3a' : '#8b2e2e'}">${fmtPct(s.chgYtd)}</span></div>
+      <div><span class="k">1-Year</span><span class="v" style="color:${s.chg1y >= 0 ? '#3a6b3a' : '#8b2e2e'}">${fmtPct(s.chg1y)}</span></div>
+    `;
+    container.parentElement.insertBefore(stats, container.nextSibling);
+  }
+
+  async function init() {
+    const frames = document.querySelectorAll('.chart-frame[data-ticker]');
+    if (!frames.length) return;
+
+    // Prefer inline price data (avoids 401s in sandboxed previews + works offline)
+    const inlineEl = document.getElementById('ticker-prices');
+    let singleTickerData = null;
+    if (inlineEl && inlineEl.textContent.trim()) {
+      try { singleTickerData = JSON.parse(inlineEl.textContent); } catch (e) {}
+    }
+
+    let priceData = null;
+    if (!singleTickerData) {
+      try {
+        const res = await fetch(PRICES_URL);
+        if (res.ok) priceData = await res.json();
+      } catch (e) {
+        console.warn('[charts] failed to load prices', e);
+      }
+    }
+
+    for (const frame of frames) {
+      const tk = frame.dataset.ticker;
+      const data = singleTickerData || (priceData ? priceData[tk] : null);
+      renderChart(frame, tk, data);
+      if (data) {
+        updateHeader(tk, data);
+        injectStats(frame, data);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+<script>
+  const TK = "CODI";
+  function getWL(){ try { return JSON.parse(localStorage.getItem('tql_watchlist') || '[]'); } catch(e) { return []; } }
+  function setWL(v){ localStorage.setItem('tql_watchlist', JSON.stringify(v)); }
+  function updBtn(){
+    const wl = getWL();
+    const b = document.getElementById('watch-btn');
+    if (!b) return;
+    if (wl.includes(TK)) { b.classList.add('on'); b.innerHTML = '★ Saved'; }
+    else { b.classList.remove('on'); b.innerHTML = '☆ Save'; }
+  }
+  function toggleWatch(){
+    let wl = getWL();
+    if (wl.includes(TK)) wl = wl.filter(t => t !== TK);
+    else wl.push(TK);
+    setWL(wl);
+    updBtn();
+  }
+  document.addEventListener('DOMContentLoaded', updBtn);
+</script>
+</body>
+</html>

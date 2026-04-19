@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QSR · Restaurant Brands International — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Equity research tearsheet for Restaurant Brands International (QSR). Published by The Quarterly Ledger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   The Quarterly Ledger — shared stylesheet
+   A Surveyor of Public Securities
+   ========================================================================== */
+
+:root {
+  --paper: #F4EEDC;
+  --paper-2: #EEE6D0;
+  --ink: #0E0E0E;
+  --ink-soft: #3B3A36;
+  --ink-mute: #6E6A5F;
+  --rule: #2B2A26;
+  --rule-soft: rgba(43, 42, 38, 0.22);
+  --accent: #6E1A17;        /* oxblood */
+  --accent-ink: #3E0D0B;
+  --good: #1F4220;          /* forest */
+  --bad: #6E1A17;
+  --page-max: 1200px;
+
+  --serif: 'GT Super Display', 'GT Super', 'Caslon', 'EB Garamond', Georgia, serif;
+  --serif-text: 'GT Super Text', 'Caslon', 'EB Garamond', Georgia, serif;
+  --mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'Menlo', monospace;
+  --italic: 'Caslon', 'EB Garamond', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'kern', 'liga', 'onum';
+}
+
+/* Subtle paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.012) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.01) 0 1px, transparent 2px);
+  background-size: 140px 140px, 180px 180px, 220px 220px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+/* ===== Typography ===== */
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+.mono { font-family: var(--mono); }
+.italic { font-family: var(--italic); font-style: italic; }
+.small-caps {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: border-color 120ms ease;
+}
+a:hover { border-bottom-color: var(--ink); }
+
+a.muted {
+  color: var(--ink-mute);
+  border-bottom-color: transparent;
+}
+a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
+
+/* ===== Page chrome ===== */
+.page {
+  position: relative;
+  z-index: 2;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.masthead {
+  border-bottom: 3px double var(--rule);
+  padding: 32px 0 20px;
+  margin-bottom: 28px;
+}
+.masthead-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.masthead-left { display: flex; flex-direction: column; gap: 4px; }
+.masthead .wordmark {
+  font-size: 48px;
+}
+.masthead .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+.masthead-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav a {
+  border-bottom: none;
+  color: var(--ink-soft);
+}
+.nav a:hover, .nav a.active { color: var(--ink); }
+
+/* ===== Ruled boxes and dividers ===== */
+.hr-thin  { border: 0; border-top: 1px solid var(--rule-soft); margin: 24px 0; }
+.hr-rule  { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
+.hr-double { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
+
+.rule-box {
+  border: 1px solid var(--rule);
+  padding: 18px 22px;
+}
+
+/* ===== Ticker chip ===== */
+.ticker-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  text-transform: none;
+  transition: background 120ms ease, color 120ms ease;
+  border-bottom: 1px solid var(--rule);
+}
+.ticker-chip:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.ticker-chip .sym { font-weight: 600; }
+.ticker-chip .co {
+  font-family: var(--serif-text);
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ===== Tier list (homepage) ===== */
+.tier-section { margin: 44px 0; }
+.tier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.tier-head .num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.tier-head h2 {
+  font-size: 28px;
+}
+.tier-head .count {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.tier-desc {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  max-width: 62ch;
+}
+
+.ticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule-soft);
+  border-left: 1px solid var(--rule-soft);
+}
+
+.ticker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  border-top: none;
+  color: var(--ink);
+  transition: background 100ms ease;
+}
+.ticker-row:hover {
+  background: var(--paper-2);
+  border-bottom-color: var(--rule-soft);
+}
+.ticker-row .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ticker-row .sym .score {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+.ticker-row .co {
+  font-family: var(--serif-text);
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.ticker-row .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* ===== Search ===== */
+.search-wrap {
+  margin: 20px 0 10px;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.search-input:focus {
+  border-color: var(--accent);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  color: var(--ink-mute);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: none;
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 50;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-result {
+  display: flex;
+  gap: 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--serif-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+.search-result:hover { background: var(--paper-2); }
+.search-result .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 70px;
+}
+.search-result .co { flex: 1; }
+.search-result .tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ===== Tear sheet page ===== */
+.ts-head {
+  border-top: 3px double var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-top: 12px;
+}
+.ts-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.ts-eyebrow span { color: var(--ink); }
+.ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
+.ts-name {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.ts-sub {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  font-size: 16px;
+}
+.ts-price {
+  text-align: right;
+  border-left: 1px solid var(--rule-soft);
+  padding-left: 22px;
+  min-width: 200px;
+}
+.ts-price .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ts-price .val {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.ts-price .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+}
+
+/* Metric rail */
+.metric-rail {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
+  margin: 24px 0 8px;
+}
+.metric {
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+}
+.metric:last-child { border-right: none; }
+.metric .k {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 4px;
+}
+.metric .v {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Body layout */
+.ts-body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  margin-top: 28px;
+}
+.ts-body section { margin-bottom: 26px; }
+.ts-block-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.ts-prose p {
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  text-wrap: pretty;
+}
+.ts-prose p:first-letter-drop::first-letter {
+  font-family: var(--serif);
+  float: left;
+  font-size: 54px;
+  line-height: 0.9;
+  padding: 6px 10px 0 0;
+  font-weight: 500;
+}
+
+/* Chart placeholder / live chart */
+.chart-frame {
+  border: 1px solid var(--rule);
+  min-height: 300px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 49px, var(--rule-soft) 49px 50px),
+    repeating-linear-gradient(0deg, transparent 0 39px, var(--rule-soft) 39px 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px;
+}
+.chart-frame svg { display: block; width: 100%; height: auto; background: transparent; }
+.chart-frame:has(svg) { background: var(--paper); }
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-top: 0;
+  margin-top: 0;
+  font-family: var(--mono);
+}
+.chart-stats > div {
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chart-stats > div:last-child { border-right: 0; }
+.chart-stats .k {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.chart-stats .v {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .chart-stats { grid-template-columns: repeat(2, 1fr); }
+  .chart-stats > div:nth-child(2) { border-right: 0; }
+  .chart-stats > div:nth-child(1),
+  .chart-stats > div:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
+}
+.chart-frame .pending {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper);
+  padding: 8px 14px;
+  border: 1px solid var(--rule-soft);
+}
+.chart-caption {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* Tier chip + score */
+.tier-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+}
+.score-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 10px;
+  margin-left: 8px;
+}
+
+/* Footer */
+.footer {
+  margin: 72px 0 32px;
+  padding-top: 22px;
+  border-top: 3px double var(--rule);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  font-size: 14px;
+}
+.footer h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin: 6px 0; }
+.footer a { color: var(--ink-soft); border-bottom: none; }
+.footer a:hover { color: var(--ink); }
+.footer .about p {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.footer .colophon {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+/* ===== Registration gate ===== */
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 12, 0.72);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+.gate-overlay.open { display: flex; }
+.gate-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 40px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.gate-card .wordmark { font-size: 26px; }
+.gate-card .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 13px;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.gate-card h2 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.gate-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.gate-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.gate-input:focus { outline: none; border-color: var(--accent); }
+.gate-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.gate-button:hover { background: var(--accent); }
+.gate-fineprint {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* Trial banner */
+.trial-banner {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 900;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border: 1px solid var(--paper);
+  display: none;
+}
+.trial-banner.show { display: block; }
+.trial-banner strong { color: #E7C98F; }
+
+/* Disclaimer strip */
+.disclaimer-strip {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page { padding: 0 20px; }
+  .masthead .wordmark { font-size: 34px; }
+  .ts-head { grid-template-columns: 1fr; }
+  .ts-price { border-left: none; padding-left: 0; text-align: left; }
+  .ts-name { font-size: 38px; }
+  .metric-rail { grid-template-columns: repeat(3, 1fr); }
+  .metric:nth-child(3) { border-right: none; }
+  .metric:nth-child(n+4) { border-top: 1px solid var(--rule-soft); }
+  .ts-body { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .metric-rail { grid-template-columns: repeat(2, 1fr); }
+  .metric { border-right: 1px solid var(--rule-soft); }
+  .metric:nth-child(2n) { border-right: none; }
+  .metric:nth-child(n+3) { border-top: 1px solid var(--rule-soft); }
+  .footer { grid-template-columns: 1fr; }
+  .ts-name { font-size: 32px; }
+}
+
+
+/* Per-page additions */
+.watch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  margin-left: 12px;
+  transition: background 120ms ease, color 120ms ease;
+}
+.watch-btn:hover { background: var(--paper-2); }
+.watch-btn.on { background: var(--ink); color: var(--paper); }
+
+/* Munger checklist table */
+.munger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--serif-text);
+  font-size: 14px;
+  margin-top: 6px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.munger-table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  background: var(--paper-2);
+}
+.munger-table td {
+  padding: 10px 12px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule-soft);
+  line-height: 1.5;
+}
+.munger-table tr:last-child td { border-bottom: none; }
+.munger-table .col-0 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  min-width: 180px;
+  font-weight: 500;
+}
+.munger-table .col-1 {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  min-width: 80px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.ts-eyebrow .dot { color: var(--ink-mute); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left">
+        <a href="../index.html" style="border:none;"><div class="wordmark" style="font-size: 30px;">The Quarterly Ledger</div></a>
+        <div class="tagline">A Surveyor of Public Securities</div>
+      </div>
+      <div class="masthead-meta">
+        Vol. 1 · No. 1<br>
+        April 2026 Issue
+      </div>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="../index.html">The Register</a>
+    <a href="../watchlist.html">Watchlist</a>
+    <a href="../my-watchlist.html">My Saves</a>
+    <a href="../methodology.html">Methodology</a>
+    <a href="../about.html">About</a>
+    <a href="../disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <div class="ts-head">
+    <div>
+      <div class="ts-eyebrow">
+        <span>QSR</span>
+        <span class="dot">·</span>
+        <span class="tier-chip">Tier 3 · ROYALTY STREAM AT SCALE</span>
+        <span class="score-chip">68/100</span>
+        <button class="watch-btn" id="watch-btn" onclick="toggleWatch()" aria-label="Save to watchlist">☆ Save</button>
+      </div>
+      <h1 class="ts-name">Restaurant Brands International</h1>
+      <p class="ts-sub">Market cap $35.52B · EV $43.31B</p>
+    </div>
+    <div class="ts-price">
+      <div class="label">Price data</div>
+      <div class="val" style="font-size:20px; color:var(--ink-mute);">Pending</div>
+      <div class="sub">Price feed loading</div>
+    </div>
+  </div>
+
+  <div class="metric-rail">
+      <div class="metric"><span class="k">Market Cap</span><span class="v">$35.52B</span></div><div class="metric"><span class="k">Revenue (TTM)</span><span class="v">$9.43B</span></div><div class="metric"><span class="k">Net Income (TTM)</span><span class="v">$902.0M</span></div><div class="metric"><span class="k">Free Cash Flow</span><span class="v">$1.39B</span></div><div class="metric"><span class="k">P/E (TTM)</span><span class="v">29.6x</span></div><div class="metric"><span class="k">EV/EBITDA</span><span class="v">15.5x</span></div>
+    </div>
+  <div class="metric-rail" style="border-top:0; margin-top:0;">
+      <div class="metric"><span class="k">Cash</span><span class="v">$1.17B</span></div><div class="metric"><span class="k">Total Debt</span><span class="v">$15.68B</span></div><div class="metric"><span class="k">Net Debt</span><span class="v">$14.51B</span></div><div class="metric"><span class="k">Enterprise Value</span><span class="v">$43.31B</span></div><div class="metric"><span class="k">Gross Margin</span><span class="v">33.8%</span></div><div class="metric"><span class="k">Dividend Yield</span><span class="v">3.3%</span></div>
+    </div>
+
+  <div class="ts-body">
+    <div>
+      
+      <section>
+        <div class="ts-block-title">Price History</div>
+        <div class="chart-frame" data-ticker="QSR"><div class="pending">Loading chart…</div></div>
+        <div class="chart-caption">Weekly candles · 14 months. Prices are illustrative (synthetic GBM seeded per ticker); swap in real OHLC by regenerating prices.json.</div>
+      </section>
+
+        <section>
+          <div class="ts-block-title">Analyst Summary</div>
+          <div class="ts-prose"><p>Restaurant Brands International is the parent company of Burger King, Tim Hortons, Popeyes, and Firehouse Subs, operating a nearly pure franchise model across 33,041 restaurants in 126 countries. The business is fundamentally a royalty collection operation: $1.977 billion in pure royalty revenue flows from franchisees to RBI with minimal capital requirements, creating a recurring revenue stream with the predictability of a toll road. Seth Klarman&#39;s Baupost Group holds a $551 million position, lending value investor credibility to the thesis. At approximately $37 billion market cap and roughly 20x P/E, the stock is fairly valued rather than cheap — the opportunity here is in the quality and durability of the cash flows, not a screaming bargain.</p><p>The franchise model economics are exceptional: RBI collects royalties (typically 4-5% of gross sales) from 33,041 locations without bearing the capital expenditure, lease obligations, labor costs, or operational complexity of running restaurants. This is a capital-light model that generates enormous free cash flow relative to its invested capital base. The 126-country footprint provides geographic diversification that few consumer brands can match, and the multi-brand portfolio (Burger King for burgers, Tim Hortons for coffee, Popeyes for chicken, Firehouse for subs) reduces dependence on any single consumer trend or competitive dynamic.</p><p>The $13.4 billion debt load is the elephant in the room and the reason the stock is &quot;fairly valued&quot; rather than &quot;compellingly cheap&quot; at 20x earnings. RBI operates with private-equity-style leverage, a legacy of the 3G Capital-backed acquisition structure that created the company. The debt is manageable given the royalty stream&#39;s predictability, but it limits financial flexibility, amplifies downside during systemwide sales declines, and reduces the margin of safety that value investors typically demand. At 20x earnings, you are paying a fair price for a high-quality royalty stream — this is a &quot;hold and collect&quot; position for investors who want steady, inflation-protected cash flows rather than a deep value opportunity with significant upside.</p></div>
+        </section>
+
+        <section>
+          <div class="ts-block-title">What a Screen Can't See</div>
+          <div class="ts-prose"><p>The royalty model creates a natural inflation hedge that does not appear in any financial metric. When menu prices increase (as they inevitably do with food cost inflation), RBI&#39;s royalty revenue increases proportionally without any corresponding cost increase. A 5% menu price increase across 33,041 restaurants flows directly to RBI&#39;s topline with no additional expense. This inflation pass-through mechanism means that in inflationary environments, RBI&#39;s real purchasing power actually increases — the royalty stream grows with nominal GDP while the cost base remains largely fixed. Klarman&#39;s $551 million position suggests he values this inflation-protected royalty characteristic, which is essentially a real asset wrapped in a corporate structure.</p></div>
+        </section>
+
+        <section>
+          <div class="ts-block-title">Munger Checklist Breakdown</div>
+          <div class="munger-wrap">
+        <table class="munger-table">
+          <thead><tr><th>Criterion</th><th>Score</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td class="col-0">Understanding</td><td class="col-1">9</td><td class="col-2">Franchise royalties from fast food. Extremely simple and transparent.</td></tr><tr><td class="col-0">Moat</td><td class="col-1">7</td><td class="col-2">33,041 locations. Brand recognition. Franchise network effects. Strong but competitive industry.</td></tr><tr><td class="col-0">Balance Sheet</td><td class="col-1">4</td><td class="col-2">$13.4B debt. Manageable but material. PE-style leverage reduces flexibility.</td></tr><tr><td class="col-0">Margin of Safety</td><td class="col-1">5</td><td class="col-2">~20x PE is fair value, not a discount. Klarman position provides validation, not cheapness.</td></tr><tr><td class="col-0">Catalyst</td><td class="col-1">5</td><td class="col-2">Burger King modernization. Popeyes international expansion. Gradual.</td></tr><tr><td class="col-0">Risk/Reward Asymmetry</td><td class="col-1">6</td><td class="col-2">Downside: leveraged during systemwide sales decline. Upside: steady compounding. Balanced.</td></tr><tr><td class="col-0">Business Quality</td><td class="col-1">8</td><td class="col-2">$2B pure royalties. Capital-light. 126 countries. Multi-brand portfolio.</td></tr><tr><td class="col-0">Executability</td><td class="col-1">9</td><td class="col-2">$37B cap. Extremely liquid. No position concerns.</td></tr><tr><td class="col-0">Inversion (Bear Case)</td><td class="col-1">5</td><td class="col-2">Debt amplifies downside. Burger King brand fatigue. Consumer trade-down risk.</td></tr><tr><td class="col-0">Macro Independence</td><td class="col-1">6</td><td class="col-2">Fast food is relatively defensive but not immune to recession. Debt adds sensitivity.</td></tr><tr><td class="col-0">**TOTAL**</td><td class="col-1">**68**</td><td class="col-2"></td></tr><tr><td class="col-0">Metric</td><td class="col-1">2014</td><td class="col-2">2015</td><td class="col-3">2016</td><td class="col-4">2017</td><td class="col-5">2018</td><td class="col-6">2019</td><td class="col-7">2020</td><td class="col-8">2021</td><td class="col-9">2022</td><td class="col-10">2023</td><td class="col-11">2024</td><td class="col-12">2025</td></tr><tr><td class="col-0">**Revenue**</td><td class="col-1">$1.20B</td><td class="col-2">$4.05B</td><td class="col-3">$4.15B</td><td class="col-4">$4.58B</td><td class="col-5">$5.36B</td><td class="col-6">$5.60B</td><td class="col-7">$4.97B</td><td class="col-8">$5.74B</td><td class="col-9">$6.50B</td><td class="col-10">$7.02B</td><td class="col-11">$8.41B</td><td class="col-12">$9.43B</td></tr><tr><td class="col-0">**Cost of Revenue**</td><td class="col-1">N/A</td><td class="col-2">N/A</td><td class="col-3">$1.73B</td><td class="col-4">$1.85B</td><td class="col-5">$1.82B</td><td class="col-6">$1.81B</td><td class="col-7">$1.61B</td><td class="col-8">$1.89B</td><td class="col-9">$2.31B</td><td class="col-10">$2.44B</td><td class="col-11">N/A</td><td class="col-12">N/A</td></tr><tr><td class="col-0">**Gross Margin**</td><td class="col-1">N/A</td><td class="col-2">N/A</td><td class="col-3">58.3%</td><td class="col-4">59.6%</td><td class="col-5">66.1%</td><td class="col-6">67.6%</td><td class="col-7">67.6%</td><td class="col-8">67.1%</td><td class="col-9">64.5%</td><td class="col-10">65.3%</td><td class="col-11">N/A</td><td class="col-12">N/A</td></tr><tr><td class="col-0">**Net Income**</td><td class="col-1">$60.4M</td><td class="col-2">$50.6M</td><td class="col-3">$168.3M</td><td class="col-4">$167.0M</td><td class="col-5">$279.0M</td><td class="col-6">$246.0M</td><td class="col-7">$224.0M</td><td class="col-8">N/A</td><td class="col-9">N/A</td><td class="col-10">N/A</td><td class="col-11">N/A</td><td class="col-12">N/A</td></tr><tr><td class="col-0">**EPS Diluted**</td><td class="col-1">$-2.32</td><td class="col-2">$0.50</td><td class="col-3">$1.45</td><td class="col-4">$2.54</td><td class="col-5">$2.42</td><td class="col-6">$2.37</td><td class="col-7">$1.60</td><td class="col-8">$2.69</td><td class="col-9">$3.25</td><td class="col-10">$3.76</td><td class="col-11">$3.18</td><td class="col-12">$2.35</td></tr><tr><td class="col-0">**Total Assets**</td><td class="col-1">$21.34B</td><td class="col-2">$18.41B</td><td class="col-3">$19.12B</td><td class="col-4">$21.22B</td><td class="col-5">$21.31B</td><td class="col-6">$22.36B</td><td class="col-7">$22.78B</td><td class="col-8">$23.25B</td><td class="col-9">$22.75B</td><td class="col-10">$23.39B</td><td class="col-11">$24.63B</td><td class="col-12">$25.61B</td></tr><tr><td class="col-0">**Stockholders Equity**</td><td class="col-1">$1.88B</td><td class="col-2">$1.34B</td><td class="col-3">$1.70B</td><td class="col-4">$2.23B</td><td class="col-5">$2.10B</td><td class="col-6">$2.49B</td><td class="col-7">$2.17B</td><td class="col-8">$2.24B</td><td class="col-9">$2.50B</td><td class="col-10">$2.87B</td><td class="col-11">$3.11B</td><td class="col-12">$3.63B</td></tr><tr><td class="col-0">**Long-term Debt**</td><td class="col-1">$9.94B</td><td class="col-2">$8.50B</td><td class="col-3">$8.48B</td><td class="col-4">$11.86B</td><td class="col-5">$11.89B</td><td class="col-6">$11.83B</td><td class="col-7">$12.48B</td><td class="col-8">$12.98B</td><td class="col-9">$12.93B</td><td class="col-10">$12.92B</td><td class="col-11">$13.64B</td><td class="col-12">$13.28B</td></tr><tr><td class="col-0">**Cash**</td><td class="col-1">$1.80B</td><td class="col-2">$792.0M</td><td class="col-3">$1.48B</td><td class="col-4">$1.10B</td><td class="col-5">$1.10B</td><td class="col-6">$913.0M</td><td class="col-7">N/A</td><td class="col-8">N/A</td><td class="col-9">N/A</td><td class="col-10">N/A</td><td class="col-11">N/A</td><td class="col-12">N/A</td></tr><tr><td class="col-0">**Operating CF**</td><td class="col-1">N/A</td><td class="col-2">$1.20B</td><td class="col-3">$1.25B</td><td class="col-4">$1.39B</td><td class="col-5">$1.17B</td><td class="col-6">$1.48B</td><td class="col-7">$921.0M</td><td class="col-8">$1.73B</td><td class="col-9">$1.49B</td><td class="col-10">$1.32B</td><td class="col-11">$1.50B</td><td class="col-12">$1.71B</td></tr><tr><td class="col-0">**CapEx**</td><td class="col-1">$30.9M</td><td class="col-2">$115.3M</td><td class="col-3">$34.0M</td><td class="col-4">$37.0M</td><td class="col-5">$86.0M</td><td class="col-6">$62.0M</td><td class="col-7">$117.0M</td><td class="col-8">$106.0M</td><td class="col-9">$100.0M</td><td class="col-10">$120.0M</td><td class="col-11">$201.0M</td><td class="col-12">$265.0M</td></tr><tr><td class="col-0">**FCF**</td><td class="col-1">N/A</td><td class="col-2">$1.09B</td><td class="col-3">$1.22B</td><td class="col-4">$1.35B</td><td class="col-5">$1.08B</td><td class="col-6">$1.41B</td><td class="col-7">$804.0M</td><td class="col-8">$1.62B</td><td class="col-9">$1.39B</td><td class="col-10">$1.20B</td><td class="col-11">$1.30B</td><td class="col-12">$1.45B</td></tr><tr><td class="col-0">**ROE**</td><td class="col-1">3.2%</td><td class="col-2">3.8%</td><td class="col-3">9.9%</td><td class="col-4">7.5%</td><td class="col-5">13.3%</td><td class="col-6">9.9%</td><td class="col-7">10.3%</td><td class="col-8">N/A</td><td class="col-9">N/A</td><td class="col-10">N/A</td><td class="col-11">N/A</td><td class="col-12">N/A</td></tr><tr><td class="col-0">**Shares Outstanding**</td><td class="col-1">N/A</td><td class="col-2">202.1M</td><td class="col-3">231.7M</td><td class="col-4">234.6M</td><td class="col-5">243.9M</td><td class="col-6">251.6M</td><td class="col-7">298.4M</td><td class="col-8">305.1M</td><td class="col-9">309.6M</td><td class="col-10">307.9M</td><td class="col-11">313.4M</td><td class="col-12">N/A</td></tr>
+          </tbody>
+        </table></div>
+        </section>
+    </div>
+    <aside>
+      
+      <section>
+        <div class="ts-block-title">Classification</div>
+        <div class="ts-prose">
+          <p><strong>Ticker:</strong> QSR</p>
+          <p><strong>Tier:</strong> 3 — ROYALTY STREAM AT SCALE</p>
+          <p><strong>Munger Score:</strong> 68/100</p>
+        </div>
+      </section>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <div class="about">
+      <h4>The Quarterly Ledger</h4>
+      <p>An independent quarterly reference for public securities.</p>
+    </div>
+    <div>
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="../index.html">The Register</a></li>
+        <li><a href="../watchlist.html">Full List</a></li>
+        <li><a href="../my-watchlist.html">My Saves</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Compliance</h4>
+      <ul>
+        <li><a href="../disclaimer.html">Disclaimer</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>This Sheet</h4>
+      <ul>
+        <li class="colophon">QSR · April 2026</li>
+      </ul>
+    </div>
+  </footer>
+  <div class="disclaimer-strip">
+    Not investment advice. For informational purposes only. <a href="../disclaimer.html" style="color:inherit; border-bottom-color: currentColor;">Full disclaimer</a>.
+  </div>
+</div>
+
+<script>window.TQL_STOCK_COUNT = 351; window.TQL_FREE = true;</script>
+<script id="ticker-prices" type="application/json">{"bars":[{"d":"2025-03-02","o":85.63,"h":90.79,"l":84.83,"c":88.48},{"d":"2025-03-09","o":88.48,"h":95.31,"l":86.83,"c":91.95},{"d":"2025-03-16","o":91.95,"h":99.88,"l":88.14,"c":95.39},{"d":"2025-03-23","o":95.39,"h":101.91,"l":93.34,"c":98.43},{"d":"2025-03-30","o":98.43,"h":100.65,"l":92.75,"c":94.44},{"d":"2025-04-06","o":94.44,"h":100.06,"l":87.86,"c":89.97},{"d":"2025-04-13","o":89.97,"h":90.09,"l":89.66,"c":89.83},{"d":"2025-04-20","o":89.83,"h":90.75,"l":87.95,"c":88.44},{"d":"2025-04-27","o":88.44,"h":89.92,"l":86.4,"c":87.26},{"d":"2025-05-04","o":87.26,"h":90.17,"l":84.24,"c":85.12},{"d":"2025-05-11","o":85.12,"h":86.21,"l":83.31,"c":83.66},{"d":"2025-05-18","o":83.66,"h":84.47,"l":82.92,"c":84.29},{"d":"2025-05-25","o":84.29,"h":91.48,"l":81.08,"c":87.4},{"d":"2025-06-01","o":87.4,"h":90.53,"l":86.86,"c":89.3},{"d":"2025-06-08","o":89.3,"h":89.64,"l":88.58,"c":88.77},{"d":"2025-06-15","o":88.77,"h":88.78,"l":88.76,"c":88.78},{"d":"2025-06-22","o":88.78,"h":90.94,"l":83.79,"c":85.04},{"d":"2025-06-29","o":85.04,"h":85.9,"l":79.45,"c":82.15},{"d":"2025-07-06","o":82.15,"h":83,"l":79.2,"c":80.2},{"d":"2025-07-13","o":80.2,"h":82.52,"l":77.76,"c":78.49},{"d":"2025-07-20","o":78.49,"h":78.99,"l":78.2,"c":78.81},{"d":"2025-07-27","o":78.81,"h":85.6,"l":76.84,"c":81.7},{"d":"2025-08-03","o":81.7,"h":82.12,"l":78.16,"c":79.71},{"d":"2025-08-10","o":79.71,"h":80.57,"l":76.58,"c":78.11},{"d":"2025-08-17","o":78.11,"h":78.26,"l":76.99,"c":77.36},{"d":"2025-08-24","o":77.36,"h":80.35,"l":75.9,"c":78.96},{"d":"2025-08-31","o":78.96,"h":81,"l":76.17,"c":77.24},{"d":"2025-09-07","o":77.24,"h":78.67,"l":75.62,"c":76.18},{"d":"2025-09-14","o":76.18,"h":76.84,"l":75.81,"c":76.6},{"d":"2025-09-21","o":76.6,"h":77.32,"l":75.65,"c":76},{"d":"2025-09-28","o":76,"h":77.77,"l":75.39,"c":77.34},{"d":"2025-10-05","o":77.34,"h":78.84,"l":77.06,"c":78.17},{"d":"2025-10-12","o":78.17,"h":79.01,"l":76.1,"c":77.22},{"d":"2025-10-19","o":77.22,"h":78.2,"l":76.98,"c":77.78},{"d":"2025-10-26","o":77.78,"h":79.63,"l":70.91,"c":74.63},{"d":"2025-11-02","o":74.63,"h":76.14,"l":74.13,"c":75.29},{"d":"2025-11-09","o":75.29,"h":78,"l":69.77,"c":72.61},{"d":"2025-11-16","o":72.61,"h":74.35,"l":71.7,"c":73.51},{"d":"2025-11-23","o":73.51,"h":75.3,"l":71.19,"c":72.17},{"d":"2025-11-30","o":72.17,"h":72.96,"l":70.57,"c":70.91},{"d":"2025-12-07","o":70.91,"h":73.96,"l":68.89,"c":73.28},{"d":"2025-12-14","o":73.28,"h":74.53,"l":71.12,"c":72.11},{"d":"2025-12-21","o":72.11,"h":73.46,"l":70.25,"c":71.07},{"d":"2025-12-28","o":71.07,"h":72.67,"l":68.55,"c":68.98},{"d":"2026-01-04","o":68.98,"h":71.92,"l":63.07,"c":65.27},{"d":"2026-01-11","o":65.27,"h":72.83,"l":63.19,"c":69.43},{"d":"2026-01-18","o":69.43,"h":70.38,"l":66.58,"c":68.03},{"d":"2026-01-25","o":68.03,"h":75.13,"l":64.49,"c":71.72},{"d":"2026-02-01","o":71.72,"h":73.68,"l":65.21,"c":68.66},{"d":"2026-02-08","o":68.66,"h":69.06,"l":67.97,"c":68.33},{"d":"2026-02-15","o":68.33,"h":72.17,"l":66.85,"c":71.38},{"d":"2026-02-22","o":71.38,"h":73.06,"l":69.04,"c":69.72},{"d":"2026-03-01","o":69.72,"h":72.14,"l":68.97,"c":70.79},{"d":"2026-03-08","o":70.79,"h":71.84,"l":69.25,"c":69.81},{"d":"2026-03-15","o":69.81,"h":76.82,"l":69.06,"c":73.16},{"d":"2026-03-22","o":73.16,"h":73.85,"l":72.99,"c":73.7},{"d":"2026-03-29","o":73.7,"h":79.1,"l":71.59,"c":76.28},{"d":"2026-04-05","o":76.28,"h":76.76,"l":75.79,"c":75.89},{"d":"2026-04-12","o":75.89,"h":76.99,"l":71.95,"c":73.07},{"d":"2026-04-19","o":73.07,"h":78.28,"l":68.04,"c":68.96}],"summary":{"last":68.96,"chg1d":-5.62,"chgYtd":5.65,"chg1y":-20.97,"high52":91.48,"low52":63.07}}</script>
+<script>
+// Chart renderer — loads assets/prices.json and draws a candlestick SVG
+// into .chart-frame elements that carry data-ticker.
+//
+// Also updates the ts-price block in the header (last, 1d change)
+// and shows a 52-week range + YTD figure beneath the chart.
+
+(function () {
+  const PRICES_URL = (document.currentScript?.dataset.pricesUrl) || '../assets/prices.json';
+
+  const fmt$ = (n) => {
+    if (n == null) return '—';
+    if (n >= 1000) return '$' + n.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    return '$' + n.toFixed(2);
+  };
+  const fmtPct = (n) => {
+    if (n == null) return '—';
+    const sign = n > 0 ? '+' : '';
+    return sign + n.toFixed(2) + '%';
+  };
+
+  function drawCandles(svgEl, bars, opts) {
+    const W = opts.width;
+    const H = opts.height;
+    const pad = { t: 10, r: 54, b: 24, l: 10 };
+    const plotW = W - pad.l - pad.r;
+    const plotH = H - pad.t - pad.b;
+
+    const highs = bars.map(b => b.h);
+    const lows = bars.map(b => b.l);
+    const yMax = Math.max(...highs);
+    const yMin = Math.min(...lows);
+    const yRange = yMax - yMin || 1;
+    const yPad = yRange * 0.08;
+    const yLo = yMin - yPad;
+    const yHi = yMax + yPad;
+
+    const xAt = (i) => pad.l + (i + 0.5) * (plotW / bars.length);
+    const yAt = (price) => pad.t + (1 - (price - yLo) / (yHi - yLo)) * plotH;
+
+    const barWidth = Math.max(2, (plotW / bars.length) * 0.64);
+
+    const bgGrid = [];
+    // 4 horizontal grid lines
+    for (let i = 0; i <= 4; i++) {
+      const y = pad.t + (i / 4) * plotH;
+      const price = yHi - (i / 4) * (yHi - yLo);
+      bgGrid.push(
+        `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y}" y2="${y}" stroke="var(--rule-soft, #E5DFD3)" stroke-width="0.5"/>`
+      );
+      bgGrid.push(
+        `<text x="${W - pad.r + 6}" y="${y + 3}" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute, #6b6356)" text-anchor="start">${price.toFixed(2)}</text>`
+      );
+    }
+
+    const candles = bars.map((b, i) => {
+      const x = xAt(i);
+      const yH = yAt(b.h);
+      const yL = yAt(b.l);
+      const yO = yAt(b.o);
+      const yC = yAt(b.c);
+      const up = b.c >= b.o;
+      const fill = up ? '#3a6b3a' : '#8b2e2e';   // muted green / muted red
+      const stroke = up ? '#2d5c2d' : '#6e2525';
+      const bodyY = Math.min(yO, yC);
+      const bodyH = Math.max(1, Math.abs(yC - yO));
+      return `
+        <line x1="${x}" x2="${x}" y1="${yH}" y2="${yL}" stroke="${stroke}" stroke-width="0.8"/>
+        <rect x="${x - barWidth / 2}" y="${bodyY}" width="${barWidth}" height="${bodyH}" fill="${fill}" stroke="${stroke}" stroke-width="0.5"/>
+      `;
+    }).join('');
+
+    // X-axis labels — first, middle, last
+    const xLabels = [];
+    const pickIdx = [0, Math.floor(bars.length / 2), bars.length - 1];
+    for (const i of pickIdx) {
+      const x = xAt(i);
+      const label = bars[i].d.slice(0, 7); // YYYY-MM
+      xLabels.push(
+        `<text x="${x}" y="${H - 6}" font-family="IBM Plex Mono, monospace" font-size="10" fill="var(--ink-mute, #6b6356)" text-anchor="middle">${label}</text>`
+      );
+    }
+
+    // Last price dashed guide
+    const lastPrice = bars[bars.length - 1].c;
+    const lastY = yAt(lastPrice);
+    const lastGuide = `
+      <line x1="${pad.l}" x2="${W - pad.r}" y1="${lastY}" y2="${lastY}" stroke="var(--ink, #1a1a1a)" stroke-width="0.6" stroke-dasharray="2 3" opacity="0.5"/>
+      <rect x="${W - pad.r}" y="${lastY - 8}" width="50" height="16" fill="var(--ink, #1a1a1a)"/>
+      <text x="${W - pad.r + 25}" y="${lastY + 3}" font-family="IBM Plex Mono, monospace" font-weight="600" font-size="10" fill="var(--paper, #f5f1e8)" text-anchor="middle">${lastPrice.toFixed(2)}</text>
+    `;
+
+    svgEl.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svgEl.setAttribute('width', '100%');
+    svgEl.setAttribute('height', H);
+    svgEl.innerHTML = `
+      <rect x="0" y="0" width="${W}" height="${H}" fill="transparent"/>
+      ${bgGrid.join('')}
+      ${candles}
+      ${lastGuide}
+      ${xLabels.join('')}
+    `;
+  }
+
+  function renderChart(container, ticker, data) {
+    if (!data) {
+      container.innerHTML = '<div class="pending">Chart · Historical OHLC data pending</div>';
+      return;
+    }
+    const bars = data.bars;
+    const sum = data.summary;
+    const W = container.clientWidth || 720;
+    const H = 300;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `Price chart for ${ticker}`);
+    container.innerHTML = '';
+    container.appendChild(svg);
+    drawCandles(svg, bars, { width: W, height: H });
+
+    // Redraw on resize
+    let resizeTimer;
+    const resizeHandler = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const newW = container.clientWidth || 720;
+        drawCandles(svg, bars, { width: newW, height: H });
+      }, 120);
+    };
+    window.addEventListener('resize', resizeHandler);
+  }
+
+  function updateHeader(ticker, data) {
+    const priceBlock = document.querySelector('.ts-price');
+    if (!priceBlock || !data) return;
+    const s = data.summary;
+    const up = s.chg1d >= 0;
+    priceBlock.innerHTML = `
+      <div class="label">Last price (synthetic)</div>
+      <div class="val">${fmt$(s.last)}</div>
+      <div class="sub" style="color:${up ? '#3a6b3a' : '#8b2e2e'}">
+        ${fmtPct(s.chg1d)} · 1d
+      </div>
+    `;
+  }
+
+  function injectStats(container, data) {
+    if (!data) return;
+    const s = data.summary;
+    const stats = document.createElement('div');
+    stats.className = 'chart-stats';
+    stats.innerHTML = `
+      <div><span class="k">52-Week High</span><span class="v">${fmt$(s.high52)}</span></div>
+      <div><span class="k">52-Week Low</span><span class="v">${fmt$(s.low52)}</span></div>
+      <div><span class="k">YTD</span><span class="v" style="color:${s.chgYtd >= 0 ? '#3a6b3a' : '#8b2e2e'}">${fmtPct(s.chgYtd)}</span></div>
+      <div><span class="k">1-Year</span><span class="v" style="color:${s.chg1y >= 0 ? '#3a6b3a' : '#8b2e2e'}">${fmtPct(s.chg1y)}</span></div>
+    `;
+    container.parentElement.insertBefore(stats, container.nextSibling);
+  }
+
+  async function init() {
+    const frames = document.querySelectorAll('.chart-frame[data-ticker]');
+    if (!frames.length) return;
+
+    // Prefer inline price data (avoids 401s in sandboxed previews + works offline)
+    const inlineEl = document.getElementById('ticker-prices');
+    let singleTickerData = null;
+    if (inlineEl && inlineEl.textContent.trim()) {
+      try { singleTickerData = JSON.parse(inlineEl.textContent); } catch (e) {}
+    }
+
+    let priceData = null;
+    if (!singleTickerData) {
+      try {
+        const res = await fetch(PRICES_URL);
+        if (res.ok) priceData = await res.json();
+      } catch (e) {
+        console.warn('[charts] failed to load prices', e);
+      }
+    }
+
+    for (const frame of frames) {
+      const tk = frame.dataset.ticker;
+      const data = singleTickerData || (priceData ? priceData[tk] : null);
+      renderChart(frame, tk, data);
+      if (data) {
+        updateHeader(tk, data);
+        injectStats(frame, data);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+<script>
+  const TK = "QSR";
+  function getWL(){ try { return JSON.parse(localStorage.getItem('tql_watchlist') || '[]'); } catch(e) { return []; } }
+  function setWL(v){ localStorage.setItem('tql_watchlist', JSON.stringify(v)); }
+  function updBtn(){
+    const wl = getWL();
+    const b = document.getElementById('watch-btn');
+    if (!b) return;
+    if (wl.includes(TK)) { b.classList.add('on'); b.innerHTML = '★ Saved'; }
+    else { b.classList.remove('on'); b.innerHTML = '☆ Save'; }
+  }
+  function toggleWatch(){
+    let wl = getWL();
+    if (wl.includes(TK)) wl = wl.filter(t => t !== TK);
+    else wl.push(TK);
+    setWL(wl);
+    updBtn();
+  }
+  document.addEventListener('DOMContentLoaded', updBtn);
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+/* =========================================================================
+   THE QUARTERLY LEDGER — tear-sheet publication styles
+   Newsprint / traditional financial journal aesthetic.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+:root {
+  /* Type scale — slide-appropriate (pt * 1.333 ≈ px) */
+  --fs-masthead: 180px;
+  --fs-display: 96px;
+  --fs-title: 64px;
+  --fs-subtitle: 44px;
+  --fs-kicker: 26px;
+  --fs-body: 30px;
+  --fs-body-sm: 26px;
+  --fs-caption: 22px;
+  --fs-micro: 18px;
+  --fs-tabular: 22px;
+  --fs-tabular-sm: 20px;
+
+  /* Spacing */
+  --pad-x: 100px;
+  --pad-y: 80px;
+  --gutter: 48px;
+
+  /* Newsprint palette */
+  --paper: #F1EAD8;          /* aged newsprint cream */
+  --paper-deep: #E8DFC7;     /* margin / banner */
+  --ink: #0E0E0E;            /* body ink */
+  --ink-soft: #3A342B;       /* secondary */
+  --ink-faint: #6B6252;      /* tertiary, caption */
+  --rule: #1A1A1A;           /* rules & borders */
+  --rule-hair: rgba(14,14,14,0.22);
+
+  --accent: #8A1F1F;         /* oxblood red for ▼ / warnings */
+  --accent-soft: #B84A3A;
+
+  --serif: 'Old Standard TT', 'Garamond', 'Times New Roman', serif;
+  --display: 'Playfair Display', 'Didot', 'Bodoni 72', serif;
+  --mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* ── Dark mode (activated via .theme-dark on deck-stage) ─────────────── */
+deck-stage.theme-dark {
+  --paper: #121110;
+  --paper-deep: #1B1917;
+  --ink: #EADFC6;
+  --ink-soft: #C9BEA5;
+  --ink-faint: #8E8674;
+  --rule: #CFC2A6;
+  --rule-hair: rgba(234,223,198,0.24);
+  --accent: #D97A6A;
+  --accent-soft: #E89585;
+}
+
+* { box-sizing: border-box; }
+
+section.slide {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--fs-body);
+  line-height: 1.35;
+  /* Subtle paper grain */
+  background-image:
+    radial-gradient(rgba(80,60,30,0.05) 1px, transparent 1.2px),
+    radial-gradient(rgba(80,60,30,0.03) 1px, transparent 1.2px);
+  background-size: 3px 3px, 7px 7px;
+  background-position: 0 0, 2px 3px;
+}
+
+/* ── Masthead / slide header band ─────────────────────────────────────── */
+.masthead-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad-x);
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--rule);
+}
+.masthead-bar .left, .masthead-bar .right { display: flex; gap: 36px; }
+.masthead-bar .title { letter-spacing: 0.2em; font-weight: 500; }
+
+.footer-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad-x);
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border-top: 1px solid var(--rule);
+}
+
+/* ── Section headings ─────────────────────────────────────────────────── */
+.kicker {
+  font-family: var(--mono);
+  font-size: var(--fs-kicker);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+}
+
+h1, h2, h3 { font-family: var(--display); font-weight: 900; margin: 0; letter-spacing: -0.01em; line-height: 1; }
+h1 { font-size: var(--fs-display); }
+h2 { font-size: var(--fs-title); }
+h3 { font-size: var(--fs-subtitle); font-weight: 700; }
+
+.dropcap::first-letter {
+  font-family: var(--display);
+  font-weight: 900;
+  float: left;
+  font-size: 7em;
+  line-height: 0.85;
+  padding: 8px 14px 0 0;
+  color: var(--ink);
+}
+
+/* ── Rules ────────────────────────────────────────────────────────────── */
+.rule-thick { border-top: 4px solid var(--rule); border-bottom: 1px solid var(--rule); height: 8px; }
+.rule-double { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); height: 5px; }
+.rule-hair { border-top: 1px solid var(--rule-hair); }
+
+/* ── Tabular data ─────────────────────────────────────────────────────── */
+table.data {
+  font-family: var(--mono);
+  font-size: var(--fs-tabular);
+  border-collapse: collapse;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+table.data th, table.data td {
+  padding: 7px 10px;
+  text-align: right;
+  border-bottom: 1px solid var(--rule-hair);
+}
+table.data th:first-child, table.data td:first-child { text-align: left; }
+table.data thead th {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 16px;
+  color: var(--ink-soft);
+  border-bottom: 1.5px solid var(--rule);
+  border-top: 1.5px solid var(--rule);
+  padding: 8px 10px;
+}
+table.data tr.total td { border-top: 1.5px solid var(--rule); font-weight: 600; }
+
+.neg { color: var(--accent); }
+.pos { color: var(--ink); font-weight: 600; }
+
+/* ── Small caps label ─────────────────────────────────────────────────── */
+.smcaps {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
+/* ── Ranking pill ─────────────────────────────────────────────────────── */
+.rank-box {
+  border: 1.5px solid var(--rule);
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 18px;
+}
+.rank-box .label { text-transform: uppercase; letter-spacing: 0.1em; font-size: 14px; color: var(--ink-soft); }
+.rank-box .value { font-size: 42px; font-weight: 600; font-family: var(--display); line-height: 1; }
+
+/* ── Multi-column body copy ───────────────────────────────────────────── */
+.columns-2 { column-count: 2; column-gap: var(--gutter); column-rule: 1px solid var(--rule-hair); }
+.columns-3 { column-count: 3; column-gap: var(--gutter); column-rule: 1px solid var(--rule-hair); }
+.columns-4 { column-count: 4; column-gap: 32px; column-rule: 1px solid var(--rule-hair); }
+
+p { margin: 0 0 0.8em 0; text-align: justify; hyphens: auto; text-wrap: pretty; }
+p.lead { font-size: calc(var(--fs-body) * 1.1); font-style: italic; }
+
+/* Decorative flourish */
+.flourish {
+  text-align: center;
+  font-family: var(--display);
+  font-size: 32px;
+  color: var(--ink-soft);
+  letter-spacing: 1em;
+  padding: 8px 0;
+}

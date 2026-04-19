@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Methodology — The Quarterly Ledger</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/ledger.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --serif: 'Cormorant Garamond', Georgia, serif; --serif-text: 'EB Garamond', Georgia, serif; --italic: 'EB Garamond', Georgia, serif; }
+  .prose { max-width: 68ch; margin: 0 auto; padding: 40px 0; }
+  .prose h1 { font-family: var(--serif); font-size: 64px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; margin-bottom: 10px; }
+  .prose .lede { font-family: var(--italic); font-style: italic; font-size: 20px; color: var(--ink-soft); line-height: 1.5; margin: 16px 0 32px; }
+  .prose h2 { font-family: var(--serif); font-size: 28px; font-weight: 500; margin: 36px 0 12px; letter-spacing: -0.01em; }
+  .prose h3 { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin: 22px 0 8px; }
+  .prose p { font-family: var(--serif-text); font-size: 17px; line-height: 1.65; color: var(--ink); margin: 0 0 16px; text-wrap: pretty; }
+  .prose em { font-family: var(--italic); font-style: italic; }
+  .prose ol, .prose ul { font-family: var(--serif-text); font-size: 17px; line-height: 1.65; padding-left: 22px; }
+  .prose li { margin-bottom: 8px; }
+  .prose hr { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
+  .tier-card { border: 1px solid var(--rule); padding: 20px; margin: 14px 0; }
+  .tier-card .t { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+  .tier-card h4 { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="masthead">
+    <div class="masthead-row">
+      <div class="masthead-left"><a href="index.html" style="border:none;"><div class="wordmark" style="font-size: 36px;">The Quarterly Ledger</div></a><div class="tagline">A Surveyor of Public Securities</div></div>
+      <div class="masthead-meta">Vol. 1 · No. 1<br>April 2026 Issue</div>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="index.html">The Register</a><a href="watchlist.html">Full List</a><a href="my-watchlist.html">My Saves</a><a href="methodology.html" class="active">Methodology</a><a href="about.html">About</a><a href="disclaimer.html">Disclaimer</a>
+  </nav>
+
+  <article class="prose">
+    <div class="small-caps" style="margin-bottom: 8px;">Methodology</div>
+    <h1>How the Register is built.</h1>
+    <p class="lede">A ten-thousand-filing funnel, a ten-point screen, a four-tier classification, and a hand-written tear sheet for every name that survives.</p>
+
+    <h2>The universe</h2>
+    <p>Each quarter we pull the full XBRL filing set from EDGAR plus structured data for foreign issuers traded in the U.S. market. The April 2026 starting universe was 10,391 issuers. We exclude blank-check SPACs pre-merger, pink-sheet shells without meaningful filings, and ETFs/passive vehicles.</p>
+
+    <h2>The screen</h2>
+    <p>Every issuer is scored against ten filing-level criteria drawn from the Munger and Buffett frameworks. The score runs 0–100; passing is a composite judgment, not a line.</p>
+    <ol>
+      <li><strong>Return on invested capital</strong> — stability across a full cycle, not one good year.</li>
+      <li><strong>Free cash flow conversion</strong> — reported FCF vs. reported net income, adjusted for stock-based comp.</li>
+      <li><strong>Balance sheet</strong> — net debt / EBITDA, interest coverage, and maturity schedule.</li>
+      <li><strong>Gross margin durability</strong> — five-year trend, not one quarter.</li>
+      <li><strong>Unit economics</strong> — per-customer, per-store, or per-well depending on industry.</li>
+      <li><strong>Insider alignment</strong> — ownership, option grants, and recent transaction records.</li>
+      <li><strong>Capital allocation</strong> — buybacks vs. issuance, dividends vs. reinvestment, history of accretive M&A.</li>
+      <li><strong>Competitive position</strong> — market share trend, pricing power, switching costs as evidenced in filings.</li>
+      <li><strong>Accounting quality</strong> — auditor comments, restatements, SBC as percent of revenue.</li>
+      <li><strong>Price vs. intrinsic range</strong> — current EV vs. a conservative DCF band using filing-level data.</li>
+    </ol>
+
+    <h2>The tiers</h2>
+
+    <div class="tier-card">
+      <div class="t">Tier I</div>
+      <h4>Institutional Orphans</h4>
+      <p>Zero or near-zero sell-side coverage. Float too small or too insider-controlled for most funds. Priced where no one is looking. The strongest members of this tier pass the full ten-point screen and trade at multiples that make no sense if the filings are taken seriously.</p>
+    </div>
+
+    <div class="tier-card">
+      <div class="t">Tier II</div>
+      <h4>Special Situations</h4>
+      <p>Forced selling, tender offers, spin-offs, activist arbitrage, capital-structure dislocations. These names have a time horizon attached — a clock on the process, a catalyst on the calendar. The tier-II register tracks the progress of each situation between issues.</p>
+    </div>
+
+    <div class="tier-card">
+      <div class="t">Tier III</div>
+      <h4>Quality at Panic Prices</h4>
+      <p>Filing-verified franchises — durable ROIC, strong balance sheet, predictable cash generation — trading at historically low multiples. These are not cheap; they are cheap <em>for what they are</em>. The register tracks each against its own ten-year multiple band.</p>
+    </div>
+
+    <div class="tier-card">
+      <div class="t">Tier IV</div>
+      <h4>Quantitative Survivors</h4>
+      <p>Names that pass the full ten-point screen without an obvious qualitative story. No activist, no forced seller, no panic — just financials that hold up under every cut. These tend to be the quietest entries in the register and often move tiers as qualitative work catches up.</p>
+    </div>
+
+    <h2>What the tear sheets contain</h2>
+    <p>Every tier and extended-register name gets a full tear sheet: masthead, eyebrow, classification; a metric rail (market cap, revenue, net income, free cash flow, leverage, yield); a chart frame (price history, OHLC, loaded from our quarterly price snapshot); analyst summary; thesis; catalysts; risks; and <em>what a screen can't see</em> — filing-level detail that isn't encoded in any database.</p>
+
+    <h2>Revisions</h2>
+    <p>Between issues, material events — earnings surprises large enough to change tier, activist disclosures, closed tenders, restatements — are logged as <em>revision notes</em> on the affected tear sheet. The full re-ranking happens each quarter.</p>
+
+    <h2>What we do not do</h2>
+    <p>No price targets. No twelve-month return forecasts. No quarterly earnings predictions. No trading signals. No paid promotion. No sponsored content. The Register is independent and unfunded by issuer relationships.</p>
+
+    <hr>
+    <p style="font-family: var(--italic); font-style: italic; color: var(--ink-soft); text-align: center;">For informational purposes only. Not investment advice. See the <a href="disclaimer.html">full disclaimer</a>.</p>
+  </article>
+
+  <footer class="footer">
+    <div class="about"><h4>The Quarterly Ledger</h4><p>An independent survey of under-followed public securities.</p></div>
+    <div><h4>Navigate</h4><ul><li><a href="index.html">The Register</a></li><li><a href="watchlist.html">Full List</a></li><li><a href="my-watchlist.html">My Saves</a></li></ul></div>
+    <div><h4>Editorial</h4><ul><li><a href="methodology.html">Methodology</a></li><li><a href="about.html">About</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div>
+    <div><h4>Compliance</h4><ul><li><a href="disclaimer.html">Not investment advice</a></li></ul></div>
+  </footer>
+  <div class="disclaimer-strip">For informational purposes only. Not investment advice.</div>
+</div>
+<script src="assets/search-index.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>
