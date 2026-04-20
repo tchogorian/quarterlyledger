@@ -1,0 +1,3512 @@
+{
+  "CIX": {
+    "ticker": "CIX",
+    "name": "CompX International",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "OFLX": {
+    "ticker": "OFLX",
+    "name": "Omega Flex",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHAN",
+    "category": "INSTITUTIONAL ORPHAN",
+    "score": 78,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "VEEV": {
+    "ticker": "VEEV",
+    "name": "Veeva Systems",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHAN",
+    "category": "INSTITUTIONAL ORPHAN",
+    "score": 72,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "QLYS": {
+    "ticker": "QLYS",
+    "name": "Qualys",
+    "tier": 3,
+    "tierName": "QUALITY AT PANIC PRICE",
+    "category": "QUALITY AT PANIC PRICE",
+    "score": 82,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "WLY": {
+    "ticker": "WLY",
+    "name": "John Wiley & Sons",
+    "tier": 3,
+    "tierName": "QUALITY AT PANIC PRICE",
+    "category": "QUALITY AT PANIC PRICE",
+    "score": 76,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "ACGL": {
+    "ticker": "ACGL",
+    "name": "Arch Capital Group",
+    "tier": 3,
+    "tierName": "QUALITY AT PANIC PRICE",
+    "category": "QUALITY AT PANIC PRICE",
+    "score": 75,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "ACAD": {
+    "ticker": "ACAD",
+    "name": "Acadia Pharmaceuticals",
+    "tier": 3,
+    "tierName": "QUALITY AT PANIC PRICE",
+    "category": "QUALITY AT PANIC PRICE",
+    "score": 76,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "HRB": {
+    "ticker": "HRB",
+    "name": "H&R Block",
+    "tier": 4,
+    "tierName": "QUANTITATIVE SURVIVOR",
+    "category": "QUANTITATIVE SURVIVOR",
+    "score": 78,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "BBW": {
+    "ticker": "BBW",
+    "name": "Build-A-Bear Workshop",
+    "tier": 4,
+    "tierName": "QUANTITATIVE SURVIVOR",
+    "category": "QUANTITATIVE SURVIVOR",
+    "score": 74,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "HFRO": {
+    "ticker": "HFRO",
+    "name": "Highland Opportunities & Income Fund",
+    "tier": 3,
+    "tierName": "QUALITY AT PANIC PRICE",
+    "category": "QUALITY AT PANIC PRICE",
+    "score": 70,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "BKE": {
+    "ticker": "BKE",
+    "name": "Buckle Inc.",
+    "tier": 2,
+    "tierName": "SPECIAL SITUATION",
+    "category": "SPECIAL SITUATION",
+    "score": 75,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "CPRX": {
+    "ticker": "CPRX",
+    "name": "Catalyst Pharmaceuticals",
+    "tier": 4,
+    "tierName": "CASH MACHINE",
+    "category": "CASH MACHINE",
+    "score": 73,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "SPNT": {
+    "ticker": "SPNT",
+    "name": "SiriusPoint Ltd.",
+    "tier": 3,
+    "tierName": "ORPHAN DRUG MONOPOLY",
+    "category": "ORPHAN DRUG MONOPOLY",
+    "score": 72,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "ANF": {
+    "ticker": "ANF",
+    "name": "Abercrombie & Fitch",
+    "tier": 3,
+    "tierName": "REINSURANCE TURNAROUND",
+    "category": "REINSURANCE TURNAROUND",
+    "score": 72,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "AUPH": {
+    "ticker": "AUPH",
+    "name": "Aurinia Pharmaceuticals",
+    "tier": 3,
+    "tierName": "BRAND TURNAROUND AT PANIC PRICE",
+    "category": "BRAND TURNAROUND AT PANIC PRICE",
+    "score": 70,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "PBH": {
+    "ticker": "PBH",
+    "name": "Prestige Brands Holdings (Prestige Consumer Healthcare)",
+    "tier": 3,
+    "tierName": "FIRST-IN-CLASS NEPHROLOGY",
+    "category": "FIRST-IN-CLASS NEPHROLOGY",
+    "score": 70,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "DUOL": {
+    "ticker": "DUOL",
+    "name": "Duolingo",
+    "tier": 2,
+    "tierName": "SEE'S CANDIES ECONOMICS",
+    "category": "SEE'S CANDIES ECONOMICS",
+    "score": 71,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "OSPN": {
+    "ticker": "OSPN",
+    "name": "OneSpan",
+    "tier": 3,
+    "tierName": "QUALITY AT PANIC PRICE",
+    "category": "QUALITY AT PANIC PRICE",
+    "score": 69,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "AMPH": {
+    "ticker": "AMPH",
+    "name": "Amphastar Pharmaceuticals",
+    "tier": 4,
+    "tierName": "HIDDEN FINTECH TRANSITION",
+    "category": "HIDDEN FINTECH TRANSITION",
+    "score": 67,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "IOSP": {
+    "ticker": "IOSP",
+    "name": "Innospec Inc.",
+    "tier": 4,
+    "tierName": "CONDITIONAL PICK",
+    "category": "CONDITIONAL PICK",
+    "score": 65,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "QSR": {
+    "ticker": "QSR",
+    "name": "Restaurant Brands International",
+    "tier": 3,
+    "tierName": "HIDDEN ASSET WITH COMPLEXITY",
+    "category": "HIDDEN ASSET WITH COMPLEXITY",
+    "score": 69,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "FDS": {
+    "ticker": "FDS",
+    "name": "FactSet Research Systems",
+    "tier": 3,
+    "tierName": "ROYALTY STREAM AT SCALE",
+    "category": "ROYALTY STREAM AT SCALE",
+    "score": 68,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "FFH": {
+    "ticker": "FFH",
+    "name": "Fairfax Financial Holdings",
+    "tier": 2,
+    "tierName": "MONOPOLY ASSET AT DISCOUNT",
+    "category": "MONOPOLY ASSET AT DISCOUNT",
+    "score": 73,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "MXF": {
+    "ticker": "MXF",
+    "name": "Mexico Fund",
+    "tier": 1,
+    "tierName": "COMPOUNDING MACHINE",
+    "category": "COMPOUNDING MACHINE",
+    "score": 74,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "ALOT": {
+    "ticker": "ALOT",
+    "name": "AstroNova Inc.",
+    "tier": 4,
+    "tierName": "CLOSED-END FUND ARBITRAGE",
+    "category": "CLOSED-END FUND ARBITRAGE",
+    "score": 71,
+    "volume": "Volume 1: DEEP PROFILES",
+    "volumeSection": null
+  },
+  "SCHL": {
+    "ticker": "SCHL",
+    "name": "Scholastic Corporation",
+    "tier": 5,
+    "tierName": "SPECIAL SITUATION",
+    "category": "SPECIAL SITUATION",
+    "score": 67,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "CVLT": {
+    "ticker": "CVLT",
+    "name": "Commvault Systems, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SELF-TENDER",
+    "score": 64,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "ALCO": {
+    "ticker": "ALCO",
+    "name": "Alico, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "GLIBA": {
+    "ticker": "GLIBA",
+    "name": "GCI Liberty, Inc. (Series A)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "CPAY": {
+    "ticker": "CPAY",
+    "name": "Corpay, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "IPAR": {
+    "ticker": "IPAR",
+    "name": "Inter Parfums, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "MUSA": {
+    "ticker": "MUSA",
+    "name": "Murphy USA Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "NRP": {
+    "ticker": "NRP",
+    "name": "Natural Resource Partners L.P.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 78,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "ENSG": {
+    "ticker": "ENSG",
+    "name": "The Ensign Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "CHE": {
+    "ticker": "CHE",
+    "name": "Chemed Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 79,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "INGR": {
+    "ticker": "INGR",
+    "name": "Ingredion Incorporated",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 78,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "ROP": {
+    "ticker": "ROP",
+    "name": "Roper Technologies, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 64,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "GBLI": {
+    "ticker": "GBLI",
+    "name": "Global Indemnity Group, LLC",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 78,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "GRND": {
+    "ticker": "GRND",
+    "name": "Grindr Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 68,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "LMNR": {
+    "ticker": "LMNR",
+    "name": "Limoneira Company",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 60,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "EEFT": {
+    "ticker": "EEFT",
+    "name": "Euronet Worldwide, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "GLRE": {
+    "ticker": "GLRE",
+    "name": "Greenlight Capital Re Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 75,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "ING": {
+    "ticker": "ING",
+    "name": "ING Groep N.V.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "BLKB": {
+    "ticker": "BLKB",
+    "name": "Blackbaud, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 64,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "NXST": {
+    "ticker": "NXST",
+    "name": "Nexstar Media Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "NPK": {
+    "ticker": "NPK",
+    "name": "National Presto Industries, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "HQI": {
+    "ticker": "HQI",
+    "name": "HireQuest, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 72,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "UTMD": {
+    "ticker": "UTMD",
+    "name": "Utah Medical Products, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 73,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": null
+  },
+  "IMPP": {
+    "ticker": "IMPP",
+    "name": "Imperial Petroleum Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 77,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "CAAS": {
+    "ticker": "CAAS",
+    "name": "China Automotive Systems, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 53,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "DLNG": {
+    "ticker": "DLNG",
+    "name": "Dynagas LNG Partners LP",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 47,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "ACCO": {
+    "ticker": "ACCO",
+    "name": "ACCO Brands Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 60,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "AMPY": {
+    "ticker": "AMPY",
+    "name": "Amplify Energy Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 51,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "DSX": {
+    "ticker": "DSX",
+    "name": "Diana Shipping Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 56,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "SEVN": {
+    "ticker": "SEVN",
+    "name": "Seven Hills Realty Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 49,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "SNFCA": {
+    "ticker": "SNFCA",
+    "name": "Security National Financial Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 53,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "CPSS": {
+    "ticker": "CPSS",
+    "name": "Consumer Portfolio Services, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 64,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "THRY": {
+    "ticker": "THRY",
+    "name": "Thryv Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 42,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "SRBK": {
+    "ticker": "SRBK",
+    "name": "SR Bancorp, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "MELTING ICE CUBE",
+    "score": 43,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "MITT": {
+    "ticker": "MITT",
+    "name": "TPG Mortgage Investment Trust, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 56,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "FBLA": {
+    "ticker": "FBLA",
+    "name": "FB Bancorp, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "DISTRESSED ARB",
+    "score": 53,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "NLCP": {
+    "ticker": "NLCP",
+    "name": "NewLake Capital Partners, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "BSET": {
+    "ticker": "BSET",
+    "name": "Bassett Furniture Industries, Incorporated",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "DISTRESSED ARB",
+    "score": 60,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "TRVG": {
+    "ticker": "TRVG",
+    "name": "trivago N.V.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 55,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "TYFG": {
+    "ticker": "TYFG",
+    "name": "Tri-County Financial Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "MELTING ICE CUBE",
+    "score": 41,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "REFI": {
+    "ticker": "REFI",
+    "name": "Chicago Atlantic Real Estate Finance, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "RICK": {
+    "ticker": "RICK",
+    "name": "RCI Hospitality Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "DISTRESSED ARB",
+    "score": 62,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "MPAA": {
+    "ticker": "MPAA",
+    "name": "Motorcar Parts of America, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 56,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "UTGN": {
+    "ticker": "UTGN",
+    "name": "UTG, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 49,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "LCNB": {
+    "ticker": "LCNB",
+    "name": "LCNB Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 48,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "FNWD": {
+    "ticker": "FNWD",
+    "name": "Finward Bancorp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 64,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "ENBP": {
+    "ticker": "ENBP",
+    "name": "ENB Financial Corp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 52,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "MNSB": {
+    "ticker": "MNSB",
+    "name": "MainStreet Bancshares",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 72,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "A. TOP 25 PROFITABLE BELOW-BOOK"
+  },
+  "FLX": {
+    "ticker": "FLX",
+    "name": "BingEx Limited (FlashEx / Flash Express)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 65,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "HERE": {
+    "ticker": "HERE",
+    "name": "Here Group Limited (formerly QuantaSing Group)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 56,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "XYF": {
+    "ticker": "XYF",
+    "name": "X Financial",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 51,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "CGEN": {
+    "ticker": "CGEN",
+    "name": "Compugen Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 47,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "ABEO": {
+    "ticker": "ABEO",
+    "name": "Abeona Therapeutics Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 60,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "ORMP": {
+    "ticker": "ORMP",
+    "name": "Oramed Pharmaceuticals Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BIOTECH BINARY",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "SITC": {
+    "ticker": "SITC",
+    "name": "SITE Centers Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 52,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "BDTX": {
+    "ticker": "BDTX",
+    "name": "Black Diamond Therapeutics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "DISTRESSED ARB",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "KINS": {
+    "ticker": "KINS",
+    "name": "Kingstone Companies, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BIOTECH BINARY",
+    "score": 56,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "OMSE": {
+    "ticker": "OMSE",
+    "name": "OMS Energy Technologies Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 71,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "JILL": {
+    "ticker": "JILL",
+    "name": "J.Jill, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 60,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "FOA": {
+    "ticker": "FOA",
+    "name": "Finance of America Companies Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 67,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "YALA": {
+    "ticker": "YALA",
+    "name": "Yalla Group Limited",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "DISTRESSED ARB",
+    "score": 62,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "BMBN": {
+    "ticker": "BMBN",
+    "name": "Benchmark Bankshares, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 71,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "GDEV": {
+    "ticker": "GDEV",
+    "name": "GDEV Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 70,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "GENC": {
+    "ticker": "GENC",
+    "name": "Gencor Industries, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "MELTING ICE CUBE",
+    "score": 55,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "CHCI": {
+    "ticker": "CHCI",
+    "name": "Comstock Holding Companies, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 71,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "FOTB": {
+    "ticker": "FOTB",
+    "name": "First Ottawa Bancshares, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 67,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "FDBC": {
+    "ticker": "FDBC",
+    "name": "Fidelity D & D Bancorp, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 58,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "BEOB": {
+    "ticker": "BEOB",
+    "name": "BEO Bancorp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 72,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "CALM": {
+    "ticker": "CALM",
+    "name": "Cal-Maine Foods, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BELOW-BOOK QUALITY",
+    "score": 60,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "RIGL": {
+    "ticker": "RIGL",
+    "name": "Rigel Pharmaceuticals, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 64,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "JFIN": {
+    "ticker": "JFIN",
+    "name": "Jiayin Group Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BIOTECH BINARY",
+    "score": 67,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "EVER": {
+    "ticker": "EVER",
+    "name": "EverQuote, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 41,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "DJCO": {
+    "ticker": "DJCO",
+    "name": "Daily Journal Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 72,
+    "volume": "Volume 2: EXTENDED WATCHLIST",
+    "volumeSection": "B. TOP 25 PROFITABLE SPECIAL SITUATIONS"
+  },
+  "PERF": {
+    "ticker": "PERF",
+    "name": "Perfect Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SUB-CASH OPERATING",
+    "score": 67,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "A. SUB-CASH & CASH-RICH OPERATING BUSINESSES"
+  },
+  "RDCM": {
+    "ticker": "RDCM",
+    "name": "RADCOM Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "BIOTECH BINARY",
+    "score": 64,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "A. SUB-CASH & CASH-RICH OPERATING BUSINESSES"
+  },
+  "MNDY": {
+    "ticker": "MNDY",
+    "name": "monday.com Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SUB-CASH OPERATING",
+    "score": 72,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "A. SUB-CASH & CASH-RICH OPERATING BUSINESSES"
+  },
+  "CURB": {
+    "ticker": "CURB",
+    "name": "Curbline Properties Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 77,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "SOBO": {
+    "ticker": "SOBO",
+    "name": "South Bow Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "ECG": {
+    "ticker": "ECG",
+    "name": "Everus Construction Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "MAGN": {
+    "ticker": "MAGN",
+    "name": "Magnera Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "CON": {
+    "ticker": "CON",
+    "name": "Concentra Group Holdings Parent, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "AMTM": {
+    "ticker": "AMTM",
+    "name": "Amentum Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "SEG": {
+    "ticker": "SEG",
+    "name": "Seaport Entertainment Group Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "MRP": {
+    "ticker": "MRP",
+    "name": "Millrose Properties, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "SNDK": {
+    "ticker": "SNDK",
+    "name": "Sandisk Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "ANGI": {
+    "ticker": "ANGI",
+    "name": "Angi Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "STRZ": {
+    "ticker": "STRZ",
+    "name": "Starz Entertainment Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "RAL": {
+    "ticker": "RAL",
+    "name": "Ralliant Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "AMRZ": {
+    "ticker": "AMRZ",
+    "name": "Amrize Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "SOLS": {
+    "ticker": "SOLS",
+    "name": "Solstice Advanced Materials Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "B. RECENT SPINOFFS (LAST 12-18 MONTHS)"
+  },
+  "TRIP": {
+    "ticker": "TRIP",
+    "name": "Tripadvisor, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "BILL": {
+    "ticker": "BILL",
+    "name": "BILL Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "FUN": {
+    "ticker": "FUN",
+    "name": "Six Flags Entertainment Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "FI": {
+    "ticker": "FI",
+    "name": "Fiserv, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "AVTR": {
+    "ticker": "AVTR",
+    "name": "Avantor, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "MNRO": {
+    "ticker": "MNRO",
+    "name": "Monro, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "WEX": {
+    "ticker": "WEX",
+    "name": "WEX Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "RIOT": {
+    "ticker": "RIOT",
+    "name": "Riot Platforms, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "WBD": {
+    "ticker": "WBD",
+    "name": "Warner Bros. Discovery, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "FR": {
+    "ticker": "FR",
+    "name": "First Industrial Realty Trust, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "NHI": {
+    "ticker": "NHI",
+    "name": "National Health Investors, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "PFGC": {
+    "ticker": "PFGC",
+    "name": "Performance Food Group Company",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "LW": {
+    "ticker": "LW",
+    "name": "Lamb Weston Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "FOXF": {
+    "ticker": "FOXF",
+    "name": "Fox Factory Holding Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "ATGE": {
+    "ticker": "ATGE",
+    "name": "Adtalem Global Education Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "C. ACTIVE ACTIVIST CAMPAIGNS"
+  },
+  "EXOSF": {
+    "ticker": "EXOSF",
+    "name": "Exor N.V. (Agnelli/Elkann family holding)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "D. HOLDING COMPANY / NAV DISCOUNTS"
+  },
+  "VIVHY": {
+    "ticker": "VIVHY",
+    "name": "Vivendi SE (post-spin remaining stub) — ADR",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 78,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "D. HOLDING COMPANY / NAV DISCOUNTS"
+  },
+  "CNNE": {
+    "ticker": "CNNE",
+    "name": "Cannae Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "D. HOLDING COMPANY / NAV DISCOUNTS"
+  },
+  "IAC": {
+    "ticker": "IAC",
+    "name": "IAC Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — FAMILY-CONTROLLED COMPOUNDER",
+    "score": 76,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "D. HOLDING COMPANY / NAV DISCOUNTS"
+  },
+  "L": {
+    "ticker": "L",
+    "name": "Loews Corporation (Tisch family)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — FAMILY-CONTROLLED COMPOUNDER",
+    "score": 80,
+    "volume": "Volume 4: MONDAY DEPLOYMENT",
+    "volumeSection": "D. HOLDING COMPANY / NAV DISCOUNTS"
+  },
+  "Q": {
+    "ticker": "Q",
+    "name": "Qnity Electronics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MICC": {
+    "ticker": "MICC",
+    "name": "The Magnum Ice Cream Company N.V.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VSNT": {
+    "ticker": "VSNT",
+    "name": "Versant Media Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RNA": {
+    "ticker": "RNA",
+    "name": "Atrium Therapeutics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VGNT": {
+    "ticker": "VGNT",
+    "name": "Versigent PLC",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GEV": {
+    "ticker": "GEV",
+    "name": "GE Vernova Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — RECENT",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ATMU": {
+    "ticker": "ATMU",
+    "name": "Atmus Filtration Technologies, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "INBX": {
+    "ticker": "INBX",
+    "name": "Inhibrx Biosciences, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SUNS": {
+    "ticker": "SUNS",
+    "name": "Sunrise Realty Trust, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SIRI": {
+    "ticker": "SIRI",
+    "name": "Sirius XM Holdings Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BNT": {
+    "ticker": "BNT",
+    "name": "Brookfield Wealth Solutions Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — FORCED SELLING",
+    "score": 75,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SFD": {
+    "ticker": "SFD",
+    "name": "Smithfield Foods, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RHLD": {
+    "ticker": "RHLD",
+    "name": "Resolute Holdings Management, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — FORCED SELLING",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "EHLD": {
+    "ticker": "EHLD",
+    "name": "EuroHoldings Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RBNE": {
+    "ticker": "RBNE",
+    "name": "Robin Energy Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CMDB": {
+    "ticker": "CMDB",
+    "name": "Costamare Bulkers Holdings Limited",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 48,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RUBI": {
+    "ticker": "RUBI",
+    "name": "Rubico Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — FORCED SELLING",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CPKRF": {
+    "ticker": "CPKRF",
+    "name": "Canada Packers Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 38,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AMVOY": {
+    "ticker": "AMVOY",
+    "name": "AUMOVIO SE (ADR)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LLYVA": {
+    "ticker": "LLYVA",
+    "name": "Liberty Live Holdings, Inc. (Series A)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — FORCED SELLING",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "JAN": {
+    "ticker": "JAN",
+    "name": "Janus Living, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TWNP": {
+    "ticker": "TWNP",
+    "name": "Twin Hospitality Group Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GRAL": {
+    "ticker": "GRAL",
+    "name": "Grail, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 28,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SOLV": {
+    "ticker": "SOLV",
+    "name": "Solventum Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF / VALUE TRAP RISK",
+    "score": 48,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WS": {
+    "ticker": "WS",
+    "name": "Worthington Steel, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CXT": {
+    "ticker": "CXT",
+    "name": "Crane NXT, Co.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PHIN": {
+    "ticker": "PHIN",
+    "name": "PHINIA Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VLTO": {
+    "ticker": "VLTO",
+    "name": "Veralto Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 61,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KLG": {
+    "ticker": "KLG",
+    "name": "WK Kellogg Co",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 84,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BATRA": {
+    "ticker": "BATRA",
+    "name": "Atlanta Braves Holdings, Inc. (Series A — Voting)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SBC": {
+    "ticker": "SBC",
+    "name": "SBC Medical Group Holdings Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SDZNY": {
+    "ticker": "SDZNY",
+    "name": "Sandoz Group AG (ADR)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KNF": {
+    "ticker": "KNF",
+    "name": "Knife River Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GEHC": {
+    "ticker": "GEHC",
+    "name": "GE HealthCare Technologies Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "K": {
+    "ticker": "K",
+    "name": "Kellanova",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF — QUALITY-AT-DISCOUNT",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BATRK": {
+    "ticker": "BATRK",
+    "name": "Atlanta Braves Holdings, Inc. (Series C — Non-Voting)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LLYVK": {
+    "ticker": "LLYVK",
+    "name": "Liberty Live Holdings, Inc. (Series C)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MATW": {
+    "ticker": "MATW",
+    "name": "Matthews International Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "UTI": {
+    "ticker": "UTI",
+    "name": "Universal Technical Institute, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WSR": {
+    "ticker": "WSR",
+    "name": "Whitestone REIT",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LYFT": {
+    "ticker": "LYFT",
+    "name": "Lyft, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VFC": {
+    "ticker": "VFC",
+    "name": "V.F. Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HON": {
+    "ticker": "HON",
+    "name": "Honeywell International Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PSX": {
+    "ticker": "PSX",
+    "name": "Phillips 66",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PEP": {
+    "ticker": "PEP",
+    "name": "PepsiCo, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — CAPITAL RETURN",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HPE": {
+    "ticker": "HPE",
+    "name": "Hewlett Packard Enterprise Company",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PINS": {
+    "ticker": "PINS",
+    "name": "Pinterest, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "EQIX": {
+    "ticker": "EQIX",
+    "name": "Equinix, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — CAPITAL RETURN",
+    "score": 59,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NCLH": {
+    "ticker": "NCLH",
+    "name": "Norwegian Cruise Line Holdings Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KVUE": {
+    "ticker": "KVUE",
+    "name": "Kenvue Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PFE": {
+    "ticker": "PFE",
+    "name": "Pfizer Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE / ACTIVIST",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KDP": {
+    "ticker": "KDP",
+    "name": "Keurig Dr Pepper Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 52,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ALGN": {
+    "ticker": "ALGN",
+    "name": "Align Technology, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — CAPITAL RETURN",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "JHG": {
+    "ticker": "JHG",
+    "name": "Janus Henderson Group plc",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CVS": {
+    "ticker": "CVS",
+    "name": "CVS Health Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "COO": {
+    "ticker": "COO",
+    "name": "The Cooper Companies, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TFX": {
+    "ticker": "TFX",
+    "name": "Teleflex Incorporated",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — SALE OR BREAKUP",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SNAP": {
+    "ticker": "SNAP",
+    "name": "Snap Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — SALE OR BREAKUP",
+    "score": 80,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CSGP": {
+    "ticker": "CSGP",
+    "name": "CoStar Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SGRY": {
+    "ticker": "SGRY",
+    "name": "Surgery Partners, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 75,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RGR": {
+    "ticker": "RGR",
+    "name": "Sturm, Ruger & Company, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RPAY": {
+    "ticker": "RPAY",
+    "name": "Repay Holdings Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST / TENDER OFFER",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "OPRT": {
+    "ticker": "OPRT",
+    "name": "Oportun Financial Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CVEO": {
+    "ticker": "CVEO",
+    "name": "Civeo Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ECAT": {
+    "ticker": "ECAT",
+    "name": "BlackRock ESG Capital Allocation Term Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — OPERATIONAL TURN",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BCAT": {
+    "ticker": "BCAT",
+    "name": "BlackRock Capital Allocation Term Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BSTZ": {
+    "ticker": "BSTZ",
+    "name": "BlackRock Science and Technology Term Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BMEZ": {
+    "ticker": "BMEZ",
+    "name": "BlackRock Health Sciences Term Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BN": {
+    "ticker": "BN",
+    "name": "Brookfield Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — FAMILY-CONTROLLED COMPOUNDER",
+    "score": 82,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LBTYK": {
+    "ticker": "LBTYK",
+    "name": "Liberty Global Ltd. (Class C)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 84,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LILAK": {
+    "ticker": "LILAK",
+    "name": "Liberty Latin America Ltd. (Class C)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HHH": {
+    "ticker": "HHH",
+    "name": "Howard Hughes Holdings Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PSHZF": {
+    "ticker": "PSHZF",
+    "name": "Pershing Square Holdings, Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 81,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NL": {
+    "ticker": "NL",
+    "name": "NL Industries, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GLPG": {
+    "ticker": "GLPG",
+    "name": "Galapagos NV",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HUYA": {
+    "ticker": "HUYA",
+    "name": "HUYA Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CASH FORTRESS",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MSGS": {
+    "ticker": "MSGS",
+    "name": "Madison Square Garden Sports Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 65,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NWSA": {
+    "ticker": "NWSA",
+    "name": "News Corporation (Class A)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "REINY": {
+    "ticker": "REINY",
+    "name": "Reinet Investments S.C.A.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BOIVF": {
+    "ticker": "BOIVF",
+    "name": "Bolloré SE",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PROSY": {
+    "ticker": "PROSY",
+    "name": "Prosus N.V.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 80,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GBLBF": {
+    "ticker": "GBLBF",
+    "name": "Groupe Bruxelles Lambert SA",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 80,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SFTBF": {
+    "ticker": "SFTBF",
+    "name": "Sofina S.A.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CODI": {
+    "ticker": "CODI",
+    "name": "Compass Diversified Holdings",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BOC": {
+    "ticker": "BOC",
+    "name": "Boston Omaha Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 75,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TRC": {
+    "ticker": "TRC",
+    "name": "Tejon Ranch Co.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ITOCY": {
+    "ticker": "ITOCY",
+    "name": "ITOCHU Corporation (ADR)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MSBHF": {
+    "ticker": "MSBHF",
+    "name": "Mitsubishi Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "POW.TO": {
+    "ticker": "POW.TO",
+    "name": "Power Corporation of Canada",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 80,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ONEX.TO": {
+    "ticker": "ONEX.TO",
+    "name": "Onex Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SEB": {
+    "ticker": "SEB",
+    "name": "Seaboard Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DNDCF": {
+    "ticker": "DNDCF",
+    "name": "Dundee Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WED.TO": {
+    "ticker": "WED.TO",
+    "name": "Westaim Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "FWONK": {
+    "ticker": "FWONK",
+    "name": "Liberty Media Corp - Formula One Group (Series C)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "EA": {
+    "ticker": "EA",
+    "name": "Electronic Arts Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE / ACTIVIST",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PEN": {
+    "ticker": "PEN",
+    "name": "Penumbra, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 81,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AES": {
+    "ticker": "AES",
+    "name": "The AES Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TXNM": {
+    "ticker": "TXNM",
+    "name": "TXNM Energy, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GTLS": {
+    "ticker": "GTLS",
+    "name": "Chart Industries, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CTRA": {
+    "ticker": "CTRA",
+    "name": "Coterra Energy Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WBS": {
+    "ticker": "WBS",
+    "name": "Webster Financial Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AVNS": {
+    "ticker": "AVNS",
+    "name": "Avanos Medical, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARB",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TWO": {
+    "ticker": "TWO",
+    "name": "Two Harbors Investment Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "OGN": {
+    "ticker": "OGN",
+    "name": "Organon & Co.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SBAC": {
+    "ticker": "SBAC",
+    "name": "SBA Communications Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CWAN": {
+    "ticker": "CWAN",
+    "name": "Clearwater Analytics Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BHF": {
+    "ticker": "BHF",
+    "name": "Brighthouse Financial, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CCO": {
+    "ticker": "CCO",
+    "name": "Clear Channel Outdoor Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "APLS": {
+    "ticker": "APLS",
+    "name": "Apellis Pharmaceuticals, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CNTA": {
+    "ticker": "CNTA",
+    "name": "Centessa Pharmaceuticals plc",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BLX.TO": {
+    "ticker": "BLX.TO",
+    "name": "Boralex Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KW": {
+    "ticker": "KW",
+    "name": "Kennedy Wilson Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 74,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "FFIC": {
+    "ticker": "FFIC",
+    "name": "Flushing Financial Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "EQH": {
+    "ticker": "EQH",
+    "name": "Equitable Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CRBG": {
+    "ticker": "CRBG",
+    "name": "Corebridge Financial, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARB",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HCBN": {
+    "ticker": "HCBN",
+    "name": "HCB Financial Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST — SALE OR BREAKUP",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LNKB": {
+    "ticker": "LNKB",
+    "name": "LINKBANCORP, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ONTF": {
+    "ticker": "ONTF",
+    "name": "ON24, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PLTK": {
+    "ticker": "PLTK",
+    "name": "Playtika Holding Corp.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PATK": {
+    "ticker": "PATK",
+    "name": "Patrick Industries, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GSAT": {
+    "ticker": "GSAT",
+    "name": "Globalstar, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CYCLICAL TROUGH",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NSC": {
+    "ticker": "NSC",
+    "name": "Norfolk Southern Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TENDER OFFER",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AAL": {
+    "ticker": "AAL",
+    "name": "American Airlines Group Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "ACTIVIST / M&A ARB",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CMRC": {
+    "ticker": "CMRC",
+    "name": "Commerce.com, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE — SPECULATIVE",
+    "score": 36,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "FOLD": {
+    "ticker": "FOLD",
+    "name": "Amicus Therapeutics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "VALUE TRAP RISK",
+    "score": 32,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "OS": {
+    "ticker": "OS",
+    "name": "OneStream, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SEM": {
+    "ticker": "SEM",
+    "name": "Select Medical Holdings Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 35,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MCW": {
+    "ticker": "MCW",
+    "name": "Mister Car Wash, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "EWCZ": {
+    "ticker": "EWCZ",
+    "name": "European Wax Center, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VRE": {
+    "ticker": "VRE",
+    "name": "Veris Residential, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KORE": {
+    "ticker": "KORE",
+    "name": "KORE Group Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "FORA": {
+    "ticker": "FORA",
+    "name": "Forian Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 55,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "FONR": {
+    "ticker": "FONR",
+    "name": "FONAR Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 50,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DAWN": {
+    "ticker": "DAWN",
+    "name": "Day One Biopharmaceuticals, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "KZR": {
+    "ticker": "KZR",
+    "name": "Kezar Life Sciences, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TERN": {
+    "ticker": "TERN",
+    "name": "Terns Pharmaceuticals, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GLDD": {
+    "ticker": "GLDD",
+    "name": "Great Lakes Dredge & Dock Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TENDER OFFER",
+    "score": 88,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ULY": {
+    "ticker": "ULY",
+    "name": "Urgent.ly Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TENDER OFFER",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ACLX": {
+    "ticker": "ACLX",
+    "name": "Arcellx, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TENDER OFFER",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SLNO": {
+    "ticker": "SLNO",
+    "name": "Soleno Therapeutics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "APTOF": {
+    "ticker": "APTOF",
+    "name": "Aptose Biosciences Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TENDER OFFER",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BLX": {
+    "ticker": "BLX",
+    "name": "Banco Latinoamericano de Comercio Exterior, S.A. (Bladex)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "TAKE-PRIVATE PENDING",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GBCS": {
+    "ticker": "GBCS",
+    "name": "Selectis Health, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HIDDEN COMPOUNDER",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WIX": {
+    "ticker": "WIX",
+    "name": "Wix.com Ltd.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SELF-TENDER",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "YEXT": {
+    "ticker": "YEXT",
+    "name": "Yext, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WW": {
+    "ticker": "WW",
+    "name": "WW International, Inc. (WeightWatchers)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VRM": {
+    "ticker": "VRM",
+    "name": "Vroom, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "WOLF": {
+    "ticker": "WOLF",
+    "name": "Wolfspeed, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "FLYYQ": {
+    "ticker": "FLYYQ",
+    "name": "Spirit Aviation Holdings, Inc. (Spirit Airlines)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MCKPF": {
+    "ticker": "MCKPF",
+    "name": "Mallinckrodt plc / Keenova Therapeutics",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 28,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PARH": {
+    "ticker": "PARH",
+    "name": "Par Health Solutions",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LUMN": {
+    "ticker": "LUMN",
+    "name": "Lumen Technologies, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPINOFF",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DBD": {
+    "ticker": "DBD",
+    "name": "Diebold Nixdorf, Incorporated",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HTZ": {
+    "ticker": "HTZ",
+    "name": "Hertz Global Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-BANKRUPTCY",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ASA": {
+    "ticker": "ASA",
+    "name": "ASA Gold and Precious Metals Limited",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PEO": {
+    "ticker": "PEO",
+    "name": "Adams Natural Resources Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BIGZ": {
+    "ticker": "BIGZ",
+    "name": "BlackRock Innovation and Growth Term Trust (now BTX)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 76,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MPA": {
+    "ticker": "MPA",
+    "name": "BlackRock MuniYield Pennsylvania Quality Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 35,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DSM": {
+    "ticker": "DSM",
+    "name": "BNY Mellon Strategic Municipal Bond Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "HOLDCO — NAV DISCOUNT",
+    "score": 63,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LEO": {
+    "ticker": "LEO",
+    "name": "BNY Mellon Strategic Municipals, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DMB": {
+    "ticker": "DMB",
+    "name": "BNY Mellon Municipal Bond Infrastructure Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NFJ": {
+    "ticker": "NFJ",
+    "name": "Virtus Dividend, Interest & Premium Strategy Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF",
+    "score": 65,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "IIF": {
+    "ticker": "IIF",
+    "name": "Morgan Stanley India Investment Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ADX": {
+    "ticker": "ADX",
+    "name": "Adams Diversified Equity Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BFZ": {
+    "ticker": "BFZ",
+    "name": "BlackRock California Municipal Income Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF — DISCOUNT ACTIVISM",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NXJ": {
+    "ticker": "NXJ",
+    "name": "Nuveen New Jersey Quality Municipal Income Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NQP": {
+    "ticker": "NQP",
+    "name": "Nuveen Pennsylvania Quality Municipal Income Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PCF": {
+    "ticker": "PCF",
+    "name": "High Income Securities Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SWZ": {
+    "ticker": "SWZ",
+    "name": "Total Return Securities Fund (formerly Swiss Helvetia Fund)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 65,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LGI": {
+    "ticker": "LGI",
+    "name": "Lazard Global Total Return & Income Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 75,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ASGI": {
+    "ticker": "ASGI",
+    "name": "abrdn Global Infrastructure Income Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF DISCOUNT ACTIVISM",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AOD": {
+    "ticker": "AOD",
+    "name": "abrdn Total Dynamic Dividend Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF — DISCOUNT ACTIVISM",
+    "score": 42,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AGD": {
+    "ticker": "AGD",
+    "name": "abrdn Global Dynamic Dividend Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CEF — DISCOUNT ACTIVISM",
+    "score": 52,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "GAB": {
+    "ticker": "GAB",
+    "name": "The Gabelli Equity Trust Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "HYT": {
+    "ticker": "HYT",
+    "name": "BlackRock Corporate High Yield Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "RIGHTS OFFERING",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TSI": {
+    "ticker": "TSI",
+    "name": "TCW Strategic Income Fund",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "RIGHTS OFFERING",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BUI": {
+    "ticker": "BUI",
+    "name": "BlackRock Utilities, Infrastructure & Power Opportunities Trust",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "RIGHTS OFFERING",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CRF": {
+    "ticker": "CRF",
+    "name": "Cornerstone Total Return Fund, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "RIGHTS OFFERING",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AACB": {
+    "ticker": "AACB",
+    "name": "Artius II Acquisition Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "RIGHTS OFFERING",
+    "score": 50,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ATMC": {
+    "ticker": "ATMC",
+    "name": "AlphaTime Acquisition Corp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPAC LIQUIDATION",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "REEUF": {
+    "ticker": "REEUF",
+    "name": "Cartesian Growth Corporation II",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPAC LIQUIDATION",
+    "score": 40,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DYNX": {
+    "ticker": "DYNX",
+    "name": "Dynamix Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPAC LIQUIDATION",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ASPC": {
+    "ticker": "ASPC",
+    "name": "A SPAC III Acquisition Corp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPAC LIQUIDATION",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "RDDT": {
+    "ticker": "RDDT",
+    "name": "Reddit, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "SPAC LIQUIDATION",
+    "score": 38,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VG": {
+    "ticker": "VG",
+    "name": "Venture Global Inc",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CRWV": {
+    "ticker": "CRWV",
+    "name": "CoreWeave, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 58,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ALAB": {
+    "ticker": "ALAB",
+    "name": "Astera Labs, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 56,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NMAX": {
+    "ticker": "NMAX",
+    "name": "Newsmax Inc",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CART": {
+    "ticker": "CART",
+    "name": "Maplebear Inc. (Instacart)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 38,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ARM": {
+    "ticker": "ARM",
+    "name": "Arm Holdings plc",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP / HIDDEN COMPOUNDER",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TVTX": {
+    "ticker": "TVTX",
+    "name": "Travere Therapeutics",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "POST-LOCKUP",
+    "score": 48,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "AXSM": {
+    "ticker": "AXSM",
+    "name": "Axsome Therapeutics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "FDA BINARY",
+    "score": 78,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LNTH": {
+    "ticker": "LNTH",
+    "name": "Lantheus Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "FDA BINARY",
+    "score": 55,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DNLI": {
+    "ticker": "DNLI",
+    "name": "Denali Therapeutics",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "FDA BINARY",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "REPL": {
+    "ticker": "REPL",
+    "name": "Replimune Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "FDA BINARY",
+    "score": 68,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VKTX": {
+    "ticker": "VKTX",
+    "name": "Viking Therapeutics, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "IONS": {
+    "ticker": "IONS",
+    "name": "Ionis Pharmaceuticals, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "FDA BINARY",
+    "score": 52,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TGTX": {
+    "ticker": "TGTX",
+    "name": "TG Therapeutics",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CONVERTIBLE MATURITY",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "JNJ": {
+    "ticker": "JNJ",
+    "name": "Johnson & Johnson",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "M&A ARBITRAGE / ACTIVIST",
+    "score": 72,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "BAYRY": {
+    "ticker": "BAYRY",
+    "name": "Bayer AG (ADR)",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "LITIGATION RESOLUTION",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VRT": {
+    "ticker": "VRT",
+    "name": "Vertiv Holdings Co",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "LITIGATION RESOLUTION",
+    "score": 60,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "LITE": {
+    "ticker": "LITE",
+    "name": "Lumentum Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INDEX REBALANCE",
+    "score": 62,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "COHR": {
+    "ticker": "COHR",
+    "name": "Coherent Corp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INDEX REBALANCE",
+    "score": 67,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MTCH": {
+    "ticker": "MTCH",
+    "name": "Match Group, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INDEX REBALANCE",
+    "score": 73,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NAKA": {
+    "ticker": "NAKA",
+    "name": "Nakamoto Holdings, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INSTITUTIONAL ORPHANS",
+    "score": null,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "VCIG": {
+    "ticker": "VCIG",
+    "name": "VCI Global Limited",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "REVERSE SPLIT",
+    "score": 22,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "NXPL": {
+    "ticker": "NXPL",
+    "name": "NextPlat Corp",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "REVERSE SPLIT",
+    "score": 18,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MSAI": {
+    "ticker": "MSAI",
+    "name": "MultiSensor AI Holdings",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "REVERSE SPLIT",
+    "score": 28,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CABO": {
+    "ticker": "CABO",
+    "name": "Cable One, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "REVERSE SPLIT",
+    "score": 28,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "DUK": {
+    "ticker": "DUK",
+    "name": "Duke Energy Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CONVERTIBLE MATURITY / CYCLICAL TROUGH",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "ETSY": {
+    "ticker": "ETSY",
+    "name": "Etsy, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CONVERTIBLE MATURITY",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "TWLO": {
+    "ticker": "TWLO",
+    "name": "Twilio Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CONVERTIBLE MATURITY",
+    "score": 53,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "SATS": {
+    "ticker": "SATS",
+    "name": "EchoStar Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "CONVERTIBLE MATURITY",
+    "score": 66,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "MOH": {
+    "ticker": "MOH",
+    "name": "Molina Healthcare, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INDEX REBALANCE",
+    "score": 70,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "CIEN": {
+    "ticker": "CIEN",
+    "name": "Ciena Corporation",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INDEX REBALANCE",
+    "score": 64,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  },
+  "PAYC": {
+    "ticker": "PAYC",
+    "name": "Paycom Software, Inc.",
+    "tier": 1,
+    "tierName": "INSTITUTIONAL ORPHANS",
+    "category": "INDEX REBALANCE",
+    "score": 71,
+    "volume": "Volume 5: SPECIAL SITUATIONS UNIVERSE",
+    "volumeSection": "A. RECENT SPINOFFS"
+  }
+}

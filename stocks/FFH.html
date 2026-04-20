@@ -64,12 +64,7 @@ body::before {
 }
 
 /* ===== Typography ===== */
-.wordmark {
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 0.95;
-}
+.wordmark { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.0; white-space: nowrap; }
 
 .mono { font-family: var(--mono); }
 .italic { font-family: var(--italic); font-style: italic; }
@@ -124,7 +119,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   gap: 24px;
   flex-wrap: wrap;
 }
-.masthead-left { display: flex; flex-direction: column; gap: 4px; }
+.masthead-left { display: flex; flex-direction: column; gap: 10px; }
 .masthead .wordmark {
   font-size: 48px;
 }
@@ -384,7 +379,8 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   color: var(--ink-mute);
   margin-bottom: 10px;
 }
-.ts-eyebrow span { color: var(--ink); }
+.ts-eyebrow > span { color: var(--ink); }
+.ts-eyebrow .score-chip { color: var(--paper); }
 .ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
 .ts-name {
   font-family: var(--serif);
@@ -476,13 +472,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   padding-bottom: 6px;
   margin-bottom: 12px;
 }
-.ts-prose p {
-  font-family: var(--serif-text);
-  font-size: 16px;
-  line-height: 1.65;
-  margin: 0 0 14px;
-  text-wrap: pretty;
-}
+.ts-prose p { font-family: var(--serif-text); font-size: 16px; line-height: 1.65; margin: 0 0 22px; }
 .ts-prose p:first-letter-drop::first-letter {
   font-family: var(--serif);
   float: left;
@@ -823,7 +813,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   white-space: nowrap;
 }
 
-.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 .ts-eyebrow .dot { color: var(--ink-mute); }
 </style>
 </head>
@@ -837,7 +827,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
       </div>
       <div class="masthead-meta">
         Vol. 1 · No. 1<br>
-        April 2026 Issue
+        April 2026
       </div>
     </div>
   </header>
@@ -855,7 +845,9 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
       <div class="ts-eyebrow">
         <span>FFH</span>
         <span class="dot">·</span>
-        <span class="tier-chip">Tier 1 · COMPOUNDING MACHINE</span>
+        <a class="tier-chip" href="../tiers/hidden-compounders.html" style="border:1px solid var(--accent);">Hidden Compounders</a>
+        <span class="dot">·</span>
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-mute);">COMPOUNDING MACHINE</span>
         <span class="score-chip">74/100</span>
         <button class="watch-btn" id="watch-btn" onclick="toggleWatch()" aria-label="Save to watchlist">☆ Save</button>
       </div>
@@ -912,7 +904,8 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
         <div class="ts-block-title">Classification</div>
         <div class="ts-prose">
           <p><strong>Ticker:</strong> FFH</p>
-          <p><strong>Tier:</strong> 1 — COMPOUNDING MACHINE</p>
+          <p><strong>Category:</strong> <a href="../tiers/hidden-compounders.html">Hidden Compounders</a></p>
+          <p><strong>Situation:</strong> COMPOUNDING MACHINE</p>
           <p><strong>Munger Score:</strong> 74/100</p>
         </div>
       </section>

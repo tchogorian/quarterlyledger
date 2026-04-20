@@ -1,177 +1,912 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Full List — The Quarterly Ledger</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/ledger.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --serif-text: 'EB Garamond', Georgia, serif;
-    --italic: 'EB Garamond', Georgia, serif;
-  }
-  .filters {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin: 20px 0;
-  }
-  .filter-btn {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    background: transparent;
-    border: 1px solid var(--rule-soft);
-    color: var(--ink-soft);
-    padding: 7px 12px;
-    cursor: pointer;
-  }
-  .filter-btn.active, .filter-btn:hover { border-color: var(--ink); color: var(--ink); background: var(--paper-2); }
-  .list-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-  .list-table thead th {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-    text-align: left;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--rule);
-    border-top: 1px solid var(--rule);
-    background: var(--paper-2);
-  }
-  .list-table tbody td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--rule-soft);
-    font-family: var(--serif-text);
-    font-size: 14px;
-  }
-  .list-table tbody tr:hover { background: var(--paper-2); }
-  .list-table .sym { font-family: var(--mono); font-weight: 600; font-size: 13px; }
-  .list-table a { border-bottom: none; }
-  .meta { font-family: var(--mono); font-size: 10px; color: var(--ink-mute); letter-spacing: 0.06em; }
-</style>
-</head>
-<body>
-<div class="page">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Full Register — The Quarterly Ledger</title><meta name="viewport" content="width=device-width,initial-scale=1"><style id="ledger-inlined">
+/* ==========================================================================
+   The Quarterly Ledger — shared stylesheet
+   A Surveyor of Public Securities
+   ========================================================================== */
 
-  <header class="masthead">
-    <div class="masthead-row">
-      <div class="masthead-left">
-        <a href="index.html" style="border:none;"><div class="wordmark" style="font-size: 36px;">The Quarterly Ledger</div></a>
-        <div class="tagline">A Surveyor of Public Securities</div>
-      </div>
-      <div class="masthead-meta">Vol. 1 · No. 1<br>April 2026 Issue</div>
-    </div>
-  </header>
+:root {
+  --paper: #F4EEDC;
+  --paper-2: #EEE6D0;
+  --ink: #0E0E0E;
+  --ink-soft: #3B3A36;
+  --ink-mute: #6E6A5F;
+  --rule: #2B2A26;
+  --rule-soft: rgba(43, 42, 38, 0.22);
+  --accent: #6E1A17;        /* oxblood */
+  --accent-ink: #3E0D0B;
+  --good: #1F4220;          /* forest */
+  --bad: #6E1A17;
+  --page-max: 1200px;
 
-  <nav class="nav">
-    <a href="index.html">The Register</a>
-    <a href="watchlist.html" class="active">Full List</a>
-    <a href="my-watchlist.html">My Saves</a>
-    <a href="methodology.html">Methodology</a>
-    <a href="about.html">About</a>
-    <a href="disclaimer.html">Disclaimer</a>
-  </nav>
+  --serif: 'GT Super Display', 'GT Super', 'Caslon', 'EB Garamond', Georgia, serif;
+  --serif-text: 'GT Super Text', 'Caslon', 'EB Garamond', Georgia, serif;
+  --mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'Menlo', monospace;
+  --italic: 'Caslon', 'EB Garamond', Georgia, serif;
+}
 
-  <div style="padding: 28px 0 12px; border-bottom: 3px double var(--rule);">
-    <div class="small-caps" style="margin-bottom: 8px;">The Complete Register</div>
-    <h1 style="font-family: var(--serif); font-size: 56px; font-weight: 500; letter-spacing: -0.02em; line-height: 1;">All 351 Names</h1>
-    <p style="font-family: var(--italic); font-style: italic; color: var(--ink-soft); font-size: 16px; max-width: 56ch; margin-top: 8px;">Every name in the April 2026 issue. Sort by tier, search by ticker or company, click to open the tear sheet.</p>
-  </div>
+* { box-sizing: border-box; }
 
-  <div class="search-wrap" style="margin-top: 24px;">
-    <span class="search-icon">⌕</span>
-    <input id="ticker-search" class="search-input" type="text" placeholder="Filter by ticker or company name" autocomplete="off">
-    <div id="search-results" class="search-results"></div>
-  </div>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'kern', 'liga', 'onum';
+}
 
-  <div class="filters" id="filters">
-    <button class="filter-btn active" data-tier="all">All (<span id="count-all">0</span>)</button>
-    <button class="filter-btn" data-tier="1">Tier 1 · Orphans</button>
-    <button class="filter-btn" data-tier="2">Tier 2 · Situations</button>
-    <button class="filter-btn" data-tier="3">Tier 3 · Quality</button>
-    <button class="filter-btn" data-tier="4">Tier 4 · Survivors</button>
-    <button class="filter-btn" data-tier="5">Tier 5 · Additional</button>
-    <button class="filter-btn" data-tier="ext">Extended</button>
-  </div>
+/* Subtle paper grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 0 1px, transparent 2px),
+    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.012) 0 1px, transparent 2px),
+    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.01) 0 1px, transparent 2px);
+  background-size: 140px 140px, 180px 180px, 220px 220px;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
 
-  <table class="list-table">
-    <thead><tr>
-      <th style="width: 90px;">Ticker</th>
-      <th>Company</th>
-      <th style="width: 180px;">Tier</th>
-      <th style="width: 120px;">Market Cap</th>
-      <th style="width: 70px;">Score</th>
-    </tr></thead>
-    <tbody id="list-body"></tbody>
-  </table>
+/* ===== Typography ===== */
+.wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+  white-space: nowrap;
+}
 
-  <footer class="footer">
-    <div class="about"><h4>The Quarterly Ledger</h4><p>An independent survey of under-followed public securities.</p></div>
-    <div><h4>Navigate</h4><ul><li><a href="index.html">The Register</a></li><li><a href="my-watchlist.html">My Saves</a></li></ul></div>
-    <div><h4>Editorial</h4><ul><li><a href="methodology.html">Methodology</a></li><li><a href="about.html">About</a></li><li><a href="disclaimer.html">Disclaimer</a></li></ul></div>
-    <div><h4>Compliance</h4><ul><li><a href="disclaimer.html">Not investment advice</a></li></ul></div>
-  </footer>
+.mono { font-family: var(--mono); }
+.italic { font-family: var(--italic); font-style: italic; }
+.small-caps {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
 
-  <div class="disclaimer-strip">For informational purposes only. Not investment advice.</div>
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-soft);
+  transition: border-color 120ms ease;
+}
+a:hover { border-bottom-color: var(--ink); }
+
+a.muted {
+  color: var(--ink-mute);
+  border-bottom-color: transparent;
+}
+a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
+
+/* ===== Page chrome ===== */
+.page {
+  position: relative;
+  z-index: 2;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.masthead {
+  border-bottom: 3px double var(--rule);
+  padding: 32px 0 20px;
+  margin-bottom: 28px;
+}
+.masthead-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.masthead-left { display: flex; flex-direction: column; gap: 10px; }
+.masthead .wordmark {
+  font-size: 48px;
+}
+.masthead .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+.masthead-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.nav a {
+  border-bottom: none;
+  color: var(--ink-soft);
+}
+.nav a:hover, .nav a.active { color: var(--ink); }
+
+/* ===== Ruled boxes and dividers ===== */
+.hr-thin  { border: 0; border-top: 1px solid var(--rule-soft); margin: 24px 0; }
+.hr-rule  { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
+.hr-double { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
+
+.rule-box {
+  border: 1px solid var(--rule);
+  padding: 18px 22px;
+}
+
+/* ===== Ticker chip ===== */
+.ticker-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+  text-transform: none;
+  transition: background 120ms ease, color 120ms ease;
+  border-bottom: 1px solid var(--rule);
+}
+.ticker-chip:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.ticker-chip .sym { font-weight: 600; }
+.ticker-chip .co {
+  font-family: var(--serif-text);
+  font-size: 13px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* ===== Tier list (homepage) ===== */
+.tier-section { margin: 44px 0; }
+.tier-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.tier-head .num {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.tier-head h2 {
+  font-size: 28px;
+}
+.tier-head .count {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+  margin-left: auto;
+}
+
+.tier-desc {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+  max-width: 62ch;
+}
+
+.ticker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--rule-soft);
+  border-left: 1px solid var(--rule-soft);
+}
+
+.ticker-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  text-decoration: none;
+  border-top: none;
+  color: var(--ink);
+  transition: background 100ms ease;
+}
+.ticker-row:hover {
+  background: var(--paper-2);
+  border-bottom-color: var(--rule-soft);
+}
+.ticker-row .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.ticker-row .sym .score {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+.ticker-row .co {
+  font-family: var(--serif-text);
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.ticker-row .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* ===== Search ===== */
+.search-wrap {
+  margin: 20px 0 10px;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--rule);
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.search-input:focus {
+  border-color: var(--accent);
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  color: var(--ink-mute);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-top: none;
+  max-height: 420px;
+  overflow-y: auto;
+  z-index: 50;
+  display: none;
+}
+.search-results.open { display: block; }
+.search-result {
+  display: flex;
+  gap: 14px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--serif-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+.search-result:hover { background: var(--paper-2); }
+.search-result .sym {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 70px;
+}
+.search-result .co { flex: 1; }
+.search-result .tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-mute);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ===== Tear sheet page ===== */
+.ts-head {
+  border-top: 3px double var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 18px 0 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+  margin-top: 12px;
+}
+.ts-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 10px;
+}
+.ts-eyebrow > span { color: var(--ink); }
+.ts-eyebrow .score-chip { color: var(--paper); }
+.ts-eyebrow .dot { color: var(--ink-mute) !important; }
+.ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
+.ts-name {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.ts-sub {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 8px;
+  font-size: 16px;
+}
+.ts-price {
+  text-align: right;
+  border-left: 1px solid var(--rule-soft);
+  padding-left: 22px;
+  min-width: 200px;
+}
+.ts-price .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ts-price .val {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 6px 0 4px;
+}
+.ts-price .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+  letter-spacing: 0.05em;
+}
+
+/* Metric rail */
+.metric-rail {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-bottom: 3px double var(--rule);
+  margin: 24px 0 8px;
+}
+.metric {
+  padding: 12px 14px;
+  border-right: 1px solid var(--rule-soft);
+}
+.metric:last-child { border-right: none; }
+.metric .k {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 4px;
+}
+.metric .v {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Body layout */
+.ts-body {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  margin-top: 28px;
+}
+.ts-body section { margin-bottom: 26px; }
+.ts-block-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.ts-prose p {
+  font-family: var(--serif-text);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  text-wrap: pretty;
+}
+.ts-prose p:first-letter-drop::first-letter {
+  font-family: var(--serif);
+  float: left;
+  font-size: 54px;
+  line-height: 0.9;
+  padding: 6px 10px 0 0;
+  font-weight: 500;
+}
+
+/* Chart placeholder / live chart */
+.chart-frame {
+  border: 1px solid var(--rule);
+  min-height: 300px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 49px, var(--rule-soft) 49px 50px),
+    repeating-linear-gradient(0deg, transparent 0 39px, var(--rule-soft) 39px 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4px;
+}
+.chart-frame svg { display: block; width: 100%; height: auto; background: transparent; }
+.chart-frame:has(svg) { background: var(--paper); }
+.chart-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-top: 0;
+  margin-top: 0;
+  font-family: var(--mono);
+}
+.chart-stats > div {
+  padding: 10px 14px;
+  border-right: 1px solid var(--rule-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.chart-stats > div:last-child { border-right: 0; }
+.chart-stats .k {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.chart-stats .v {
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 500;
+}
+@media (max-width: 640px) {
+  .chart-stats { grid-template-columns: repeat(2, 1fr); }
+  .chart-stats > div:nth-child(2) { border-right: 0; }
+  .chart-stats > div:nth-child(1),
+  .chart-stats > div:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
+}
+.chart-frame .pending {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper);
+  padding: 8px 14px;
+  border: 1px solid var(--rule-soft);
+}
+.chart-caption {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 6px;
+  text-align: right;
+}
+
+/* Tier chip + score */
+.tier-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 4px 10px;
+}
+.score-chip {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 10px;
+  margin-left: 8px;
+}
+
+/* Footer */
+.footer {
+  margin: 72px 0 32px;
+  padding-top: 22px;
+  border-top: 3px double var(--rule);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  font-size: 14px;
+}
+.footer h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 12px;
+}
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { margin: 6px 0; }
+.footer a { color: var(--ink-soft); border-bottom: none; }
+.footer a:hover { color: var(--ink); }
+.footer .about p {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.footer .colophon {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+/* ===== Registration gate ===== */
+.gate-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 12, 0.72);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+.gate-overlay.open { display: flex; }
+.gate-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  max-width: 480px;
+  width: 100%;
+  padding: 36px 40px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+.gate-card .wordmark { font-size: 26px; }
+.gate-card .tagline {
+  font-family: var(--italic);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 13px;
+  border-bottom: 1px solid var(--rule-soft);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+.gate-card h2 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.gate-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+.gate-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.gate-input:focus { outline: none; border-color: var(--accent); }
+.gate-button {
+  width: 100%;
+  padding: 12px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.gate-button:hover { background: var(--accent); }
+.gate-fineprint {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* Trial banner */
+.trial-banner {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 900;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  border: 1px solid var(--paper);
+  display: none;
+}
+.trial-banner.show { display: block; }
+.trial-banner strong { color: #E7C98F; }
+
+/* Disclaimer strip */
+.disclaimer-strip {
+  background: var(--paper-2);
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 10px 0;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page { padding: 0 20px; }
+  .masthead .wordmark { font-size: 34px; }
+  .ts-head { grid-template-columns: 1fr; }
+  .ts-price { border-left: none; padding-left: 0; text-align: left; }
+  .ts-name { font-size: 38px; }
+  .metric-rail { grid-template-columns: repeat(3, 1fr); }
+  .metric:nth-child(3) { border-right: none; }
+  .metric:nth-child(n+4) { border-top: 1px solid var(--rule-soft); }
+  .ts-body { grid-template-columns: 1fr; }
+  .footer { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .metric-rail { grid-template-columns: repeat(2, 1fr); }
+  .metric { border-right: 1px solid var(--rule-soft); }
+  .metric:nth-child(2n) { border-right: none; }
+  .metric:nth-child(n+3) { border-top: 1px solid var(--rule-soft); }
+  .footer { grid-template-columns: 1fr; }
+  .ts-name { font-size: 32px; }
+}
+
+</style><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>:root{--serif:'Cormorant Garamond',Georgia,serif;--serif-text:'EB Garamond',Georgia,serif;--italic:'EB Garamond',Georgia,serif;}
+.wl-hero{padding:48px 0 24px;border-bottom:3px double var(--rule);}
+.wl-hero h1{font-family:var(--serif);font-size:clamp(48px,7vw,78px);line-height:0.96;letter-spacing:-0.025em;font-weight:500;margin:0 0 14px;}
+.wl-hero .lede{font-family:var(--italic);font-style:italic;font-size:19px;color:var(--ink-soft);max-width:58ch;margin:0;}
+.wl-bar{display:flex;gap:14px;align-items:center;margin:24px 0;flex-wrap:wrap;}
+.wl-bar input{font-family:var(--mono);font-size:12px;padding:10px 14px;border:1px solid var(--rule);background:var(--paper);flex:1;min-width:200px;color:var(--ink);}
+.wl-bar input:focus{outline:none;border-color:var(--accent);}
+.wl-filter{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;padding:10px 12px;border:1px solid var(--rule-soft);background:var(--paper);color:var(--ink);cursor:pointer;}
+.wl-filter.on{background:var(--rule);color:var(--paper);border-color:var(--rule);}
+.wl-count{font-family:var(--mono);font-size:11px;color:var(--ink-mute);letter-spacing:0.12em;text-transform:uppercase;margin:8px 0 20px;}
+.wl-table{width:100%;border-collapse:collapse;font-family:var(--serif-text);}
+.wl-table th{text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);padding:14px 10px;border-bottom:1px solid var(--rule);font-weight:400;}
+.wl-table td{padding:12px 10px;border-bottom:1px solid var(--rule-soft);}
+.wl-table tr:hover td{background:var(--paper-2);}
+.wl-tk{font-family:var(--mono);font-weight:600;font-size:14px;letter-spacing:0.04em;}
+.wl-bucket{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-mute);}
+.wl-score{font-family:var(--mono);font-size:11px;color:var(--accent);}
+.wl-mcap{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-align:right;}
+</style></head><body><div class="page">
+<header class="masthead"><div class="masthead-row"><div class="masthead-left"><a href="index.html" style="border:none;"><div class="wordmark" style="font-size:42px;">The Quarterly Ledger</div></a><div class="tagline">A Surveyor of Public Securities</div></div><div class="masthead-meta">Vol. 1 · No. 1<br>April 2026<br>Est. 2026</div></div></header>
+<nav class="nav"><a href="index.html">The Register</a><a href="watchlist.html" class="active">Full List</a><a href="my-watchlist.html">My Saves</a><a href="methodology.html">Methodology</a><a href="about.html">About</a></nav>
+<section class="wl-hero">
+  <div class="small-caps" style="margin-bottom:10px;color:var(--accent);">The Full Register · April 2026</div>
+  <h1>All 351 names.</h1>
+  <p class="lede">Every tearsheet in this issue, searchable and filterable. Sort by score. Filter by category. Everything that passed the screen.</p>
+</section>
+<div class="wl-bar">
+  <input id="wl-search" type="text" placeholder="Filter by ticker or company…" autocomplete="off">
+  <button class="wl-filter on" data-bucket="all">All (351)</button>
+  <button class="wl-filter" data-bucket="Institutional Orphans">Institutional Orphans (48)</button><button class="wl-filter" data-bucket="Hidden Compounders">Hidden Compounders (38)</button><button class="wl-filter" data-bucket="Activist Situations">Activist Situations (29)</button><button class="wl-filter" data-bucket="Spinoffs">Spinoffs (29)</button><button class="wl-filter" data-bucket="Merger Arbitrage">Merger Arbitrage (52)</button><button class="wl-filter" data-bucket="Holding Company Discounts">Holding Company Discounts (33)</button><button class="wl-filter" data-bucket="Cyclicals & CEFs">Cyclicals & CEFs (61)</button><button class="wl-filter" data-bucket="Distressed & Binary">Distressed & Binary (61)</button>
 </div>
+<div class="wl-count" id="wl-count">Showing 351 names</div>
+<table class="wl-table"><thead><tr><th>Ticker</th><th>Company</th><th>Category</th><th>Score</th><th style="text-align:right;">Market Cap</th></tr></thead>
+<tbody id="wl-tbody"></tbody></table>
+<footer class="footer">
+<div class="about"><h4>The Quarterly Ledger</h4><p>An independent survey of under-followed public securities.</p><div class="colophon">Set in Cormorant, EB Garamond, &amp; IBM Plex Mono.</div></div>
+<div><h4>The Register</h4><ul><li><a href="tiers/institutional-orphans.html">Institutional Orphans</a></li><li><a href="tiers/hidden-compounders.html">Hidden Compounders</a></li><li><a href="tiers/activist-situations.html">Activist Situations</a></li><li><a href="tiers/spinoffs.html">Spinoffs</a></li><li><a href="tiers/merger-arbitrage.html">Merger Arbitrage</a></li><li><a href="tiers/holdco-discounts.html">Holding Company Discounts</a></li><li><a href="tiers/cyclicals-cefs.html">Cyclicals & CEFs</a></li><li><a href="tiers/distressed-binary.html">Distressed & Binary</a></li><li><a href="watchlist.html">Full List</a></li></ul></div>
+<div><h4>Editorial</h4><ul><li><a href="methodology.html">Methodology</a></li><li><a href="about.html">About</a></li><li><a href="disclaimer.html">Disclaimer</a></li><li><a href="my-watchlist.html">My Saves</a></li></ul></div>
+<div><h4>Compliance</h4><ul><li><a href="disclaimer.html">Not investment advice</a></li><li><a href="disclaimer.html">Author may hold positions</a></li><li><a href="disclaimer.html">Data as of April 2026</a></li></ul></div>
+</footer>
+<div class="disclaimer-strip">For informational purposes only. Not investment advice. See <a href="disclaimer.html" style="color:inherit; border-bottom-color: currentColor;">full disclaimer</a>.</div>
+</div>
+<script id="inline-search">
+window.TQL_INDEX = [{"ticker":"CIX","name":"CompX International","tier":1,"tierName":"INSTITUTIONAL ORPHAN","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHAN","score":78,"marketCap":"$288.4M","sector":null},{"ticker":"OFLX","name":"Omega Flex","tier":1,"tierName":"INSTITUTIONAL ORPHAN","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHAN","score":72,"marketCap":"$330.1M","sector":null},{"ticker":"VEEV","name":"Veeva Systems","tier":3,"tierName":"QUALITY AT PANIC PRICE","bucket":"Hidden Compounders","category":"QUALITY AT PANIC PRICE","score":82,"marketCap":"$27.60B","sector":null},{"ticker":"QLYS","name":"Qualys","tier":3,"tierName":"QUALITY AT PANIC PRICE","bucket":"Hidden Compounders","category":"QUALITY AT PANIC PRICE","score":76,"marketCap":"$3.00B","sector":null},{"ticker":"WLY","name":"John Wiley & Sons","tier":3,"tierName":"QUALITY AT PANIC PRICE","bucket":"Hidden Compounders","category":"QUALITY AT PANIC PRICE","score":75,"marketCap":"$2.08B","sector":null},{"ticker":"ACGL","name":"Arch Capital Group","tier":3,"tierName":"QUALITY AT PANIC PRICE","bucket":"Hidden Compounders","category":"QUALITY AT PANIC PRICE","score":76,"marketCap":"$34.52B","sector":null},{"ticker":"ACAD","name":"Acadia Pharmaceuticals","tier":4,"tierName":"QUANTITATIVE SURVIVOR","bucket":"Institutional Orphans","category":"QUANTITATIVE SURVIVOR","score":78,"marketCap":"$3.63B","sector":null},{"ticker":"HRB","name":"H&R; Block","tier":4,"tierName":"QUANTITATIVE SURVIVOR","bucket":"Institutional Orphans","category":"QUANTITATIVE SURVIVOR","score":74,"marketCap":"$4.08B","sector":null},{"ticker":"BBW","name":"Build-A-Bear Workshop","tier":3,"tierName":"QUALITY AT PANIC PRICE","bucket":"Hidden Compounders","category":"QUALITY AT PANIC PRICE","score":70,"marketCap":"$493.9M","sector":null},{"ticker":"HFRO","name":"Highland Opportunities & Income Fund","tier":2,"tierName":"SPECIAL SITUATION","bucket":"Institutional Orphans","category":"SPECIAL SITUATION","score":75,"marketCap":"$336.8M","sector":null},{"ticker":"BKE","name":"Buckle Inc.","tier":4,"tierName":"CASH MACHINE","bucket":"Hidden Compounders","category":"CASH MACHINE","score":73,"marketCap":"$2.74B","sector":null},{"ticker":"CPRX","name":"Catalyst Pharmaceuticals","tier":3,"tierName":"ORPHAN DRUG MONOPOLY","bucket":"Hidden Compounders","category":"ORPHAN DRUG MONOPOLY","score":72,"marketCap":"$3.15B","sector":null},{"ticker":"SPNT","name":"SiriusPoint Ltd.","tier":3,"tierName":"REINSURANCE TURNAROUND","bucket":"Hidden Compounders","category":"REINSURANCE TURNAROUND","score":72,"marketCap":"$2.64B","sector":null},{"ticker":"ANF","name":"Abercrombie & Fitch","tier":3,"tierName":"BRAND TURNAROUND AT PANIC PRICE","bucket":"Hidden Compounders","category":"BRAND TURNAROUND AT PANIC PRICE","score":70,"marketCap":"$4.30B","sector":null},{"ticker":"AUPH","name":"Aurinia Pharmaceuticals","tier":3,"tierName":"FIRST-IN-CLASS NEPHROLOGY","bucket":"Hidden Compounders","category":"FIRST-IN-CLASS NEPHROLOGY","score":70,"marketCap":"$2.11B","sector":null},{"ticker":"PBH","name":"Prestige Brands Holdings (Prestige Consumer","tier":2,"tierName":"SEE'S CANDIES ECONOMICS","bucket":"Hidden Compounders","category":"SEE'S CANDIES ECONOMICS","score":71,"marketCap":"$2.75B","sector":null},{"ticker":"DUOL","name":"Duolingo","tier":3,"tierName":"QUALITY AT PANIC PRICE","bucket":"Hidden Compounders","category":"QUALITY AT PANIC PRICE","score":69,"marketCap":"$4.85B","sector":null},{"ticker":"OSPN","name":"OneSpan","tier":4,"tierName":"HIDDEN FINTECH TRANSITION","bucket":"Hidden Compounders","category":"HIDDEN FINTECH TRANSITION","score":67,"marketCap":"$430.7M","sector":null},{"ticker":"AMPH","name":"Amphastar Pharmaceuticals","tier":4,"tierName":"CONDITIONAL PICK","bucket":"Institutional Orphans","category":"CONDITIONAL PICK","score":65,"marketCap":"$992.2M","sector":null},{"ticker":"IOSP","name":"Innospec Inc.","tier":3,"tierName":"HIDDEN ASSET WITH COMPLEXITY","bucket":"Holding Company Discounts","category":"HIDDEN ASSET WITH COMPLEXITY","score":69,"marketCap":".87B","sector":null},{"ticker":"QSR","name":"Restaurant Brands International","tier":3,"tierName":"ROYALTY STREAM AT SCALE","bucket":"Hidden Compounders","category":"ROYALTY STREAM AT SCALE","score":68,"marketCap":"$35.52B","sector":null},{"ticker":"FDS","name":"FactSet Research Systems","tier":2,"tierName":"MONOPOLY ASSET AT DISCOUNT","bucket":"Hidden Compounders","category":"MONOPOLY ASSET AT DISCOUNT","score":73,"marketCap":"$8.59B","sector":null},{"ticker":"FFH","name":"Fairfax Financial Holdings","tier":1,"tierName":"COMPOUNDING MACHINE","bucket":"Hidden Compounders","category":"COMPOUNDING MACHINE","score":74,"marketCap":"51.07B CAD","sector":null},{"ticker":"MXF","name":"Mexico Fund","tier":4,"tierName":"CLOSED-END FUND ARBITRAGE","bucket":"Cyclicals & CEFs","category":"CLOSED-END FUND ARBITRAGE","score":71,"marketCap":"$315.4M","sector":null},{"ticker":"ALOT","name":"AstroNova Inc.","tier":5,"tierName":"SPECIAL SITUATION","bucket":"Institutional Orphans","category":"SPECIAL SITUATION","score":67,"marketCap":"$97.7M","sector":null},{"ticker":"SCHL","name":"Scholastic Corporation","tier":1,"tierName":"SELF-TENDER","bucket":"Merger Arbitrage","category":"SELF-TENDER","score":64,"marketCap":".00B","sector":"Consumer / Publishing"},{"ticker":"CVLT","name":"Commvault Systems","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":58,"marketCap":"$4.18B","sector":"Software / Data Management"},{"ticker":"ALCO","name":"Alico Inc.","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":70,"marketCap":"$324.7M","sector":"Agriculture / Citrus"},{"ticker":"GLIBA","name":"Liberty Broadband (GCI Liberty)","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":70,"marketCap":"$7.74B","sector":"Communications / Broadband"},{"ticker":"CPAY","name":"Corpay (formerly FleetCor)","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":70,"marketCap":"$22.61B","sector":"Payments / Fintech"},{"ticker":"IPAR","name":"Inter Parfums, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":70,"marketCap":"$3.01B","sector":"Consumer / Fragrances"},{"ticker":"MUSA","name":"Murphy USA Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":78,"marketCap":"$9.60B","sector":"Retail / Fuel & Convenience"},{"ticker":"NRP","name":"Natural Resource Partners LP","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":70,"marketCap":".53B","sector":"Energy / Coal Royalties"},{"ticker":"ENSG","name":"The Ensign Group","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":79,"marketCap":"1.55B","sector":"Healthcare / Skilled Nursing"},{"ticker":"CHE","name":"Chemed Corporation","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":78,"marketCap":"$5.27B","sector":"Healthcare / Hospice & Roto-Rooter"},{"ticker":"INGR","name":"Ingredion Incorporated","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":64,"marketCap":"$7.16B","sector":"Consumer Staples / Ingredients"},{"ticker":"ROP","name":"Roper Technologies","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":78,"marketCap":"$37.43B","sector":"Industrial Software"},{"ticker":"GBLI","name":"Global Indemnity Group","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":68,"marketCap":"$410.1M","sector":"Specialty P&C; Insurance"},{"ticker":"GRND","name":"Grindr Inc.","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":60,"marketCap":"$2.42B","sector":"Consumer Internet / Dating"},{"ticker":"LMNR","name":"Limoneira Company","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":58,"marketCap":"$236.8M","sector":"Agriculture / Citrus"},{"ticker":"EEFT","name":"Euronet Worldwide","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":75,"marketCap":"$3.12B","sector":"Payments / ATM Network"},{"ticker":"GLRE","name":"Greenlight Capital Re","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":70,"marketCap":"$618.5M","sector":"Reinsurance"},{"ticker":"ING","name":"ING Groep N.V.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":64,"marketCap":"$84.24B","sector":"European Banking"},{"ticker":"BLKB","name":"Blackbaud, Inc.","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":70,"marketCap":".86B","sector":"Software / Nonprofit SaaS"},{"ticker":"NXST","name":"Nexstar Media Group","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":70,"marketCap":"$5.92B","sector":"Media / Local TV"},{"ticker":"NPK","name":"National Presto Industries","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":72,"marketCap":"$995.6M","sector":"Industrial / Defense + Housewares"},{"ticker":"HQI","name":"HireQuest, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":73,"marketCap":"43.2M","sector":"Staffing / Temp Labor"},{"ticker":"UTMD","name":"Utah Medical Products","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":77,"marketCap":"$220.5M","sector":"Medical Devices / Niche"},{"ticker":"IMPP","name":"Imperial Petroleum Inc.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":53,"marketCap":"58.3M","sector":null},{"ticker":"CAAS","name":"China Automotive Systems, Inc.","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":47,"marketCap":"29.4M","sector":null},{"ticker":"DLNG","name":"Dynagas LNG Partners LP","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":60,"marketCap":"45.2M","sector":null},{"ticker":"ACCO","name":"ACCO Brands Corporation","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":51,"marketCap":"$298.9M","sector":null},{"ticker":"AMPY","name":"Amplify Energy Corp.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":56,"marketCap":"$226.5M","sector":null},{"ticker":"DSX","name":"Diana Shipping Inc.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":49,"marketCap":"$308.8M","sector":null},{"ticker":"SEVN","name":"Seven Hills Realty Trust","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":53,"marketCap":"90.3M","sector":null},{"ticker":"SNFCA","name":"Security National Financial Corporation","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":64,"marketCap":"$251.1M","sector":null},{"ticker":"CPSS","name":"Consumer Portfolio Services, Inc.","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":42,"marketCap":"87.4M","sector":null},{"ticker":"THRY","name":"Thryv Holdings, Inc.","tier":1,"tierName":"MELTING ICE CUBE","bucket":"Distressed & Binary","category":"MELTING ICE CUBE","score":43,"marketCap":"45.3M","sector":null},{"ticker":"SRBK","name":"SR Bancorp, Inc.","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":56,"marketCap":"38.8M","sector":null},{"ticker":"MITT","name":"TPG Mortgage Investment Trust, Inc.","tier":1,"tierName":"DISTRESSED ARB","bucket":"Distressed & Binary","category":"DISTRESSED ARB","score":53,"marketCap":"$248.2M","sector":null},{"ticker":"FBLA","name":"FB Bancorp, Inc.","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":58,"marketCap":"91.7M","sector":null},{"ticker":"NLCP","name":"NewLake Capital Partners, Inc.","tier":1,"tierName":"DISTRESSED ARB","bucket":"Distressed & Binary","category":"DISTRESSED ARB","score":60,"marketCap":"$299.7M","sector":null},{"ticker":"BSET","name":"Bassett Furniture Industries, Incorporated","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":55,"marketCap":"25.4M","sector":null},{"ticker":"TRVG","name":"trivago N.V.","tier":1,"tierName":"MELTING ICE CUBE","bucket":"Distressed & Binary","category":"MELTING ICE CUBE","score":41,"marketCap":"95.6M","sector":null},{"ticker":"TYFG","name":"Tri-County Financial Group, Inc.","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":58,"marketCap":"26.0M","sector":null},{"ticker":"REFI","name":"Chicago Atlantic Real Estate Finance, Inc.","tier":1,"tierName":"DISTRESSED ARB","bucket":"Distressed & Binary","category":"DISTRESSED ARB","score":62,"marketCap":"$250.0M","sector":null},{"ticker":"RICK","name":"RCI Hospitality Holdings, Inc.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":56,"marketCap":"$215.0M","sector":null},{"ticker":"MPAA","name":"Motorcar Parts of America, Inc.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":49,"marketCap":"$219.6M","sector":null},{"ticker":"UTGN","name":"UTG, Inc.","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":48,"marketCap":"94.7M","sector":null},{"ticker":"LCNB","name":"LCNB Corp.","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":64,"marketCap":"$235.7M","sector":null},{"ticker":"FNWD","name":"Finward Bancorp","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":52,"marketCap":"50.1M","sector":null},{"ticker":"ENBP","name":"ENB Financial Corp","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":72,"marketCap":"40.5M","sector":null},{"ticker":"MNSB","name":"MainStreet Bancshares","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":65,"marketCap":"71.1M","sector":null},{"ticker":"FLX","name":"BingEx Limited (FlashEx / Flash Express)","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":56,"marketCap":"82.8M","sector":null},{"ticker":"HERE","name":"Here Group Limited (formerly QuantaSing Group)","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":51,"marketCap":"90.1M","sector":null},{"ticker":"XYF","name":"X Financial","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":47,"marketCap":"85.3M","sector":null},{"ticker":"CGEN","name":"Compugen Ltd.","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":60,"marketCap":"$274.5M","sector":null},{"ticker":"ABEO","name":"Abeona Therapeutics Inc.","tier":1,"tierName":"BIOTECH BINARY","bucket":"Distressed & Binary","category":"BIOTECH BINARY","score":58,"marketCap":"$306.9M","sector":null},{"ticker":"ORMP","name":"Oramed Pharmaceuticals Inc.","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":52,"marketCap":"56.1M","sector":null},{"ticker":"SITC","name":"SITE Centers Corp.","tier":1,"tierName":"DISTRESSED ARB","bucket":"Distressed & Binary","category":"DISTRESSED ARB","score":58,"marketCap":"$286.0M","sector":null},{"ticker":"BDTX","name":"Black Diamond Therapeutics, Inc.","tier":1,"tierName":"BIOTECH BINARY","bucket":"Distressed & Binary","category":"BIOTECH BINARY","score":56,"marketCap":"67.3M","sector":null},{"ticker":"KINS","name":"Kingstone Companies, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":71,"marketCap":"$268.8M","sector":null},{"ticker":"OMSE","name":"OMS Energy Technologies Inc.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":60,"marketCap":"90.2M","sector":null},{"ticker":"JILL","name":"J.Jill, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":67,"marketCap":"81.7M","sector":null},{"ticker":"FOA","name":"Finance of America Companies Inc.","tier":1,"tierName":"DISTRESSED ARB","bucket":"Distressed & Binary","category":"DISTRESSED ARB","score":62,"marketCap":"87.7M","sector":null},{"ticker":"YALA","name":"Yalla Group Limited","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":71,"marketCap":".11B","sector":null},{"ticker":"BMBN","name":"Benchmark Bankshares, Inc.","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":70,"marketCap":"67.4M","sector":null},{"ticker":"GDEV","name":"GDEV Inc.","tier":1,"tierName":"MELTING ICE CUBE","bucket":"Distressed & Binary","category":"MELTING ICE CUBE","score":55,"marketCap":"$289.0M","sector":null},{"ticker":"GENC","name":"Gencor Industries, Inc.","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":71,"marketCap":"$216.1M","sector":null},{"ticker":"CHCI","name":"Comstock Holding Companies, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":67,"marketCap":"85.8M","sector":null},{"ticker":"FOTB","name":"First Ottawa Bancshares, Inc.","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":58,"marketCap":"80.8M","sector":null},{"ticker":"FDBC","name":"Fidelity D & D Bancorp, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":72,"marketCap":"$258.7M","sector":null},{"ticker":"BEOB","name":"BEO Bancorp","tier":1,"tierName":"BELOW-BOOK QUALITY","bucket":"Cyclicals & CEFs","category":"BELOW-BOOK QUALITY","score":60,"marketCap":"32.9M","sector":null},{"ticker":"CALM","name":"Cal-Maine Foods, Inc.","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":64,"marketCap":"$3.63B","sector":null},{"ticker":"RIGL","name":"Rigel Pharmaceuticals, Inc.","tier":1,"tierName":"BIOTECH BINARY","bucket":"Distressed & Binary","category":"BIOTECH BINARY","score":67,"marketCap":"$590.1M","sector":null},{"ticker":"JFIN","name":"Jiayin Group Inc.","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":41,"marketCap":"$249.8M","sector":null},{"ticker":"EVER","name":"EverQuote, Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":72,"marketCap":"$583.0M","sector":null},{"ticker":"DJCO","name":"Daily Journal Corporation","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":71,"marketCap":"$748.7M","sector":null},{"ticker":"PERF","name":"Perfect Corp.","tier":1,"tierName":"SUB-CASH OPERATING","bucket":"Cyclicals & CEFs","category":"SUB-CASH OPERATING","score":64,"marketCap":"74.2M","sector":null},{"ticker":"RDCM","name":"RADCOM Ltd.","tier":1,"tierName":"SUB-CASH OPERATING","bucket":"Cyclicals & CEFs","category":"SUB-CASH OPERATING","score":76,"marketCap":"$215.3M","sector":null},{"ticker":"MNDY","name":"monday.com Ltd.","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":74,"marketCap":"$3.35B","sector":null},{"ticker":"CURB","name":"Curbline Properties Corp.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":77,"marketCap":"$2.98B","sector":null},{"ticker":"SOBO","name":"South Bow Corporation","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$6.71B","sector":null},{"ticker":"ECG","name":"Everus Construction Group, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$6.57B","sector":null},{"ticker":"MAGN","name":"Magnera Corporation","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$384.8M","sector":null},{"ticker":"CON","name":"Concentra Group Holdings Parent, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$2.94B","sector":null},{"ticker":"AMTM","name":"Amentum Holdings, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$6.73B","sector":null},{"ticker":"SEG","name":"Seaport Entertainment Group Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$290.6M","sector":null},{"ticker":"MRP","name":"Millrose Properties, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$5.15B","sector":null},{"ticker":"SNDK","name":"Sandisk Corporation","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"35.94B","sector":null},{"ticker":"ANGI","name":"Angi Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$319.3M","sector":null},{"ticker":"STRZ","name":"Starz Entertainment Corp.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$337.3M","sector":null},{"ticker":"RAL","name":"Ralliant Corporation","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$5.35B","sector":null},{"ticker":"AMRZ","name":"Amrize Ltd.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$32.00B","sector":null},{"ticker":"SOLS","name":"Solstice Advanced Materials Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"2.89B","sector":null},{"ticker":"TRIP","name":"Tripadvisor, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":".33B","sector":null},{"ticker":"BILL","name":"BILL Holdings, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$3.89B","sector":null},{"ticker":"FUN","name":"Six Flags Entertainment Corporation","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$2.04B","sector":null},{"ticker":"FI","name":"Fiserv, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$34.21B","sector":null},{"ticker":"AVTR","name":"Avantor, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$5.81B","sector":null},{"ticker":"MNRO","name":"Monro, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$536.5M","sector":null},{"ticker":"WEX","name":"WEX Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$5.95B","sector":null},{"ticker":"RIOT","name":"Riot Platforms, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$6.87B","sector":null},{"ticker":"WBD","name":"Warner Bros. Discovery, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$68.86B","sector":null},{"ticker":"FR","name":"First Industrial Realty Trust, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$8.71B","sector":null},{"ticker":"NHI","name":"National Health Investors, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$4.15B","sector":null},{"ticker":"PFGC","name":"Performance Food Group Company","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"4.69B","sector":null},{"ticker":"LW","name":"Lamb Weston Holdings, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$6.22B","sector":null},{"ticker":"FOXF","name":"Fox Factory Holding Corp.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$728.4M","sector":null},{"ticker":"ATGE","name":"Adtalem Global Education Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$3.58B","sector":null},{"ticker":"EXOSF","name":"Exor N.V. (Agnelli/Elkann family holding)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":78,"marketCap":"—","sector":null},{"ticker":"VIVHY","name":"Vivendi SE (post-spin remaining stub) — ADR","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":78,"marketCap":"2.25B EUR","sector":null},{"ticker":"CNNE","name":"Cannae Holdings, Inc.","tier":1,"tierName":"HOLDCO — FAMILY-CONTROLLED COMPOUNDER","bucket":"Holding Company Discounts","category":"HOLDCO — FAMILY-CONTROLLED COMPOUNDER","score":76,"marketCap":"$676.2M","sector":null},{"ticker":"IAC","name":"IAC Inc.","tier":1,"tierName":"HOLDCO — FAMILY-CONTROLLED COMPOUNDER","bucket":"Holding Company Discounts","category":"HOLDCO — FAMILY-CONTROLLED COMPOUNDER","score":80,"marketCap":"$3.41B","sector":null},{"ticker":"L","name":"Loews Corporation (Tisch family)","tier":1,"tierName":"HOLDCO — FAMILY-CONTROLLED COMPOUNDER","bucket":"Holding Company Discounts","category":"HOLDCO — FAMILY-CONTROLLED COMPOUNDER","score":82,"marketCap":"$22.94B","sector":null},{"ticker":"Q","name":"Qnity Electronics, Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":74,"marketCap":"$28.57B","sector":null},{"ticker":"MICC","name":"The Magnum Ice Cream Company N.V.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":71,"marketCap":"$8.94B","sector":null},{"ticker":"VSNT","name":"Versant Media Group, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":71,"marketCap":"$5.91B","sector":null},{"ticker":"RNA","name":"Atrium Therapeutics, Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":64,"marketCap":"$223.6M","sector":null},{"ticker":"VGNT","name":"Versigent PLC","tier":1,"tierName":"SPINOFF — RECENT","bucket":"Spinoffs","category":"SPINOFF — RECENT","score":78,"marketCap":"$2.46B","sector":null},{"ticker":"GEV","name":"GE Vernova Inc.","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":70,"marketCap":"$270.27B","sector":null},{"ticker":"ATMU","name":"Atmus Filtration Technologies, Inc.","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":68,"marketCap":"$5.18B","sector":null},{"ticker":"INBX","name":"Inhibrx Biosciences, Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":58,"marketCap":".29B","sector":null},{"ticker":"SUNS","name":"Sunrise Realty Trust, Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":62,"marketCap":"05.5M","sector":null},{"ticker":"SIRI","name":"Sirius XM Holdings Inc.","tier":1,"tierName":"SPINOFF — FORCED SELLING","bucket":"Spinoffs","category":"SPINOFF — FORCED SELLING","score":75,"marketCap":"$8.58B","sector":null},{"ticker":"BNT","name":"Brookfield Wealth Solutions Ltd.","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":78,"marketCap":"2.87B","sector":null},{"ticker":"SFD","name":"Smithfield Foods, Inc.","tier":1,"tierName":"SPINOFF — FORCED SELLING","bucket":"Spinoffs","category":"SPINOFF — FORCED SELLING","score":68,"marketCap":"1.41B","sector":null},{"ticker":"RHLD","name":"Resolute Holdings Management, Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":62,"marketCap":".26B","sector":null},{"ticker":"EHLD","name":"EuroHoldings Ltd.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":62,"marketCap":"$23.2M","sector":null},{"ticker":"RBNE","name":"Robin Energy Ltd.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":48,"marketCap":"4.5M","sector":null},{"ticker":"CMDB","name":"Costamare Bulkers Holdings Limited","tier":1,"tierName":"SPINOFF — FORCED SELLING","bucket":"Spinoffs","category":"SPINOFF — FORCED SELLING","score":74,"marketCap":"$419.4M","sector":null},{"ticker":"RUBI","name":"Rubico Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":38,"marketCap":"$2.7M","sector":null},{"ticker":"CPKRF","name":"Canada Packers Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":68,"marketCap":"—","sector":null},{"ticker":"AMVOY","name":"AUMOVIO SE (ADR)","tier":1,"tierName":"SPINOFF — FORCED SELLING","bucket":"Spinoffs","category":"SPINOFF — FORCED SELLING","score":73,"marketCap":"—","sector":null},{"ticker":"LLYVA","name":"Liberty Live Holdings, Inc. (Series A)","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":73,"marketCap":"$8.83B","sector":null},{"ticker":"JAN","name":"Janus Living Inc.","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":60,"marketCap":"$6.78B","sector":null},{"ticker":"TWNP","name":"Twin Hospitality Group Inc.","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":28,"sector":null},{"ticker":"GRAL","name":"Grail, Inc.","tier":1,"tierName":"SPINOFF / VALUE TRAP RISK","bucket":"Spinoffs","category":"SPINOFF / VALUE TRAP RISK","score":48,"marketCap":"$2.12B","sector":null},{"ticker":"SOLV","name":"Solventum Corporation","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":48,"marketCap":"2.23B","sector":null},{"ticker":"WS","name":"Worthington Steel, Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":68,"marketCap":".75B","sector":null},{"ticker":"CXT","name":"Crane NXT, Co.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":71,"marketCap":"$2.67B","sector":null},{"ticker":"PHIN","name":"PHINIA Inc.","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":61,"marketCap":"$2.77B","sector":null},{"ticker":"VLTO","name":"Veralto Corporation","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":84,"marketCap":"$22.55B","sector":null},{"ticker":"KLG","name":"WK Kellogg Co","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":73,"sector":null},{"ticker":"BATRA","name":"Atlanta Braves Holdings, Inc.","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":62,"marketCap":"$3.39B","sector":null},{"ticker":"SBC","name":"SBC Medical Group Holdings Inc.","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":58,"marketCap":"$460.6M","sector":null},{"ticker":"SDZNY","name":"Sandoz Group AG (ADR)","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":71,"marketCap":"$37.21B","sector":null},{"ticker":"KNF","name":"Knife River Corporation","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":76,"marketCap":"$5.06B","sector":null},{"ticker":"GEHC","name":"GE HealthCare Technologies Inc.","tier":1,"tierName":"SPINOFF — QUALITY-AT-DISCOUNT","bucket":"Spinoffs","category":"SPINOFF — QUALITY-AT-DISCOUNT","score":76,"marketCap":"$34.07B","sector":null},{"ticker":"K","name":"Kellanova","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":78,"sector":null},{"ticker":"BATRK","name":"Atlanta Braves Holdings, Inc. (Series C)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":64,"marketCap":"$3.12B","sector":null},{"ticker":"LLYVK","name":"Liberty Live Holdings, Inc. (Series C)","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":64,"marketCap":"$8.87B","sector":null},{"ticker":"MATW","name":"Matthews International Corporation","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":70,"marketCap":"$857.2M","sector":null},{"ticker":"UTI","name":"Universal Technical Institute, Inc.","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":74,"marketCap":"$2.10B","sector":null},{"ticker":"WSR","name":"Whitestone REIT","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":72,"marketCap":"$985.9M","sector":null},{"ticker":"LYFT","name":"Lyft, Inc.","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":67,"marketCap":"$5.95B","sector":null},{"ticker":"VFC","name":"V.F. Corporation","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":71,"marketCap":"$8.22B","sector":null},{"ticker":"HON","name":"Honeywell International Inc.","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":76,"marketCap":"47.99B","sector":null},{"ticker":"PSX","name":"Phillips 66","tier":1,"tierName":"ACTIVIST — CAPITAL RETURN","bucket":"Activist Situations","category":"ACTIVIST — CAPITAL RETURN","score":72,"marketCap":"$62.70B","sector":null},{"ticker":"PEP","name":"PepsiCo, Inc.","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":60,"marketCap":"$215.53B","sector":null},{"ticker":"HPE","name":"Hewlett Packard Enterprise Company","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":71,"marketCap":"$35.13B","sector":null},{"ticker":"PINS","name":"Pinterest, Inc.","tier":1,"tierName":"ACTIVIST — CAPITAL RETURN","bucket":"Activist Situations","category":"ACTIVIST — CAPITAL RETURN","score":59,"marketCap":"2.89B","sector":null},{"ticker":"EQIX","name":"Equinix, Inc.","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":71,"marketCap":"07.36B","sector":null},{"ticker":"NCLH","name":"Norwegian Cruise Line Holdings Ltd.","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":76,"marketCap":"$9.56B","sector":null},{"ticker":"KVUE","name":"Kenvue Inc.","tier":1,"tierName":"M&A ARBITRAGE / ACTIVIST","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE / ACTIVIST","score":72,"marketCap":"$33.81B","sector":null},{"ticker":"PFE","name":"Pfizer Inc.","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":52,"marketCap":"56.77B","sector":null},{"ticker":"KDP","name":"Keurig Dr Pepper Inc.","tier":1,"tierName":"ACTIVIST — CAPITAL RETURN","bucket":"Activist Situations","category":"ACTIVIST — CAPITAL RETURN","score":67,"marketCap":"$36.05B","sector":null},{"ticker":"ALGN","name":"Align Technology, Inc.","tier":1,"tierName":"ACTIVIST — CAPITAL RETURN","bucket":"Activist Situations","category":"ACTIVIST — CAPITAL RETURN","score":68,"marketCap":"3.61B","sector":null},{"ticker":"JHG","name":"Janus Henderson Group plc","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":72,"marketCap":"$7.94B","sector":null},{"ticker":"CVS","name":"CVS Health Corporation","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":76,"marketCap":"$99.07B","sector":null},{"ticker":"COO","name":"The Cooper Companies, Inc.","tier":1,"tierName":"ACTIVIST — SALE OR BREAKUP","bucket":"Activist Situations","category":"ACTIVIST — SALE OR BREAKUP","score":74,"marketCap":"3.67B","sector":null},{"ticker":"TFX","name":"Teleflex Incorporated","tier":1,"tierName":"ACTIVIST — SALE OR BREAKUP","bucket":"Activist Situations","category":"ACTIVIST — SALE OR BREAKUP","score":80,"marketCap":"$5.82B","sector":null},{"ticker":"SNAP","name":"Snap Inc.","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":58,"marketCap":"0.18B","sector":null},{"ticker":"CSGP","name":"CoStar Group, Inc.","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":71,"marketCap":"6.83B","sector":null},{"ticker":"SGRY","name":"Surgery Partners, Inc.","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":70,"marketCap":".81B","sector":null},{"ticker":"RGR","name":"Sturm, Ruger & Company, Inc.","tier":1,"tierName":"ACTIVIST / TENDER OFFER","bucket":"Activist Situations","category":"ACTIVIST / TENDER OFFER","score":78,"marketCap":"$673.0M","sector":null},{"ticker":"RPAY","name":"Repay Holdings Corporation","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":60,"marketCap":"$359.4M","sector":null},{"ticker":"OPRT","name":"Oportun Financial Corporation","tier":1,"tierName":"ACTIVIST","bucket":"Activist Situations","category":"ACTIVIST","score":62,"marketCap":"$261.7M","sector":null},{"ticker":"CVEO","name":"Civeo Corporation","tier":1,"tierName":"ACTIVIST — OPERATIONAL TURN","bucket":"Activist Situations","category":"ACTIVIST — OPERATIONAL TURN","score":73,"marketCap":"$330.5M","sector":null},{"ticker":"ECAT","name":"BlackRock ESG Capital Allocation Term Trust","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":78,"marketCap":".46B","sector":null},{"ticker":"BCAT","name":"BlackRock Capital Allocation Term Trust","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":62,"marketCap":".55B","sector":null},{"ticker":"BSTZ","name":"BlackRock Science and Technology Term Trust","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":71,"marketCap":".72B","sector":null},{"ticker":"BMEZ","name":"BlackRock Health Sciences Term Trust","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":76,"marketCap":"$914.4M","sector":null},{"ticker":"BN","name":"Brookfield Corporation","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":84,"marketCap":"05.37B","sector":null},{"ticker":"LBTYK","name":"Liberty Global Ltd.","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":76,"marketCap":"$4.08B","sector":null},{"ticker":"LILAK","name":"Liberty Latin America Ltd.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":76,"marketCap":".76B","sector":null},{"ticker":"HHH","name":"Howard Hughes Holdings Inc.","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":81,"marketCap":"$3.93B","sector":null},{"ticker":"PSHZF","name":"Pershing Square Holdings, Ltd.","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":78,"marketCap":"2.83B","sector":null},{"ticker":"NL","name":"NL Industries, Inc. (Harold Simmons / Contran)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":64,"marketCap":"$285.8M","sector":null},{"ticker":"GLPG","name":"Galapagos NV","tier":1,"tierName":"CASH FORTRESS","bucket":"Cyclicals & CEFs","category":"CASH FORTRESS","score":71,"marketCap":".97B","sector":null},{"ticker":"HUYA","name":"HUYA Inc. (Tencent-controlled Chinese game","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":65,"marketCap":"$710.8M","sector":null},{"ticker":"MSGS","name":"Madison Square Garden Sports Corp. (Dolan","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":78,"marketCap":"$8.09B","sector":null},{"ticker":"NWSA","name":"News Corporation (Murdoch family - Class A)","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":71,"marketCap":"4.99B","sector":null},{"ticker":"REINY","name":"Reinet Investments S.C.A. (Johann Rupert vehicle)","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":76,"sector":null},{"ticker":"BOIVF","name":"Bolloré SE (Vincent Bolloré family)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":80,"marketCap":"6.77B","sector":null},{"ticker":"PROSY","name":"Prosus N.V. (Naspers tech holding)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":80,"marketCap":"11.81B","sector":null},{"ticker":"GBLBF","name":"Groupe Bruxelles Lambert (Frère/Desmarais","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":74,"marketCap":"1.86B","sector":null},{"ticker":"SFTBF","name":"Sofina S.A. (Boël family Belgian holdco)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":74,"marketCap":"62.02B","sector":null},{"ticker":"CODI","name":"Compass Diversified Holdings (Berkshire-style","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":75,"marketCap":"$790.7M","sector":null},{"ticker":"BOC","name":"Boston Omaha Corporation (Buffett grandnephew)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":70,"marketCap":"$385.3M","sector":null},{"ticker":"TRC","name":"Tejon Ranch Co. (270,000-acre California land bank)","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":74,"marketCap":"$535.5M","sector":null},{"ticker":"ITOCY","name":"ITOCHU Corporation (Japanese sogo shosha) --","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":74,"marketCap":"$88.42B","sector":null},{"ticker":"MSBHF","name":"Mitsubishi Corporation (Buffett's largest sogo","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":80,"marketCap":"16.19B","sector":null},{"ticker":"POW.TO","name":"Power Corporation of Canada (Desmarais","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":76,"marketCap":"46.67B CAD","sector":null},{"ticker":"ONEX.TO","name":"Onex Corporation (Gerry Schwartz vehicle)","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":76,"marketCap":"8.88B CAD","sector":null},{"ticker":"SEB","name":"Seaboard Corporation (Bresky family)","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":67,"marketCap":"$5.31B","sector":null},{"ticker":"DNDCF","name":"Dundee Corporation (Goodman family mining","tier":1,"tierName":"HOLDCO","bucket":"Holding Company Discounts","category":"HOLDCO","score":73,"sector":null},{"ticker":"WED.TO","name":"Westaim Corporation (HG Vora-backed","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":73,"sector":null},{"ticker":"FWONK","name":"Liberty Media Corp - Formula One Group","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":78,"marketCap":"$22.66B","sector":null},{"ticker":"EA","name":"Electronic Arts Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":81,"marketCap":"$51.01B","sector":null},{"ticker":"PEN","name":"Penumbra, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":62,"marketCap":"3.03B","sector":null},{"ticker":"AES","name":"The AES Corporation","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":67,"marketCap":"0.32B","sector":null},{"ticker":"TXNM","name":"TXNM Energy, Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":78,"marketCap":"$6.42B","sector":null},{"ticker":"GTLS","name":"Chart Industries, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":78,"marketCap":"$9.97B","sector":null},{"ticker":"CTRA","name":"Coterra Energy Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":60,"marketCap":"$23.46B","sector":null},{"ticker":"WBS","name":"Webster Financial Corporation","tier":1,"tierName":"M&A ARB","bucket":"Merger Arbitrage","category":"M&A ARB","score":62,"marketCap":"1.83B","sector":null},{"ticker":"AVNS","name":"Avanos Medical, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":58,"marketCap":".15B","sector":null},{"ticker":"TWO","name":"Two Harbors Investment Corp.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":70,"marketCap":".17B","sector":null},{"ticker":"OGN","name":"Organon & Co.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":72,"marketCap":"$2.54B","sector":null},{"ticker":"SBAC","name":"SBA Communications Corporation","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":52,"marketCap":"$23.67B","sector":null},{"ticker":"CWAN","name":"Clearwater Analytics Holdings, Inc.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":78,"marketCap":"$7.18B","sector":null},{"ticker":"BHF","name":"Brighthouse Financial, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":71,"marketCap":"$3.57B","sector":null},{"ticker":"CCO","name":"Clear Channel Outdoor Holdings, Inc.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":67,"marketCap":".19B","sector":null},{"ticker":"APLS","name":"Apellis Pharmaceuticals, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":72,"marketCap":"$5.23B","sector":null},{"ticker":"CNTA","name":"Centessa Pharmaceuticals plc","tier":1,"tierName":"M&A ARBITRAGE — CVR","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE — CVR","score":76,"marketCap":"$6.13B","sector":null},{"ticker":"BLX.TO","name":"Boralex Inc. (Canadian-listed; cross-border arb","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":74,"marketCap":"3.76B CAD","sector":null},{"ticker":"KW","name":"Kennedy Wilson Holdings, Inc.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":64,"marketCap":".51B","sector":null},{"ticker":"FFIC","name":"Flushing Financial Corporation","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":62,"marketCap":"$552.0M","sector":null},{"ticker":"EQH","name":"Equitable Holdings, Inc.","tier":1,"tierName":"M&A ARB","bucket":"Merger Arbitrage","category":"M&A ARB","score":58,"marketCap":"1.74B","sector":null},{"ticker":"CRBG","name":"Corebridge Financial Inc.","tier":1,"tierName":"ACTIVIST — SALE OR BREAKUP","bucket":"Activist Situations","category":"ACTIVIST — SALE OR BREAKUP","score":64,"marketCap":"2.89B","sector":null},{"ticker":"HCBN","name":"HCB Financial Corp.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":64,"marketCap":"$72.4M","sector":null},{"ticker":"LNKB","name":"LINKBANCORP, Inc.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":72,"marketCap":"$335.0M","sector":null},{"ticker":"ONTF","name":"ON24, Inc.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":60,"marketCap":"$348.2M","sector":null},{"ticker":"PLTK","name":"Playtika Holding Corp.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":38,"marketCap":".37B","sector":null},{"ticker":"PATK","name":"Patrick Industries / LCI Industries (proposed","tier":1,"tierName":"CYCLICAL TROUGH","bucket":"Cyclicals & CEFs","category":"CYCLICAL TROUGH","score":58,"marketCap":"$3.55B","sector":null},{"ticker":"GSAT","name":"Globalstar, Inc.","tier":1,"tierName":"TENDER OFFER","bucket":"Merger Arbitrage","category":"TENDER OFFER","score":67,"marketCap":"0.29B","sector":null},{"ticker":"NSC","name":"Norfolk Southern Corporation","tier":1,"tierName":"ACTIVIST / M&A ARB","bucket":"Activist Situations","category":"ACTIVIST / M&A ARB","score":60,"marketCap":"$67.91B","sector":null},{"ticker":"AAL","name":"American Airlines / United Airlines (early","tier":1,"tierName":"M&A ARBITRAGE — SPECULATIVE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE — SPECULATIVE","score":36,"marketCap":"$8.44B","sector":null},{"ticker":"CMRC","name":"Commerce.com, Inc.","tier":1,"tierName":"VALUE TRAP RISK","bucket":"Distressed & Binary","category":"VALUE TRAP RISK","score":32,"marketCap":"$242.0M","sector":null},{"ticker":"FOLD","name":"Amicus Therapeutics, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":65,"marketCap":"$4.54B","sector":null},{"ticker":"OS","name":"OneStream, Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":35,"marketCap":"$5.90B","sector":null},{"ticker":"SEM","name":"Select Medical Holdings Corporation","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":68,"marketCap":"$2.03B","sector":null},{"ticker":"MCW","name":"Mister Car Wash, Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":62,"marketCap":"$2.30B","sector":null},{"ticker":"EWCZ","name":"European Wax Center, Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":60,"marketCap":"$319.5M","sector":null},{"ticker":"VRE","name":"Veris Residential, Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":70,"marketCap":".93B","sector":null},{"ticker":"KORE","name":"KORE Group Holdings, Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":55,"marketCap":"60.7M","sector":null},{"ticker":"FORA","name":"Forian Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":50,"marketCap":"$67.2M","sector":null},{"ticker":"FONR","name":"FONAR Corporation","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":60,"marketCap":"18.5M","sector":null},{"ticker":"DAWN","name":"Day One Biopharmaceuticals, Inc.","tier":1,"tierName":"TAKE-PRIVATE","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE","score":64,"marketCap":"$2.22B","sector":null},{"ticker":"KZR","name":"Kezar Life Sciences, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":58,"marketCap":"$54.0M","sector":null},{"ticker":"TERN","name":"Terns Pharmaceuticals, Inc.","tier":1,"tierName":"TENDER OFFER","bucket":"Merger Arbitrage","category":"TENDER OFFER","score":88,"marketCap":"$6.08B","sector":null},{"ticker":"GLDD","name":"Great Lakes Dredge & Dock Corporation","tier":1,"tierName":"TENDER OFFER","bucket":"Merger Arbitrage","category":"TENDER OFFER","score":62,"marketCap":".14B","sector":null},{"ticker":"ULY","name":"Urgent.ly Inc.","tier":1,"tierName":"TENDER OFFER","bucket":"Merger Arbitrage","category":"TENDER OFFER","score":62,"marketCap":"1.8M","sector":null},{"ticker":"ACLX","name":"Arcellx, Inc.","tier":1,"tierName":"M&A ARBITRAGE","bucket":"Merger Arbitrage","category":"M&A ARBITRAGE","score":70,"marketCap":"$6.73B","sector":null},{"ticker":"SLNO","name":"Soleno Therapeutics, Inc.","tier":1,"tierName":"TENDER OFFER","bucket":"Merger Arbitrage","category":"TENDER OFFER","score":78,"marketCap":"$2.73B","sector":null},{"ticker":"APTOF","name":"Aptose Biosciences Inc.","tier":1,"tierName":"TAKE-PRIVATE PENDING","bucket":"Merger Arbitrage","category":"TAKE-PRIVATE PENDING","score":62,"marketCap":"$4.4M","sector":null},{"ticker":"BLX","name":"Boralex Inc.","tier":1,"tierName":"HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"HIDDEN COMPOUNDER","score":73,"marketCap":"3.76B CAD","sector":null},{"ticker":"GBCS","name":"Selectis Health, Inc.","tier":1,"tierName":"HOSTILE TENDER","bucket":"Merger Arbitrage","category":"HOSTILE TENDER","score":41,"marketCap":"3.5M","sector":null},{"ticker":"WIX","name":"Wix.com Ltd.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":64,"marketCap":"$3.98B","sector":null},{"ticker":"YEXT","name":"Yext, Inc.","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":null,"marketCap":"$457.6M","sector":null},{"ticker":"WW","name":"WW International, Inc. (WeightWatchers)","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":58,"marketCap":"09.8M","sector":null},{"ticker":"VRM","name":"Vroom, Inc.","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":68,"marketCap":"$80.3M","sector":null},{"ticker":"WOLF","name":"Wolfspeed, Inc.","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":67,"marketCap":".24B","sector":null},{"ticker":"FLYYQ","name":"Spirit Aviation Holdings, Inc. (Spirit Airlines)","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":28,"marketCap":"$6.1M","sector":null},{"ticker":"MCKPF","name":"Mallinckrodt plc / Keenova Therapeutics","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":64,"sector":null},{"ticker":"PARH","name":"Par Health (spinoff from Mallinckrodt-Endo)","tier":1,"tierName":"SPINOFF","bucket":"Spinoffs","category":"SPINOFF","score":70,"sector":null},{"ticker":"LUMN","name":"Lumen Technologies, Inc.","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":60,"marketCap":"$8.83B","sector":null},{"ticker":"DBD","name":"Diebold Nixdorf, Incorporated","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":60,"marketCap":"$3.12B","sector":null},{"ticker":"HTZ","name":"Hertz Global Holdings, Inc.","tier":1,"tierName":"POST-BANKRUPTCY","bucket":"Distressed & Binary","category":"POST-BANKRUPTCY","score":54,"marketCap":"$2.34B","sector":null},{"ticker":"ASA","name":"ASA Gold and Precious Metals Limited","tier":1,"tierName":"CEF — DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF — DISCOUNT ACTIVISM","score":65,"marketCap":".31B","sector":null},{"ticker":"PEO","name":"Adams Natural Resources Fund, Inc.","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":58,"marketCap":"$704.2M","sector":null},{"ticker":"BIGZ","name":"BlackRock Innovation and Growth Term Trust","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":35,"sector":null},{"ticker":"MPA","name":"BlackRock MuniYield Pennsylvania Quality Fund","tier":1,"tierName":"HOLDCO — NAV DISCOUNT","bucket":"Holding Company Discounts","category":"HOLDCO — NAV DISCOUNT","score":63,"marketCap":"46.2M","sector":null},{"ticker":"DSM","name":"BNY Mellon Strategic Municipal Bond Fund","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":71,"marketCap":"$302.0M","sector":null},{"ticker":"LEO","name":"BNY Mellon Strategic Municipals, Inc.","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":60,"marketCap":"$410.4M","sector":null},{"ticker":"DMB","name":"BNY Mellon Municipal Bond Infrastructure Fund","tier":1,"tierName":"CEF","bucket":"Cyclicals & CEFs","category":"CEF","score":65,"marketCap":"$202.1M","sector":null},{"ticker":"NFJ","name":"Virtus Dividend, Interest & Premium Strategy Fund","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":73,"marketCap":".28B","sector":null},{"ticker":"IIF","name":"Morgan Stanley India Investment Fund, Inc.","tier":1,"tierName":"CEF","bucket":"Cyclicals & CEFs","category":"CEF","score":62,"marketCap":"$219.4M","sector":null},{"ticker":"ADX","name":"Adams Diversified Equity Fund, Inc.","tier":1,"tierName":"CEF — DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF — DISCOUNT ACTIVISM","score":60,"marketCap":"$2.94B","sector":null},{"ticker":"BFZ","name":"BlackRock California Municipal Income Trust","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":58,"sector":null},{"ticker":"NXJ","name":"Nuveen New Jersey Quality Municipal Income Fund","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":70,"marketCap":"$512.1M","sector":null},{"ticker":"NQP","name":"Nuveen Pennsylvania Quality Municipal Income","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":68,"marketCap":"$450.0M","sector":null},{"ticker":"PCF","name":"High Income Securities Fund (formerly Putnam High","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":65,"marketCap":"07.1M","sector":null},{"ticker":"SWZ","name":"Total Return Securities Fund (formerly Swiss","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":75,"marketCap":"03.2M","sector":null},{"ticker":"LGI","name":"Lazard Global Total Return & Income Fund, Inc.","tier":1,"tierName":"CEF DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF DISCOUNT ACTIVISM","score":58,"marketCap":"$229.0M","sector":null},{"ticker":"ASGI","name":"abrdn Global Infrastructure Income Fund","tier":1,"tierName":"CEF — DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF — DISCOUNT ACTIVISM","score":42,"marketCap":"$774.1M","sector":null},{"ticker":"AOD","name":"abrdn Total Dynamic Dividend Fund","tier":1,"tierName":"CEF — DISCOUNT ACTIVISM","bucket":"Cyclicals & CEFs","category":"CEF — DISCOUNT ACTIVISM","score":52,"marketCap":".08B","sector":null},{"ticker":"AGD","name":"abrdn Global Dynamic Dividend Fund","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":52,"marketCap":"$320.0M","sector":null},{"ticker":"GAB","name":"Gabelli Equity Trust","tier":1,"tierName":"RIGHTS OFFERING","bucket":"Distressed & Binary","category":"RIGHTS OFFERING","score":58,"marketCap":".81B","sector":null},{"ticker":"HYT","name":"BlackRock Corporate High Yield Fund","tier":1,"tierName":"RIGHTS OFFERING","bucket":"Distressed & Binary","category":"RIGHTS OFFERING","score":60,"marketCap":".41B","sector":null},{"ticker":"TSI","name":"TCW Strategic Income Fund","tier":1,"tierName":"RIGHTS OFFERING","bucket":"Distressed & Binary","category":"RIGHTS OFFERING","score":62,"marketCap":"$217.9M","sector":null},{"ticker":"BUI","name":"BlackRock Utilities, Infrastructure & Power","tier":1,"tierName":"RIGHTS OFFERING","bucket":"Distressed & Binary","category":"RIGHTS OFFERING","score":58,"marketCap":"$659.7M","sector":null},{"ticker":"CRF","name":"Cornerstone Total Return Fund","tier":1,"tierName":"RIGHTS OFFERING","bucket":"Distressed & Binary","category":"RIGHTS OFFERING","score":50,"marketCap":".18B","sector":null},{"ticker":"AACB","name":"Artius II Acquisition Inc","tier":1,"tierName":"SPAC LIQUIDATION","bucket":"Distressed & Binary","category":"SPAC LIQUIDATION","score":60,"marketCap":"$287.0M","sector":null},{"ticker":"ATMC","name":"AlphaTime Acquisition Corp","tier":1,"tierName":"SPAC LIQUIDATION","bucket":"Distressed & Binary","category":"SPAC LIQUIDATION","score":40,"sector":null},{"ticker":"REEUF","name":"Cartesian Growth Corporation II","tier":1,"tierName":"SPAC LIQUIDATION","bucket":"Distressed & Binary","category":"SPAC LIQUIDATION","score":64,"marketCap":"—","sector":null},{"ticker":"DYNX","name":"Dynamix Corporation","tier":1,"tierName":"SPAC LIQUIDATION","bucket":"Distressed & Binary","category":"SPAC LIQUIDATION","score":73,"sector":null},{"ticker":"ASPC","name":"A SPAC III Acquisition Corp","tier":1,"tierName":"SPAC LIQUIDATION","bucket":"Distressed & Binary","category":"SPAC LIQUIDATION","score":38,"marketCap":"$25.7M","sector":null},{"ticker":"RDDT","name":"Reddit Inc","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":62,"marketCap":"$31.29B","sector":null},{"ticker":"VG","name":"Venture Global Inc","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":58,"marketCap":"$28.45B","sector":null},{"ticker":"CRWV","name":"CoreWeave Inc","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":56,"marketCap":"$62.50B","sector":null},{"ticker":"ALAB","name":"Astera Labs Inc","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":62,"marketCap":"$29.63B","sector":null},{"ticker":"NMAX","name":"Newsmax Inc","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":38,"marketCap":"$897.5M","sector":null},{"ticker":"CART","name":"Maplebear Inc (Instacart)","tier":1,"tierName":"POST-LOCKUP / HIDDEN COMPOUNDER","bucket":"Hidden Compounders","category":"POST-LOCKUP / HIDDEN COMPOUNDER","score":72,"marketCap":"$9.96B","sector":null},{"ticker":"ARM","name":"Arm Holdings plc","tier":1,"tierName":"POST-LOCKUP","bucket":"Distressed & Binary","category":"POST-LOCKUP","score":48,"marketCap":"77.07B","sector":null},{"ticker":"TVTX","name":"Travere Therapeutics","tier":1,"tierName":"FDA BINARY","bucket":"Distressed & Binary","category":"FDA BINARY","score":78,"marketCap":"$3.77B","sector":null},{"ticker":"AXSM","name":"Axsome Therapeutics","tier":1,"tierName":"FDA BINARY","bucket":"Distressed & Binary","category":"FDA BINARY","score":55,"marketCap":"$9.67B","sector":null},{"ticker":"LNTH","name":"Lantheus Holdings","tier":1,"tierName":"FDA BINARY","bucket":"Distressed & Binary","category":"FDA BINARY","score":71,"marketCap":"$5.46B","sector":null},{"ticker":"DNLI","name":"Denali Therapeutics","tier":1,"tierName":"FDA BINARY","bucket":"Distressed & Binary","category":"FDA BINARY","score":68,"marketCap":"$3.26B","sector":null},{"ticker":"REPL","name":"Replimune Group","tier":1,"tierName":"INSTITUTIONAL ORPHANS","bucket":"Institutional Orphans","category":"INSTITUTIONAL ORPHANS","score":68,"marketCap":"79.2M","sector":null},{"ticker":"VKTX","name":"Viking Therapeutics","tier":1,"tierName":"FDA BINARY","bucket":"Distressed & Binary","category":"FDA BINARY","score":52,"marketCap":"$4.08B","sector":null},{"ticker":"IONS","name":"Ionis Pharmaceuticals","tier":1,"tierName":"CONVERTIBLE MATURITY","bucket":"Distressed & Binary","category":"CONVERTIBLE MATURITY","score":62,"marketCap":"2.51B","sector":null},{"ticker":"TGTX","name":"TG Therapeutics","tier":1,"tierName":"FDA BINARY","bucket":"Distressed & Binary","category":"FDA BINARY","score":72,"marketCap":"$5.64B","sector":null},{"ticker":"JNJ","name":"Johnson & Johnson","tier":1,"tierName":"LITIGATION RESOLUTION","bucket":"Merger Arbitrage","category":"LITIGATION RESOLUTION","score":71,"marketCap":"$564.35B","sector":null},{"ticker":"BAYRY","name":"Bayer AG","tier":1,"tierName":"LITIGATION RESOLUTION","bucket":"Merger Arbitrage","category":"LITIGATION RESOLUTION","score":60,"marketCap":"$47.55B","sector":null},{"ticker":"VRT","name":"Vertiv Holdings","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":62,"marketCap":"17.59B","sector":null},{"ticker":"LITE","name":"Lumentum Holdings","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":67,"marketCap":"$63.84B","sector":null},{"ticker":"COHR","name":"Coherent Corp","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":73,"marketCap":"$64.68B","sector":null},{"ticker":"MTCH","name":"Match Group Inc","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":62,"marketCap":"—","sector":null},{"ticker":"NAKA","name":"Nakamoto","tier":1,"tierName":"REVERSE SPLIT","bucket":"Distressed & Binary","category":"REVERSE SPLIT","score":22,"marketCap":"82.2M","sector":null},{"ticker":"VCIG","name":"VCI Global Limited","tier":1,"tierName":"REVERSE SPLIT","bucket":"Distressed & Binary","category":"REVERSE SPLIT","score":18,"marketCap":"$4.3M","sector":null},{"ticker":"NXPL","name":"NextPlat Corp","tier":1,"tierName":"REVERSE SPLIT","bucket":"Distressed & Binary","category":"REVERSE SPLIT","score":28,"marketCap":"4.6M","sector":null},{"ticker":"MSAI","name":"MultiSensor AI Holdings","tier":1,"tierName":"REVERSE SPLIT","bucket":"Distressed & Binary","category":"REVERSE SPLIT","score":28,"marketCap":"2.6M","sector":null},{"ticker":"CABO","name":"Cable One Inc","tier":1,"tierName":"CONVERTIBLE MATURITY / CYCLICAL TROUGH","bucket":"Distressed & Binary","category":"CONVERTIBLE MATURITY / CYCLICAL TROUGH","score":64,"marketCap":"—","sector":null},{"ticker":"DUK","name":"Duke Energy","tier":1,"tierName":"CONVERTIBLE MATURITY","bucket":"Distressed & Binary","category":"CONVERTIBLE MATURITY","score":64,"marketCap":"$99.64B","sector":null},{"ticker":"ETSY","name":"Etsy Inc","tier":1,"tierName":"CONVERTIBLE MATURITY","bucket":"Distressed & Binary","category":"CONVERTIBLE MATURITY","score":53,"marketCap":"$6.11B","sector":null},{"ticker":"TWLO","name":"Twilio Inc","tier":1,"tierName":"CONVERTIBLE MATURITY","bucket":"Distressed & Binary","category":"CONVERTIBLE MATURITY","score":66,"marketCap":"$21.24B","sector":null},{"ticker":"SATS","name":"EchoStar Corp","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":70,"marketCap":"$38.48B","sector":null},{"ticker":"MOH","name":"Molina Healthcare","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":64,"marketCap":"$7.76B","sector":null},{"ticker":"CIEN","name":"Ciena Corp","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":71,"marketCap":"$71.78B","sector":null},{"ticker":"PAYC","name":"Paycom Software","tier":1,"tierName":"INDEX REBALANCE","bucket":"Cyclicals & CEFs","category":"INDEX REBALANCE","score":70,"marketCap":"$6.89B","sector":null}];
 
-<script src="assets/search-index.js"></script>
+</script>
 <script>
-  const idx = window.TQL_INDEX || [];
-  document.getElementById('count-all').textContent = idx.length;
-  let currentFilter = 'all';
-  let currentQuery = '';
-
-  function render() {
-    const q = currentQuery.toLowerCase();
-    let rows = idx.slice();
-    if (currentFilter !== 'all') {
-      if (currentFilter === 'ext') rows = rows.filter(r => !r.tier);
-      else rows = rows.filter(r => String(r.tier) === currentFilter);
-    }
-    if (q) rows = rows.filter(r => r.ticker.toLowerCase().includes(q) || r.name.toLowerCase().includes(q));
-    rows.sort((a,b) => {
-      if (a.tier && b.tier && a.tier !== b.tier) return a.tier - b.tier;
-      if (a.tier && !b.tier) return -1;
-      if (!a.tier && b.tier) return 1;
-      return (b.score||0) - (a.score||0) || a.ticker.localeCompare(b.ticker);
-    });
-    document.getElementById('list-body').innerHTML = rows.map(d => `
-      <tr>
-        <td><a href="stocks/${d.ticker}.html" class="sym">${d.ticker}</a></td>
-        <td><a href="stocks/${d.ticker}.html">${d.name}</a></td>
-        <td class="meta">${d.tier?'T'+d.tier+' · '+(d.tierName||''):'Extended'}</td>
-        <td class="meta">${d.marketCap||'—'}</td>
-        <td class="meta">${d.score?d.score+'/100':'—'}</td>
+(function(){
+  const rows = window.TQL_INDEX || [];
+  const BUCKET_ORDER = ["Institutional Orphans","Hidden Compounders","Activist Situations","Spinoffs","Merger Arbitrage","Holding Company Discounts","Cyclicals & CEFs","Distressed & Binary"];
+  let filterBucket = 'all';
+  let filterText = '';
+  const tbody = document.getElementById('wl-tbody');
+  const count = document.getElementById('wl-count');
+  function render(){
+    const txt = filterText.toLowerCase();
+    const filtered = rows.filter(r => {
+      if (filterBucket !== 'all' && r.bucket !== filterBucket) return false;
+      if (txt && !(r.ticker.toLowerCase().includes(txt) || (r.name||'').toLowerCase().includes(txt))) return false;
+      return true;
+    }).sort((a,b) => (b.score||0)-(a.score||0) || a.ticker.localeCompare(b.ticker));
+    tbody.innerHTML = filtered.map(r => `
+      <tr onclick="location.href='stocks/${r.ticker}.html'" style="cursor:pointer;">
+        <td class="wl-tk"><a href="stocks/${r.ticker}.html" style="border:none;">${r.ticker}</a></td>
+        <td>${r.name||''}</td>
+        <td class="wl-bucket">${r.bucket||'—'}</td>
+        <td class="wl-score">${r.score?r.score+'/100':'—'}</td>
+        <td class="wl-mcap">${r.marketCap||'—'}</td>
       </tr>`).join('');
+    count.textContent = 'Showing '+filtered.length+' name'+(filtered.length===1?'':'s');
   }
-
-  document.querySelectorAll('.filter-btn').forEach(b => {
+  document.querySelectorAll('.wl-filter').forEach(b => {
     b.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
-      b.classList.add('active');
-      currentFilter = b.dataset.tier;
+      document.querySelectorAll('.wl-filter').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      filterBucket = b.dataset.bucket;
       render();
     });
   });
-  // Override default search behavior: filter list instead of navigate
-  document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('wl-search').addEventListener('input', e => { filterText = e.target.value; render(); });
+  render();
+})();
+</script>
+<script id="inline-site">
+/* The Quarterly Ledger — shared site JS
+   Free access. Personal watchlist via localStorage. Homepage ticker search.
+*/
+(function(){
+  // ---------- Homepage / site-wide search ----------
+  function initSearch() {
     const input = document.getElementById('ticker-search');
     const results = document.getElementById('search-results');
-    input.addEventListener('input', e => {
-      currentQuery = e.target.value.trim();
-      render();
-      results.classList.remove('open');
+    if (!input || !results || !window.TQL_INDEX) return;
+    const index = window.TQL_INDEX;
+
+    function render(matches) {
+      if (!matches.length) {
+        results.innerHTML = `<div class="search-result"><span class="co" style="color:var(--ink-mute)">No matches.</span></div>`;
+      } else {
+        // Resolve relative path depending on page depth
+        const prefix = location.pathname.includes('/stocks/') || location.pathname.includes('/tiers/') ? '../stocks/' : 'stocks/';
+        results.innerHTML = matches.slice(0, 40).map(m => `
+          <a class="search-result" href="${prefix}${m.ticker}.html">
+            <span class="sym">${m.ticker}</span>
+            <span class="co">${m.name}</span>
+            <span class="tag">${m.tierName || m.sector || ''}</span>
+          </a>
+        `).join('');
+      }
+      results.classList.add('open');
+    }
+
+    input.addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) { results.classList.remove('open'); return; }
+      const matches = index.filter(s =>
+        s.ticker.toLowerCase().startsWith(q) ||
+        s.ticker.toLowerCase().includes(q) ||
+        s.name.toLowerCase().includes(q)
+      );
+      render(matches);
     });
-    render();
+
+    input.addEventListener('focus', () => {
+      if (input.value.trim()) input.dispatchEvent(new Event('input'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.search-wrap')) results.classList.remove('open');
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const first = results.querySelector('.search-result[href]');
+        if (first) window.location.href = first.getAttribute('href');
+      }
+      if (e.key === 'Escape') { results.classList.remove('open'); input.blur(); }
+    });
+  }
+
+  // ---------- Watchlist badge in nav ----------
+  function mountWatchBadge() {
+    try {
+      const wl = JSON.parse(localStorage.getItem('tql_watchlist') || '[]');
+      if (!wl.length) return;
+      // Find "My Saves" nav link and append count
+      document.querySelectorAll('.nav a').forEach(a => {
+        if (/my saves/i.test(a.textContent)) {
+          a.innerHTML = a.textContent + ` <span style="font-family:var(--mono);font-size:9px;background:var(--ink);color:var(--paper);padding:1px 6px;margin-left:4px;letter-spacing:0.1em;">${wl.length}</span>`;
+        }
+      });
+    } catch(e) {}
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initSearch();
+    mountWatchBadge();
   });
+})();
+
 </script>
-</body>
-</html>
+</body></html>

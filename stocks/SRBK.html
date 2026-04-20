@@ -64,12 +64,7 @@ body::before {
 }
 
 /* ===== Typography ===== */
-.wordmark {
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 0.95;
-}
+.wordmark { font-family: var(--serif); font-weight: 500; letter-spacing: -0.01em; line-height: 1.0; white-space: nowrap; }
 
 .mono { font-family: var(--mono); }
 .italic { font-family: var(--italic); font-style: italic; }
@@ -124,7 +119,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   gap: 24px;
   flex-wrap: wrap;
 }
-.masthead-left { display: flex; flex-direction: column; gap: 4px; }
+.masthead-left { display: flex; flex-direction: column; gap: 10px; }
 .masthead .wordmark {
   font-size: 48px;
 }
@@ -384,7 +379,8 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   color: var(--ink-mute);
   margin-bottom: 10px;
 }
-.ts-eyebrow span { color: var(--ink); }
+.ts-eyebrow > span { color: var(--ink); }
+.ts-eyebrow .score-chip { color: var(--paper); }
 .ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
 .ts-name {
   font-family: var(--serif);
@@ -476,13 +472,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   padding-bottom: 6px;
   margin-bottom: 12px;
 }
-.ts-prose p {
-  font-family: var(--serif-text);
-  font-size: 16px;
-  line-height: 1.65;
-  margin: 0 0 14px;
-  text-wrap: pretty;
-}
+.ts-prose p { font-family: var(--serif-text); font-size: 16px; line-height: 1.65; margin: 0 0 22px; }
 .ts-prose p:first-letter-drop::first-letter {
   font-family: var(--serif);
   float: left;
@@ -823,7 +813,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
   white-space: nowrap;
 }
 
-.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.ts-eyebrow { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
 .ts-eyebrow .dot { color: var(--ink-mute); }
 </style>
 </head>
@@ -837,7 +827,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
       </div>
       <div class="masthead-meta">
         Vol. 1 · No. 1<br>
-        April 2026 Issue
+        April 2026
       </div>
     </div>
   </header>
@@ -912,7 +902,8 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
         <div class="ts-block-title">Classification</div>
         <div class="ts-prose">
           <p><strong>Ticker:</strong> SRBK</p>
-          <p><strong>Tier:</strong> Extended Watchlist</p>
+          <p><strong>Category:</strong> <a href="../tiers/cyclicals-cefs.html">Cyclicals & CEFs</a></p>
+          <p><strong>Situation:</strong> BELOW-BOOK QUALITY</p>
           
         </div>
       </section>

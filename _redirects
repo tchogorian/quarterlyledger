@@ -1,0 +1,3 @@
+/stocks/:ticker    /stocks/:ticker.html    200
+/tiers/:slug       /tiers/:slug.html       200
+/ticker/:ticker    /stocks/:ticker.html    301

@@ -1,0 +1,93 @@
+{
+  "BUCKET_ORDER": [
+    "Institutional Orphans",
+    "Hidden Compounders",
+    "Activist Situations",
+    "Spinoffs",
+    "Merger Arbitrage",
+    "Holding Company Discounts",
+    "Cyclicals & CEFs",
+    "Distressed & Binary"
+  ],
+  "BUCKETS": {
+    "Hidden Compounders": [
+      "HIDDEN COMPOUNDER",
+      "COMPOUNDING MACHINE",
+      "CASH MACHINE",
+      "SEE'S CANDIES ECONOMICS",
+      "BRAND TURNAROUND AT PANIC PRICE",
+      "MONOPOLY ASSET AT DISCOUNT",
+      "ROYALTY STREAM AT SCALE",
+      "HIDDEN FINTECH TRANSITION",
+      "FIRST-IN-CLASS NEPHROLOGY",
+      "ORPHAN DRUG MONOPOLY",
+      "REINSURANCE TURNAROUND",
+      "POST-LOCKUP / HIDDEN COMPOUNDER",
+      "QUALITY AT PANIC PRICE"
+    ],
+    "Institutional Orphans": [
+      "INSTITUTIONAL ORPHANS",
+      "INSTITUTIONAL ORPHAN",
+      "QUANTITATIVE SURVIVOR",
+      "SPECIAL SITUATION",
+      "CONDITIONAL PICK"
+    ],
+    "Holding Company Discounts": [
+      "HOLDCO — NAV DISCOUNT",
+      "HOLDCO",
+      "HOLDCO — FAMILY-CONTROLLED COMPOUNDER",
+      "HIDDEN ASSET WITH COMPLEXITY"
+    ],
+    "Spinoffs": [
+      "SPINOFF",
+      "SPINOFF — QUALITY-AT-DISCOUNT",
+      "SPINOFF — FORCED SELLING",
+      "SPINOFF — RECENT",
+      "SPINOFF / VALUE TRAP RISK"
+    ],
+    "Activist Situations": [
+      "ACTIVIST",
+      "ACTIVIST — OPERATIONAL TURN",
+      "ACTIVIST — CAPITAL RETURN",
+      "ACTIVIST — SALE OR BREAKUP",
+      "ACTIVIST / TENDER OFFER",
+      "ACTIVIST / M&A ARB"
+    ],
+    "Merger Arbitrage": [
+      "M&A ARBITRAGE",
+      "M&A ARB",
+      "M&A ARBITRAGE / ACTIVIST",
+      "M&A ARBITRAGE — SPECULATIVE",
+      "TAKE-PRIVATE PENDING",
+      "TAKE-PRIVATE",
+      "TENDER OFFER",
+      "SELF-TENDER",
+      "LITIGATION RESOLUTION"
+    ],
+    "Distressed & Binary": [
+      "POST-BANKRUPTCY",
+      "DISTRESSED ARB",
+      "FDA BINARY",
+      "BIOTECH BINARY",
+      "VALUE TRAP RISK",
+      "MELTING ICE CUBE",
+      "REVERSE SPLIT",
+      "CONVERTIBLE MATURITY",
+      "CONVERTIBLE MATURITY / CYCLICAL TROUGH",
+      "POST-LOCKUP",
+      "SPAC LIQUIDATION",
+      "RIGHTS OFFERING"
+    ],
+    "Cyclicals & CEFs": [
+      "CYCLICAL TROUGH",
+      "BELOW-BOOK QUALITY",
+      "SUB-CASH OPERATING",
+      "CASH FORTRESS",
+      "INDEX REBALANCE",
+      "CEF DISCOUNT ACTIVISM",
+      "CEF — DISCOUNT ACTIVISM",
+      "CEF",
+      "CLOSED-END FUND ARBITRAGE"
+    ]
+  }
+}
