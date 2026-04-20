@@ -136,7 +136,7 @@
     const s = data.summary;
     const up = s.chg1d >= 0;
     priceBlock.innerHTML = `
-      <div class="label">Last price (synthetic)</div>
+      <div class="label">Last Price</div>
       <div class="val">${fmt$(s.last)}</div>
       <div class="sub" style="color:${up ? '#3a6b3a' : '#8b2e2e'}">
         ${fmtPct(s.chg1d)} · 1d

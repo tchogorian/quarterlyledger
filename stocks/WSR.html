@@ -872,7 +872,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
       <section>
         <div class="ts-block-title">Price History</div>
         <div class="chart-frame" data-ticker="WSR"><div class="pending">Loading chart…</div></div>
-        <div class="chart-caption">Weekly candles · 14 months. Prices are illustrative (synthetic GBM seeded per ticker); swap in real OHLC by regenerating prices.json.</div>
+        <div class="chart-caption">Weekly candles · 14 months of real historical OHLC data.</div>
       </section>
 
         <section>
@@ -896,7 +896,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
         <div class="ts-block-title">Classification</div>
         <div class="ts-prose">
           <p><strong>Ticker:</strong> WSR</p>
-          <p><strong>Category:</strong> <a href="../tiers/activist-situations.html">Activist Situations</a></p>
+          <p><strong>Category:</strong> <a href="../tiers/merger-arbitrage.html">M&A Arbitrage</a></p>
           <p><strong>Situation:</strong> ACTIVIST</p>
           
         </div>
@@ -1078,7 +1078,7 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
     const s = data.summary;
     const up = s.chg1d >= 0;
     priceBlock.innerHTML = `
-      <div class="label">Last price (synthetic)</div>
+      <div class="label">Last Price</div>
       <div class="val">${fmt$(s.last)}</div>
       <div class="sub" style="color:${up ? '#3a6b3a' : '#8b2e2e'}">
         ${fmtPct(s.chg1d)} · 1d
