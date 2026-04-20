@@ -1095,15 +1095,39 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
     container.parentElement.insertBefore(stats, container.nextSibling);
   }
 
+  function transformRaw(raw) {
+    if (!raw || !Array.isArray(raw) || raw.length === 0) return null;
+    const bars = raw.map(function(r) {
+      return { d: r.date || r.d, o: r.o, h: r.h, l: r.l, c: r.c };
+    });
+    var last = bars[bars.length - 1].c;
+    var prev = bars.length > 1 ? bars[bars.length - 2].c : last;
+    var chg1d = prev ? ((last - prev) / prev) * 100 : 0;
+    var highs = bars.map(function(b){ return b.h; });
+    var lows  = bars.map(function(b){ return b.l; });
+    var high52 = Math.max.apply(null, highs);
+    var low52  = Math.min.apply(null, lows);
+    var firstC = bars[0].c;
+    var chgYtd = firstC ? ((last - firstC) / firstC) * 100 : 0;
+    var chg1y  = chgYtd;
+    return {
+      bars: bars,
+      summary: { last: last, chg1d: chg1d, high52: high52, low52: low52, chgYtd: chgYtd, chg1y: chg1y }
+    };
+  }
+
   async function init() {
     const frames = document.querySelectorAll('.chart-frame[data-ticker]');
     if (!frames.length) return;
 
-    // Prefer inline price data (avoids 401s in sandboxed previews + works offline)
     const inlineEl = document.getElementById('ticker-prices');
     let singleTickerData = null;
     if (inlineEl && inlineEl.textContent.trim()) {
-      try { singleTickerData = JSON.parse(inlineEl.textContent); } catch (e) {}
+      try {
+        var parsed = JSON.parse(inlineEl.textContent);
+        if (parsed && parsed.bars) { singleTickerData = parsed; }
+        else { singleTickerData = transformRaw(parsed); }
+      } catch (e) {}
     }
 
     let priceData = null;
@@ -1118,7 +1142,11 @@ a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
 
     for (const frame of frames) {
       const tk = frame.dataset.ticker;
-      const data = singleTickerData || (priceData ? priceData[tk] : null);
+      let data = singleTickerData;
+      if (!data && priceData) {
+        var raw = priceData[tk];
+        data = transformRaw(raw);
+      }
       renderChart(frame, tk, data);
       if (data) {
         updateHeader(tk, data);
