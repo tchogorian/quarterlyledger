@@ -2657,5 +2657,90 @@ window.addEventListener('message', (e) => {
 window.parent.postMessage({type:'__edit_mode_available'}, '*');
 </script>
 
+<!-- ═════════════════════════════════════════════════════════════════════
+     PERSISTENT NEXT / PREV NAVIGATION
+     ═════════════════════════════════════════════════════════════════════ -->
+<style>
+.slide-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2147483500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 72px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 1;
+  transition: background 180ms ease, opacity 180ms ease;
+  opacity: 0.7;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.slide-nav:hover {
+  background: rgba(0,0,0,0.82);
+  opacity: 1;
+}
+.slide-nav--prev {
+  left: 0;
+  border-radius: 0 10px 10px 0;
+}
+.slide-nav--next {
+  right: 0;
+  border-radius: 10px 0 0 10px;
+}
+.slide-nav svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.slide-nav__label {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+.slide-nav:hover .slide-nav__label { opacity: 1; }
+@media print { .slide-nav { display: none !important; } }
+</style>
+
+<button class="slide-nav slide-nav--prev" id="nav-prev" aria-label="Previous slide" title="Previous (←)">
+  <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+  <span class="slide-nav__label">Prev</span>
+</button>
+<button class="slide-nav slide-nav--next" id="nav-next" aria-label="Next slide" title="Next (→)">
+  <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+  <span class="slide-nav__label">Next</span>
+</button>
+
+<script>
+(function() {
+  const deck = document.getElementById('stage');
+  document.getElementById('nav-prev').addEventListener('click', function() { if (deck && deck.prev) deck.prev(); });
+  document.getElementById('nav-next').addEventListener('click', function() { if (deck && deck.next) deck.next(); });
+})();
+</script>
+
 </body>
 </html>
