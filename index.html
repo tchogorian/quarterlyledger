@@ -1,1348 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>The Quarterly Ledger — April 2026 Issue</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Institutional-grade equity research on under-followed small-capital securities. 351 tearsheets. Free. No registration.">
-<style id="ledger-inlined">
-/* ==========================================================================
-   The Quarterly Ledger — shared stylesheet
-   A Surveyor of Public Securities
-   ========================================================================== */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Munger's Checklist · The Quarterly Ledger</title>
+<meta name="description" content="A private investment discipline. Read the report. Invert the thesis. Wait for the fat pitch.">
 
-:root {
-  --paper: #F4EEDC;
-  --paper-2: #EEE6D0;
-  --ink: #0E0E0E;
-  --ink-soft: #3B3A36;
-  --ink-mute: #6E6A5F;
-  --rule: #2B2A26;
-  --rule-soft: rgba(43, 42, 38, 0.22);
-  --accent: #6E1A17;        /* oxblood */
-  --accent-ink: #3E0D0B;
-  --good: #1F4220;          /* forest */
-  --bad: #6E1A17;
-  --page-max: 1200px;
-
-  --serif: 'GT Super Display', 'GT Super', 'Caslon', 'EB Garamond', Georgia, serif;
-  --serif-text: 'GT Super Text', 'Caslon', 'EB Garamond', Georgia, serif;
-  --mono: 'IBM Plex Mono', 'JetBrains Mono', ui-monospace, 'Menlo', monospace;
-  --italic: 'Caslon', 'EB Garamond', Georgia, serif;
-}
-
-* { box-sizing: border-box; }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--serif-text);
-  font-size: 16px;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  font-feature-settings: 'kern', 'liga', 'onum';
-}
-
-/* Subtle paper grain */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.015) 0 1px, transparent 2px),
-    radial-gradient(circle at 70% 60%, rgba(0,0,0,0.012) 0 1px, transparent 2px),
-    radial-gradient(circle at 40% 80%, rgba(0,0,0,0.01) 0 1px, transparent 2px);
-  background-size: 140px 140px, 180px 180px, 220px 220px;
-  z-index: 1;
-  mix-blend-mode: multiply;
-}
-
-/* ===== Typography ===== */
-.wordmark {
-  font-family: var(--serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: 1.0;
-  white-space: nowrap;
-}
-
-.mono { font-family: var(--mono); }
-.italic { font-family: var(--italic); font-style: italic; }
-.small-caps {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--serif);
-  font-weight: 500;
-  margin: 0;
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-
-a {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule-soft);
-  transition: border-color 120ms ease;
-}
-a:hover { border-bottom-color: var(--ink); }
-
-a.muted {
-  color: var(--ink-mute);
-  border-bottom-color: transparent;
-}
-a.muted:hover { color: var(--ink); border-bottom-color: var(--rule-soft); }
-
-/* ===== Page chrome ===== */
-.page {
-  position: relative;
-  z-index: 2;
-  max-width: var(--page-max);
-  margin: 0 auto;
-  padding: 0 40px;
-}
-
-.masthead {
-  border-bottom: 3px double var(--rule);
-  padding: 32px 0 20px;
-  margin-bottom: 28px;
-}
-.masthead-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.masthead-left { display: flex; flex-direction: column; gap: 10px; }
-.masthead .wordmark {
-  font-size: 48px;
-}
-.masthead .tagline {
-  font-family: var(--italic);
-  font-style: italic;
-  font-size: 17px;
-  color: var(--ink-soft);
-  letter-spacing: 0.01em;
-}
-.masthead-meta {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  text-align: right;
-  line-height: 1.6;
-}
-
-.nav {
-  display: flex;
-  gap: 28px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--rule);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-.nav a {
-  border-bottom: none;
-  color: var(--ink-soft);
-}
-.nav a:hover, .nav a.active { color: var(--ink); }
-
-/* ===== Ruled boxes and dividers ===== */
-.hr-thin  { border: 0; border-top: 1px solid var(--rule-soft); margin: 24px 0; }
-.hr-rule  { border: 0; border-top: 1px solid var(--rule); margin: 24px 0; }
-.hr-double { border: 0; border-top: 3px double var(--rule); margin: 32px 0; }
-
-.rule-box {
-  border: 1px solid var(--rule);
-  padding: 18px 22px;
-}
-
-/* ===== Ticker chip ===== */
-.ticker-chip {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 10px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  padding: 8px 14px;
-  border: 1px solid var(--rule);
-  background: var(--paper);
-  color: var(--ink);
-  text-transform: none;
-  transition: background 120ms ease, color 120ms ease;
-  border-bottom: 1px solid var(--rule);
-}
-.ticker-chip:hover {
-  background: var(--ink);
-  color: var(--paper);
-}
-.ticker-chip .sym { font-weight: 600; }
-.ticker-chip .co {
-  font-family: var(--serif-text);
-  font-size: 13px;
-  color: inherit;
-  opacity: 0.85;
-}
-
-/* ===== Tier list (homepage) ===== */
-.tier-section { margin: 44px 0; }
-.tier-head {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 14px;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 8px;
-}
-.tier-head .num {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--accent);
-  text-transform: uppercase;
-}
-.tier-head h2 {
-  font-size: 28px;
-}
-.tier-head .count {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  margin-left: auto;
-}
-
-.tier-desc {
-  font-family: var(--italic);
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-bottom: 18px;
-  max-width: 62ch;
-}
-
-.ticker-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--rule-soft);
-  border-left: 1px solid var(--rule-soft);
-}
-
-.ticker-row {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 12px 14px;
-  border-right: 1px solid var(--rule-soft);
-  border-bottom: 1px solid var(--rule-soft);
-  text-decoration: none;
-  border-top: none;
-  color: var(--ink);
-  transition: background 100ms ease;
-}
-.ticker-row:hover {
-  background: var(--paper-2);
-  border-bottom-color: var(--rule-soft);
-}
-.ticker-row .sym {
-  font-family: var(--mono);
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.ticker-row .sym .score {
-  font-size: 10px;
-  font-weight: 400;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-}
-.ticker-row .co {
-  font-family: var(--serif-text);
-  font-size: 14px;
-  line-height: 1.3;
-  color: var(--ink-soft);
-}
-.ticker-row .meta {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink-mute);
-  letter-spacing: 0.08em;
-  margin-top: 2px;
-}
-
-/* ===== Search ===== */
-.search-wrap {
-  margin: 20px 0 10px;
-  position: relative;
-}
-.search-input {
-  width: 100%;
-  padding: 14px 16px 14px 44px;
-  font-family: var(--mono);
-  font-size: 14px;
-  letter-spacing: 0.04em;
-  color: var(--ink);
-  background: transparent;
-  border: 1px solid var(--rule);
-  outline: none;
-}
-.search-input::placeholder {
-  color: var(--ink-mute);
-  font-family: var(--mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 11px;
-}
-.search-input:focus {
-  border-color: var(--accent);
-}
-.search-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-family: var(--mono);
-  color: var(--ink-mute);
-  font-size: 14px;
-  pointer-events: none;
-}
-
-.search-results {
-  position: absolute;
-  top: calc(100% + 2px);
-  left: 0;
-  right: 0;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-top: none;
-  max-height: 420px;
-  overflow-y: auto;
-  z-index: 50;
-  display: none;
-}
-.search-results.open { display: block; }
-.search-result {
-  display: flex;
-  gap: 14px;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--rule-soft);
-  font-family: var(--serif-text);
-  font-size: 14px;
-  cursor: pointer;
-}
-.search-result:hover { background: var(--paper-2); }
-.search-result .sym {
-  font-family: var(--mono);
-  font-weight: 600;
-  font-size: 13px;
-  min-width: 70px;
-}
-.search-result .co { flex: 1; }
-.search-result .tag {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--ink-mute);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* ===== Tear sheet page ===== */
-.ts-head {
-  border-top: 3px double var(--rule);
-  border-bottom: 1px solid var(--rule);
-  padding: 18px 0 14px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: end;
-  margin-top: 12px;
-}
-.ts-eyebrow {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-bottom: 10px;
-}
-.ts-eyebrow > span { color: var(--ink); }
-.ts-eyebrow .score-chip { color: var(--paper); }
-.ts-eyebrow .dot { color: var(--ink-mute) !important; }
-.ts-eyebrow .dot { margin: 0 10px; color: var(--ink-mute); }
-.ts-name {
-  font-family: var(--serif);
-  font-size: 56px;
-  line-height: 0.98;
-  letter-spacing: -0.02em;
-  font-weight: 500;
-}
-.ts-sub {
-  font-family: var(--italic);
-  font-style: italic;
-  color: var(--ink-soft);
-  margin-top: 8px;
-  font-size: 16px;
-}
-.ts-price {
-  text-align: right;
-  border-left: 1px solid var(--rule-soft);
-  padding-left: 22px;
-  min-width: 200px;
-}
-.ts-price .label {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-}
-.ts-price .val {
-  font-family: var(--serif);
-  font-size: 42px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  margin: 6px 0 4px;
-}
-.ts-price .sub {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-mute);
-  letter-spacing: 0.05em;
-}
-
-/* Metric rail */
-.metric-rail {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0;
-  border: 1px solid var(--rule);
-  border-bottom: 3px double var(--rule);
-  margin: 24px 0 8px;
-}
-.metric {
-  padding: 12px 14px;
-  border-right: 1px solid var(--rule-soft);
-}
-.metric:last-child { border-right: none; }
-.metric .k {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  display: block;
-  margin-bottom: 4px;
-}
-.metric .v {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-/* Body layout */
-.ts-body {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 36px;
-  margin-top: 28px;
-}
-.ts-body section { margin-bottom: 26px; }
-.ts-block-title {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  border-bottom: 1px solid var(--rule-soft);
-  padding-bottom: 6px;
-  margin-bottom: 12px;
-}
-.ts-prose p {
-  font-family: var(--serif-text);
-  font-size: 16px;
-  line-height: 1.65;
-  margin: 0 0 14px;
-  text-wrap: pretty;
-}
-.ts-prose p:first-letter-drop::first-letter {
-  font-family: var(--serif);
-  float: left;
-  font-size: 54px;
-  line-height: 0.9;
-  padding: 6px 10px 0 0;
-  font-weight: 500;
-}
-
-/* Chart placeholder / live chart */
-.chart-frame {
-  border: 1px solid var(--rule);
-  min-height: 300px;
-  background:
-    repeating-linear-gradient(90deg, transparent 0 49px, var(--rule-soft) 49px 50px),
-    repeating-linear-gradient(0deg, transparent 0 39px, var(--rule-soft) 39px 40px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 4px;
-}
-.chart-frame svg { display: block; width: 100%; height: auto; background: transparent; }
-.chart-frame:has(svg) { background: var(--paper); }
-.chart-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border: 1px solid var(--rule);
-  border-top: 0;
-  margin-top: 0;
-  font-family: var(--mono);
-}
-.chart-stats > div {
-  padding: 10px 14px;
-  border-right: 1px solid var(--rule-soft);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.chart-stats > div:last-child { border-right: 0; }
-.chart-stats .k {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-}
-.chart-stats .v {
-  font-size: 15px;
-  color: var(--ink);
-  font-weight: 500;
-}
-@media (max-width: 640px) {
-  .chart-stats { grid-template-columns: repeat(2, 1fr); }
-  .chart-stats > div:nth-child(2) { border-right: 0; }
-  .chart-stats > div:nth-child(1),
-  .chart-stats > div:nth-child(2) { border-bottom: 1px solid var(--rule-soft); }
-}
-.chart-frame .pending {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  background: var(--paper);
-  padding: 8px 14px;
-  border: 1px solid var(--rule-soft);
-}
-.chart-caption {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-top: 6px;
-  text-align: right;
-}
-
-/* Tier chip + score */
-.tier-chip {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  padding: 4px 10px;
-}
-.score-chip {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  background: var(--ink);
-  color: var(--paper);
-  padding: 4px 10px;
-  margin-left: 8px;
-}
-
-/* Footer */
-.footer {
-  margin: 72px 0 32px;
-  padding-top: 22px;
-  border-top: 3px double var(--rule);
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 36px;
-  font-size: 14px;
-}
-.footer h4 {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-bottom: 12px;
-}
-.footer ul { list-style: none; padding: 0; margin: 0; }
-.footer li { margin: 6px 0; }
-.footer a { color: var(--ink-soft); border-bottom: none; }
-.footer a:hover { color: var(--ink); }
-.footer .about p {
-  font-family: var(--italic);
-  font-style: italic;
-  color: var(--ink-soft);
-  margin: 0 0 10px;
-  font-size: 14px;
-  line-height: 1.55;
-}
-.footer .colophon {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-}
-
-/* ===== Registration gate ===== */
-.gate-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(20, 18, 12, 0.72);
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  backdrop-filter: blur(2px);
-}
-.gate-overlay.open { display: flex; }
-.gate-card {
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  max-width: 480px;
-  width: 100%;
-  padding: 36px 40px;
-  position: relative;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-}
-.gate-card .wordmark { font-size: 26px; }
-.gate-card .tagline {
-  font-family: var(--italic);
-  font-style: italic;
-  color: var(--ink-soft);
-  font-size: 13px;
-  border-bottom: 1px solid var(--rule-soft);
-  padding-bottom: 14px;
-  margin-bottom: 18px;
-}
-.gate-card h2 {
-  font-size: 22px;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-.gate-card p {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  margin: 0 0 16px;
-}
-.gate-input {
-  width: 100%;
-  padding: 12px 14px;
-  font-family: var(--mono);
-  font-size: 13px;
-  border: 1px solid var(--rule);
-  background: transparent;
-  color: var(--ink);
-  margin-bottom: 12px;
-}
-.gate-input:focus { outline: none; border-color: var(--accent); }
-.gate-button {
-  width: 100%;
-  padding: 12px;
-  background: var(--ink);
-  color: var(--paper);
-  border: none;
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 120ms ease;
-}
-.gate-button:hover { background: var(--accent); }
-.gate-fineprint {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  margin-top: 14px;
-  line-height: 1.6;
-}
-
-/* Trial banner */
-.trial-banner {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 900;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 10px 14px;
-  border: 1px solid var(--paper);
-  display: none;
-}
-.trial-banner.show { display: block; }
-.trial-banner strong { color: #E7C98F; }
-
-/* Disclaimer strip */
-.disclaimer-strip {
-  background: var(--paper-2);
-  border-top: 1px solid var(--rule-soft);
-  border-bottom: 1px solid var(--rule-soft);
-  padding: 10px 0;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--ink-mute);
-  text-align: center;
-  margin-top: 24px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .page { padding: 0 20px; }
-  .masthead .wordmark { font-size: 34px; }
-  .ts-head { grid-template-columns: 1fr; }
-  .ts-price { border-left: none; padding-left: 0; text-align: left; }
-  .ts-name { font-size: 38px; }
-  .metric-rail { grid-template-columns: repeat(3, 1fr); }
-  .metric:nth-child(3) { border-right: none; }
-  .metric:nth-child(n+4) { border-top: 1px solid var(--rule-soft); }
-  .ts-body { grid-template-columns: 1fr; }
-  .footer { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 560px) {
-  .metric-rail { grid-template-columns: repeat(2, 1fr); }
-  .metric { border-right: 1px solid var(--rule-soft); }
-  .metric:nth-child(2n) { border-right: none; }
-  .metric:nth-child(n+3) { border-top: 1px solid var(--rule-soft); }
-  .footer { grid-template-columns: 1fr; }
-  .ts-name { font-size: 32px; }
-}
-
-</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 <style>
-  :root {
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --serif-text: 'EB Garamond', Georgia, serif;
-    --italic: 'EB Garamond', Georgia, serif;
-  }
-
-  /* ---------- Hero ---------- */
-  .hero {
-    padding: 72px 0 56px;
-    border-bottom: 3px double var(--rule);
-    position: relative;
-  }
-  .hero-issue {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 36px;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .hero-issue .left { display: flex; gap: 20px; align-items: baseline; }
-  .hero-issue .tag {
-    display: inline-block;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 4px 10px;
-    letter-spacing: 0.22em;
-  }
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(56px, 9vw, 108px);
-    line-height: 0.92;
-    letter-spacing: -0.03em;
-    font-weight: 500;
-    margin: 0 0 28px;
-    text-wrap: balance;
-    max-width: 18ch;
-  }
-  .hero h1 em {
-    font-family: var(--italic);
-    font-style: italic;
-    font-weight: 400;
-  }
-  .hero .lede {
-    font-family: var(--serif-text);
-    font-size: 22px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-    max-width: 62ch;
-    margin: 0 0 14px;
-  }
-  .hero .lede em { font-family: var(--italic); font-style: italic; color: var(--ink); }
-  .hero .sub-lede {
-    font-family: var(--serif-text);
-    font-size: 17px;
-    line-height: 1.55;
-    color: var(--ink-mute);
-    max-width: 62ch;
-    margin: 18px 0 0;
-  }
-  .hero-rule {
-    height: 1px;
-    background: var(--rule-soft);
-    margin: 36px 0 20px;
-  }
-  .hero-facts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 34px 48px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .hero-facts b {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 28px;
-    letter-spacing: -0.01em;
+  html, body { margin: 0; padding: 0; }
+  .mc-root {
+    --paper: #f3ecdc;
+    --paper-2: #ede4cf;
+    --paper-line: #d9ceb1;
+    --ink: #1a1611;
+    --ink-2: #443a2a;
+    --ink-3: #6b5d44;
+    --rule: #c8b994;
+    --gold: #8a6a1f;
+    --gold-soft: #c8a253;
+    --moss: #2f4a2a;
+    --moss-soft: #5a7a4f;
+    --oxblood: #6e1f1a;
+    --oxblood-soft: #a64a3e;
+    --crimson-tint: #f3dad4;
+    --moss-tint: #dde6d3;
+    font-family: 'EB Garamond', Georgia, serif;
     color: var(--ink);
-    display: block;
-    text-transform: none;
-    margin-bottom: 2px;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(138,106,31,0.06), transparent 40%),
+      radial-gradient(circle at 80% 90%, rgba(46,74,42,0.05), transparent 40%);
+    min-height: 100vh;
   }
-  .hero-cta {
-    margin-top: 36px;
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .cta-primary, .cta-ghost {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 14px 22px;
+  .mc-display { font-family: 'Fraunces', 'Times New Roman', serif; letter-spacing: -0.01em; }
+  .mc-mono { font-family: 'JetBrains Mono', monospace; }
+
+  .mc-card {
+    background-color: var(--paper-2);
     border: 1px solid var(--rule);
-    transition: background .12s, color .12s;
+    box-shadow: 0 1px 0 rgba(26,22,17,0.04), 0 8px 24px -16px rgba(26,22,17,0.18);
   }
-  .cta-primary {
-    background: var(--rule);
-    color: var(--paper);
-  }
-  .cta-primary:hover { background: var(--accent); border-color: var(--accent); }
-  .cta-ghost:hover { background: var(--rule); color: var(--paper); }
-
-  /* ---------- Search ---------- */
-  .search-wrap { margin: 48px 0 8px; }
-
-  /* ---------- Bucket Section ---------- */
-  .bucket-intro {
-    margin: 64px 0 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 24px;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 14px;
-  }
-  .bucket-intro h2 {
-    font-family: var(--serif);
-    font-size: 34px;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    margin: 0;
-  }
-  .bucket-intro p {
-    font-family: var(--italic);
-    font-style: italic;
-    color: var(--ink-soft);
-    margin: 0;
-    font-size: 15px;
-    max-width: 58ch;
-  }
-
-  .bucket-section { margin: 44px 0; }
-  .bucket-head {
-    display: grid;
-    grid-template-columns: 64px 1fr auto;
-    align-items: baseline;
-    gap: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .bucket-head .num {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    color: var(--ink-mute);
-  }
-  .bucket-head h3 {
-    font-family: var(--serif);
-    font-size: 32px;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    margin: 0;
-  }
-  .bucket-head h3 a { border: none; }
-  .bucket-head h3 a:hover { color: var(--accent); }
-  .bucket-head .count {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-mute);
-  }
-  .bucket-desc {
-    font-family: var(--italic);
-    font-style: italic;
-    color: var(--ink-soft);
-    margin: 10px 0 18px 84px;
-    font-size: 15px;
-    max-width: 66ch;
-    line-height: 1.5;
-  }
-
-  .ticker-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 0;
-    border-top: 1px solid var(--rule-soft);
-    margin-left: 84px;
-  }
-  .ticker-row {
-    padding: 14px 18px;
-    border-right: 1px solid var(--rule-soft);
-    border-bottom: 1px solid var(--rule-soft);
-    display: block;
-    border-top: none;
-    border-left: none;
-    transition: background .1s;
-  }
-  .ticker-row:hover { background: var(--paper-2); }
-  .ticker-row .sym {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 4px;
-  }
-  .ticker-row .sym span:first-child {
-    font-family: var(--mono);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    font-size: 14px;
-  }
-  .ticker-row .sym .score {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent);
-    letter-spacing: 0.06em;
-  }
-  .ticker-row .co {
-    font-family: var(--serif-text);
-    font-size: 15px;
+  .mc-input {
+    background-color: rgba(255,253,247,0.6);
+    border: 1px solid var(--rule);
     color: var(--ink);
-    line-height: 1.2;
-    margin-bottom: 2px;
-    text-wrap: pretty;
+    font-family: inherit;
+    transition: border-color 120ms, background 120ms;
   }
-  .ticker-row .meta {
-    font-family: var(--mono);
-    font-size: 9px;
-    letter-spacing: 0.1em;
-    color: var(--ink-mute);
-    text-transform: uppercase;
+  .mc-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background-color: #fffdf7;
   }
+  .mc-input.mc-mono { font-family: 'JetBrains Mono', monospace; }
 
-  .bucket-more {
-    margin: 14px 0 0 84px;
-    font-family: var(--mono);
-    font-size: 10px;
+  .mc-btn {
+    border: 1px solid var(--ink);
+    background-color: var(--ink);
+    color: var(--paper);
+    font-family: 'Fraunces', serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    padding: 0.6rem 1.1rem;
+    transition: transform 80ms, box-shadow 120ms;
+    cursor: pointer;
+  }
+  .mc-btn:hover { box-shadow: 0 2px 0 var(--gold); transform: translate(-1px,-1px); }
+  .mc-btn:active { transform: translate(0,0); }
+  .mc-btn-ghost {
+    background: transparent; color: var(--ink); border-color: var(--ink-3);
+  }
+  .mc-btn-ghost:hover { background: var(--paper-2); box-shadow: 0 2px 0 var(--ink-3); }
+
+  .mc-tab {
+    font-family: 'Fraunces', serif;
     letter-spacing: 0.18em;
     text-transform: uppercase;
+    font-size: 0.72rem;
+    padding: 0.5rem 0;
+    margin-right: 1.5rem;
+    color: var(--ink-3);
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color 120ms, border-color 120ms;
+    background: transparent;
+    border-top: none; border-left: none; border-right: none;
   }
-  .bucket-more a { color: var(--accent); }
+  .mc-tab.active { color: var(--ink); border-bottom-color: var(--gold); }
+  .mc-tab:hover { color: var(--ink); }
 
-  /* ---------- Manifesto ---------- */
-  .manifesto {
-    margin: 88px 0 40px;
-    border-top: 3px double var(--rule);
-    border-bottom: 3px double var(--rule);
-    padding: 56px 0;
+  .mc-pill {
+    font-family: 'Fraunces', serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.62rem;
+    padding: 0.22rem 0.5rem;
+    border: 1px solid currentColor;
+    display: inline-block;
   }
-  .manifesto .lead {
-    font-family: var(--italic);
+  .mc-pill-pass { color: var(--moss); background: var(--moss-tint); }
+  .mc-pill-fail { color: var(--oxblood); background: var(--crimson-tint); }
+  .mc-pill-pending { color: var(--ink-3); background: rgba(0,0,0,0.03); }
+
+  .mc-rule { border-top: 1px solid var(--rule); }
+  .mc-rule-thick { border-top: 3px double var(--rule); }
+
+  .mc-roman {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
     font-style: italic;
-    font-size: 15px;
-    letter-spacing: 0.04em;
-    color: var(--ink-mute);
-    margin: 0 0 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-  }
-  .manifesto p {
-    font-family: var(--serif);
-    font-size: 38px;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    max-width: 22ch;
-    margin: 0;
-    font-weight: 500;
-  }
-  .manifesto p em { font-family: var(--italic); font-style: italic; }
-  .manifesto .cols {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr 1fr;
-    gap: 36px;
-    margin-top: 48px;
-  }
-  .manifesto .cols h4 {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 10px;
-  }
-  .manifesto .cols h5 {
-    font-family: var(--serif);
-    font-size: 19px;
-    font-weight: 500;
-    margin: 0 0 8px;
-    letter-spacing: -0.01em;
-  }
-  .manifesto .cols p {
-    font-family: var(--serif-text);
-    font-size: 14.5px;
-    line-height: 1.55;
-    color: var(--ink-soft);
-    margin: 0;
-    max-width: none;
-    letter-spacing: 0;
+    color: var(--gold);
+    line-height: 1;
   }
 
-  @media (max-width: 900px) {
-    .hero { padding: 48px 0 36px; }
-    .hero h1 { font-size: 52px; }
-    .hero .lede { font-size: 19px; }
-    .bucket-head { grid-template-columns: 1fr auto; }
-    .bucket-head .num { display: none; }
-    .bucket-desc, .ticker-grid, .bucket-more { margin-left: 0; }
-    .manifesto .cols { grid-template-columns: 1fr; }
-    .manifesto p { font-size: 28px; }
+  .mc-answer-btn {
+    border: 1px solid var(--rule);
+    background: rgba(255,253,247,0.4);
+    color: var(--ink-3);
+    transition: all 120ms;
+    cursor: pointer;
+    font-family: 'Fraunces', serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
   }
+  .mc-answer-btn:hover { background: rgba(255,253,247,0.9); color: var(--ink); }
+  .mc-answer-btn.active-yes { background: var(--moss); color: #f5f1e6; border-color: var(--moss); }
+  .mc-answer-btn.active-no { background: var(--oxblood); color: #f5e8e3; border-color: var(--oxblood); }
+  .mc-answer-btn.active-skip { background: var(--ink-3); color: var(--paper); border-color: var(--ink-3); }
+
+  .mc-section-toggle {
+    background: transparent; border: none; cursor: pointer;
+    font-family: inherit; color: inherit; text-align: left;
+  }
+  .mc-section-toggle:hover { background: rgba(138,106,31,0.04); }
+
+  .mc-toast {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Fraunces', serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    padding: 0.7rem 1.1rem;
+    border-left: 3px solid var(--gold);
+    animation: mc-fadein 200ms ease-out;
+  }
+  @keyframes mc-fadein { from { opacity:0; transform: translateY(8px);} to { opacity:1; transform: translateY(0);} }
+
+  .mc-empty-icon { color: var(--ink-3); opacity: 0.4; }
+
+  textarea.mc-input { resize: vertical; min-height: 56px; }
 </style>
 </head>
 <body>
-<div class="page">
+<div id="root"></div>
 
-  <header class="masthead">
-    <div class="masthead-row">
-      <div class="masthead-left">
-        <div class="wordmark" style="font-size: 42px;">The Quarterly Ledger</div>
-        <div class="tagline">A Surveyor of Public Securities</div>
-      </div>
-      <div class="masthead-meta">
-        Vol. 1 · No. 1<br>
-        April 2026<br>
-        Est. 2026
-      </div>
-    </div>
-  </header>
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef } = React;
 
-  <nav class="nav">
-    <a href="index.html" class="active">The Register</a>
-    <a href="watchlist.html">Full List</a>
-    <a href="my-watchlist.html">My Saves</a>
-    <a href="methodology.html">Methodology</a>
-    <a href="about.html">About</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-issue">
-      <div class="left">
-        <span class="tag">April Ledger · Free</span>
-        <span>Issue No. 01 — published April 2026</span>
-      </div>
-      <div>No registration. No email. No tracking.</div>
-    </div>
-    <h1>Institutional-grade research on the securities <em>nobody is covering.</em></h1>
-    <p class="lede">351 tearsheets on small-capital companies screened at the filing level — the kind of equity research that usually sits behind a $12,000 terminal. Published here <em>for free</em>, every quarter.</p>
-    <p class="sub-lede">No sell-side noise. No sponsored content. No affiliate links. Built in the tradition of Value Line, Graham-Dodd, and the Munger checklist — and maintained as a standing reference for serious investors.</p>
-
-    <div class="hero-cta">
-      <a class="cta-primary" href="#register">Open the April Register →</a>
-      <a class="cta-ghost" href="methodology.html">How it's built</a>
-    </div>
-  </section>
-
-  <div class="search-wrap" id="register">
-    <span class="search-icon">⌕</span>
-    <input id="ticker-search" class="search-input" type="text" placeholder="Search 351 names — ticker or company" autocomplete="off">
-    <div id="search-results" class="search-results"></div>
-  </div>
-  <div class="small-caps" style="margin-top: 8px; opacity: 0.7;">Press Enter to open · Esc to dismiss</div>
-
-  <div class="bucket-intro">
-    <h2>The April Register</h2>
-    <p>Eight special-situation categories, 258 names — plus 93 extended watchlist picks. Sorted by situation type and conviction.</p>
-  </div>
-
-  <div id="bucket-sections"></div>
-
-  <section class="manifesto">
-    <div class="lead">A note from the editor</div>
-    <p>Good research shouldn't cost <em>twelve thousand dollars</em> a year.</p>
-
-    <div class="cols">
-      <div>
-        <h4>I · Why</h4>
-        <h5>Small-cap is where work still matters.</h5>
-        <p>Large-caps are picked over by thousands of analysts. The bottom half of the public market is picked over by almost no one. That's where we look.</p>
-      </div>
-      <div>
-        <h4>II · How</h4>
-        <h5>Filings first, always.</h5>
-        <p>Every tearsheet is built from 10-Ks, 10-Qs, 8-Ks, proxies, and DEF 14As. No scraped data. No third-party summaries. If it's in the register, we read the filings.</p>
-      </div>
-      <div>
-        <h4>III · What</h4>
-        <h5>A standing reference, revised quarterly.</h5>
-        <p>Four issues a year. Names get promoted, demoted, or retired based on fundamentals and situation progress. The Ledger is a living register, not a one-time report.</p>
-      </div>
-      <div>
-        <h4>IV · Yours</h4>
-        <h5>Your watchlist, locally.</h5>
-        <p>Hit <em>Save</em> on any tearsheet. The list lives in your browser — never on our servers. No account, no email, no unsubscribe page.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="about">
-      <h4>The Quarterly Ledger</h4>
-      <p>An independent survey of under-followed public securities, published quarterly. Each issue revisits the full universe with fresh filings and fresh conviction.</p>
-      <div class="colophon">Set in Cormorant, EB Garamond, &amp; IBM Plex Mono.</div>
-    </div>
-    <div>
-      <h4>The Register</h4>
-      <ul id="footer-buckets"></ul>
-    </div>
-    <div>
-      <h4>Editorial</h4>
-      <ul>
-        <li><a href="methodology.html">Methodology</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="disclaimer.html">Disclaimer</a></li>
-        <li><a href="watchlist.html">Full List (351)</a></li>
-        <li><a href="my-watchlist.html">My Saves</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Compliance</h4>
-      <ul>
-        <li><a href="disclaimer.html">Not investment advice</a></li>
-        <li><a href="disclaimer.html">Author may hold positions</a></li>
-        <li><a href="disclaimer.html">Data as of April 2026</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <div class="disclaimer-strip">
-    For informational purposes only. Not investment advice. See <a href="disclaimer.html" style="color:inherit; border-bottom-color: currentColor;">full disclaimer</a>.
-  </div>
-
-</div>
-
-<script id="inline-search">
-window.TQL_INDEX = [{"ticker":"CURB","name":"Curbline Properties Corp.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2979348224,"sector":"Real Estate","detail":"Spun from SITE Centers (SITC) on 2024-10-01"},{"ticker":"SOBO","name":"South Bow Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":6708203520,"sector":"Energy","detail":"Spun from TC Energy (TRP) on 2024-10-01"},{"ticker":"ECG","name":"Everus Construction Group, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":6574669312,"sector":"Industrials","detail":"Spun from MDU Resources (MDU) on 2024-11-01"},{"ticker":"MAGN","name":"Magnera Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":384836000,"sector":"Consumer Defensive","detail":"Spun from Berry Global (BERY) / Glatfelter merger on 2024-11-05"},{"ticker":"CON","name":"Concentra Group Holdings Parent, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2940590592,"sector":"Healthcare","detail":"Spun from Select Medical (SEM) on 2024-11-26"},{"ticker":"AMTM","name":"Amentum Holdings, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":6727731712,"sector":"Industrials","detail":"Spun from Jacobs Solutions (J) on 2024-09-30"},{"ticker":"SEG","name":"Seaport Entertainment Group Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":290602816,"sector":"Real Estate","detail":"Spun from Howard Hughes Holdings (HHH) on 2024-08-01"},{"ticker":"MRP","name":"Millrose Properties, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":5151088640,"sector":"Real Estate","detail":"Spun from Lennar (LEN) on 2025-02-07"},{"ticker":"SNDK","name":"Sandisk Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":135939022848,"sector":"Technology","detail":"Spun from Western Digital (WDC) on 2025-02-24"},{"ticker":"ANGI","name":"Angi Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":319314272,"sector":"Communication Services","detail":"Spun from IAC Inc. (IAC) on 2025-04-01"},{"ticker":"STRZ","name":"Starz Entertainment Corp.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":337298336,"sector":"Communication Services","detail":"Spun from Lionsgate (LION) on 2025-05-07"},{"ticker":"RAL","name":"Ralliant Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":5346996224,"sector":"Technology","detail":"Spun from Fortive (FTV) on 2025-06-30"},{"ticker":"AMRZ","name":"Amrize Ltd.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":31996598272,"sector":"Basic Materials","detail":"Spun from Holcim (HCMLY) on 2025-06-23"},{"ticker":"GLIBA","name":"GCI Liberty, Inc. (Series A)","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":7739736064,"sector":"Communication Services","detail":"Spun from Liberty Broadband (LBRDA) on 2025-07-14"},{"ticker":"SOLS","name":"Solstice Advanced Materials Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":12890300416,"sector":"Basic Materials","detail":"Spun from Honeywell (HON) on 2025-10-30"},{"ticker":"Q","name":"Qnity Electronics, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":28574410752,"sector":"Technology","detail":"Spun from DuPont de Nemours (DD) on 2025-11-01"},{"ticker":"MICC","name":"The Magnum Ice Cream Company N.V.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":8935164928,"sector":"Consumer Defensive","detail":"Spun from Unilever (UL) on 2025-12-08"},{"ticker":"VSNT","name":"Versant Media Group, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":5905405440,"sector":"Communication Services","detail":"Spun from Comcast (CMCSA) on 2026-01-05"},{"ticker":"RNA","name":"Atrium Therapeutics, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":223570672,"sector":"Healthcare","detail":"Spun from Avidity Biosciences (acquired by Novartis) on 2026-02-26"},{"ticker":"VGNT","name":"Versigent PLC","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2459975168,"sector":"Consumer Cyclical","detail":"Spun from Aptiv PLC (APTV) on 2026-04-01"},{"ticker":"GEV","name":"GE Vernova Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":270270676992,"sector":"Industrials","detail":"Spun from General Electric (GE) on 2024-04-02"},{"ticker":"ATMU","name":"Atmus Filtration Technologies, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":5176398848,"sector":"Consumer Cyclical","detail":"Spun from Cummins (CMI) on 2024-03-18"},{"ticker":"INBX","name":"Inhibrx Biosciences, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":1288778880,"sector":"Healthcare","detail":"Spun from Inhibrx, Inc. (acquired by Sanofi) on 2024-05-30"},{"ticker":"SUNS","name":"Sunrise Realty Trust, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":105453320,"sector":"Real Estate","detail":"Spun from AFC Gamma (AFCG) on 2024-07-09"},{"ticker":"SIRI","name":"Sirius XM Holdings Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":8575302656,"sector":"Communication Services","detail":"Spun from Liberty Media (LSXMA/K) on 2024-09-09"},{"ticker":"BNT","name":"Brookfield Wealth Solutions Ltd.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":12865397760,"sector":"Financial Services","detail":"Spun from Brookfield Corporation (BN) on 2024-09-06"},{"ticker":"SFD","name":"Smithfield Foods, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":11410840576,"sector":"Consumer Defensive","detail":"Spun from WH Group (Hong Kong, WHGLY) on 2025-01-28"},{"ticker":"RHLD","name":"Resolute Holdings Management, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":1255722496,"sector":"Industrials","detail":"Spun from CompoSecure (CMPO) on 2025-02-28"},{"ticker":"EHLD","name":"EuroHoldings Ltd.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":23180740,"sector":"Industrials","detail":"Spun from Euroseas Ltd. (ESEA) on 2025-03-18"},{"ticker":"RBNE","name":"Robin Energy Ltd.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":14538532,"sector":"Energy","detail":"Spun from Toro Corp. (TORO) on 2025-04-14"},{"ticker":"CMDB","name":"Costamare Bulkers Holdings Limited","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":419443744,"sector":"Industrials","detail":"Spun from Costamare Inc. (CMRE) on 2025-05-07"},{"ticker":"RUBI","name":"Rubico Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2665896,"sector":"Industrials","detail":"Spun from TOP Ships Inc. (TOPS) on 2025-08-04"},{"ticker":"CPKRF","name":"Canada Packers Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":600000000,"sector":null,"detail":"Spun from Maple Leaf Foods (MLFNF) on 2025-10-01"},{"ticker":"AMVOY","name":"AUMOVIO SE (ADR)","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":4300000000,"sector":null,"detail":"Spun from Continental AG (CTTAY) on 2025-09-18"},{"ticker":"LLYVA","name":"Liberty Live Holdings, Inc. (Series A)","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":8834445312,"sector":"Communication Services","detail":"Spun from Liberty Media Corporation (FWONA) on 2025-12-15"},{"ticker":"JAN","name":"Janus Living Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":6775874560,"sector":"Real Estate","detail":"Spun from Healthpeak Properties (DOC) on 2026-03-20"},{"ticker":"TWNP","name":"Twin Hospitality Group Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":4100000,"sector":null,"detail":"Spun from FAT Brands (FAT) on 2025-01-30"},{"ticker":"GRAL","name":"Grail, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2121157376,"sector":"Healthcare","detail":"Spun from Illumina (ILMN) on 2024-06-25"},{"ticker":"SOLV","name":"Solventum Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":12227787776,"sector":"Healthcare","detail":"Spun from 3M Company (MMM) on 2024-04-01"},{"ticker":"WS","name":"Worthington Steel, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":1747737984,"sector":"Basic Materials","detail":"Spun from Worthington Enterprises (WOR) on 2023-12-01"},{"ticker":"CXT","name":"Crane NXT, Co.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2669730304,"sector":"Industrials","detail":"Spun from Crane Holdings (renamed; sister Crane Company) on 2023-04-04"},{"ticker":"PHIN","name":"PHINIA Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":2773873152,"sector":"Consumer Cyclical","detail":"Spun from BorgWarner (BWA) on 2023-07-03"},{"ticker":"VLTO","name":"Veralto Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":22548789248,"sector":"Industrials","detail":"Spun from Danaher Corporation (DHR) on 2023-09-30"},{"ticker":"KLG","name":"WK Kellogg Co","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":1950000000,"sector":null,"detail":"Spun from Kellogg Company (now Kellanova, K) on 2023-10-02"},{"ticker":"BATRA","name":"Atlanta Braves Holdings, Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":3387946496,"sector":"Communication Services","detail":"Spun from Liberty Media Corporation (FWONA) on 2023-07-18"},{"ticker":"SBC","name":"SBC Medical Group Holdings Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":460570464,"sector":"Industrials","detail":"Spun from Pono Capital / SBC Medical Japan parent on 2024-09-25"},{"ticker":"SDZNY","name":"Sandoz Group AG (ADR)","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":37210226688,"sector":"Healthcare","detail":"Spun from Novartis AG (NVS) on 2023-10-04"},{"ticker":"KNF","name":"Knife River Corporation","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":5057903616,"sector":"Basic Materials","detail":"Spun from MDU Resources (MDU) on 2023-06-01"},{"ticker":"GEHC","name":"GE HealthCare Technologies Inc.","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":34066624512,"sector":"Healthcare","detail":"Spun from General Electric (GE) on 2023-01-04"},{"ticker":"K","name":"Kellanova","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":28300000000,"sector":null,"detail":"Spun from Kellogg Company (renamed; sister WK Kellogg) on 2023-10-02"},{"ticker":"BATRK","name":"Atlanta Braves Holdings, Inc. (Series C)","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":3116759040,"sector":"Communication Services","detail":"Spun from Liberty Media Corporation (FWONA) on 2023-07-18"},{"ticker":"LLYVK","name":"Liberty Live Holdings, Inc. (Series C)","bucket":"Recent Spinoffs","category":"spinoffs","tierName":"","marketCap":8874164224,"sector":"Communication Services","detail":"Spun from Liberty Media Corporation (FWONA) on 2025-12-15"},{"ticker":"TRIP","name":"Tripadvisor, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":1331586048,"sector":"Consumer Cyclical","detail":"Starboard Value \u00b7 9.4% stake"},{"ticker":"BILL","name":"BILL Holdings, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":3887080960,"sector":"Technology","detail":"Starboard Value \u00b7 8.5% stake"},{"ticker":"FUN","name":"Six Flags Entertainment Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":2036691200,"sector":"Consumer Cyclical","detail":"JANA Partners (with Travis Kelce, Glenn Murphy, Dave Habiger) \u00b7 9.0% stake"},{"ticker":"FI","name":"Fiserv, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":34209718272,"sector":null,"detail":"JANA Partners \u00b7 1.0% stake"},{"ticker":"AVTR","name":"Avantor, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":5811117056,"sector":"Healthcare","detail":"Engine Capital \u00b7 3.0% stake"},{"ticker":"MNRO","name":"Monro, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":536451360,"sector":"Consumer Cyclical","detail":"Carl Icahn \u00b7 14.79% stake"},{"ticker":"WEX","name":"WEX Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":5952891904,"sector":"Technology","detail":"Impactive Capital \u00b7 4.9% stake"},{"ticker":"RIOT","name":"Riot Platforms, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":6865969664,"sector":"Financial Services","detail":"Starboard Value (and D.E. Shaw) \u00b7 3.12% stake"},{"ticker":"WBD","name":"Warner Bros. Discovery, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":68860928000,"sector":"Communication Services","detail":"Ancora Holdings Group \u00b7 0.5% stake"},{"ticker":"FR","name":"First Industrial Realty Trust, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":8711624704,"sector":"Real Estate","detail":"Land & Buildings Investment Management (Jonathan Litt) \u00b7 1.5% stake"},{"ticker":"NHI","name":"National Health Investors, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":4150544896,"sector":"Real Estate","detail":"Land & Buildings Investment Management (Jonathan Litt) \u00b7 1.5% stake"},{"ticker":"PFGC","name":"Performance Food Group Company","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":14688754688,"sector":"Consumer Defensive","detail":"Sachem Head Capital Management (Scott Ferguson) \u00b7 2.1% stake"},{"ticker":"LW","name":"Lamb Weston Holdings, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":6224596480,"sector":"Consumer Defensive","detail":"JANA Partners (with Continental Grain) \u00b7 5.0% stake"},{"ticker":"FOXF","name":"Fox Factory Holding Corp.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":728369152,"sector":"Consumer Cyclical","detail":"Engine Capital (with Alan Bazaar) \u00b7 2.5% stake"},{"ticker":"ATGE","name":"Adtalem Global Education Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":3579815168,"sector":"Consumer Defensive","detail":"Engine Capital + Hawk Ridge Partners \u00b7 1.0% stake"},{"ticker":"MATW","name":"Matthews International Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":857212288,"sector":"Industrials","detail":"Barington Capital (James Mitarotonda) \u00b7 3.2% stake"},{"ticker":"UTI","name":"Universal Technical Institute, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":2104534272,"sector":"Consumer Defensive","detail":"Coliseum Capital Management (Christopher Shackelton) \u00b7 7.3% stake"},{"ticker":"WSR","name":"Whitestone REIT","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":985949120,"sector":"Real Estate","detail":"James C. Mastandrea (former CEO/Chairman) \u00b7 2.3% stake"},{"ticker":"LYFT","name":"Lyft, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":5951708672,"sector":"Technology","detail":"Engine Capital \u00b7 1.0% stake"},{"ticker":"VFC","name":"V.F. Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":8216529920,"sector":"Consumer Cyclical","detail":"Engaged Capital \u00b7 1.34% stake"},{"ticker":"HON","name":"Honeywell International Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":147989692416,"sector":"Industrials","detail":"Elliott Investment Management \u00b7 2.0% stake"},{"ticker":"PSX","name":"Phillips 66","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":62701645824,"sector":"Energy","detail":"Elliott Investment Management \u00b7 4.5% stake"},{"ticker":"PEP","name":"PepsiCo, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":215525572608,"sector":"Consumer Defensive","detail":"Elliott Investment Management \u00b7 1.7% stake"},{"ticker":"HPE","name":"Hewlett Packard Enterprise Company","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":35133698048,"sector":"Technology","detail":"Elliott Investment Management \u00b7 1.4% stake"},{"ticker":"PINS","name":"Pinterest, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":12893299712,"sector":"Communication Services","detail":"Elliott Investment Management \u00b7 9.0% stake"},{"ticker":"EQIX","name":"Equinix, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":107363500032,"sector":"Real Estate","detail":"Elliott Investment Management \u00b7 0.5% stake"},{"ticker":"NCLH","name":"Norwegian Cruise Line Holdings Ltd.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":9561903104,"sector":"Consumer Cyclical","detail":"Elliott Investment Management \u00b7 10.0% stake"},{"ticker":"KVUE","name":"Kenvue Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":33809727488,"sector":"Consumer Defensive","detail":"Starboard Value (Jeff Smith) \u00b7 1.0% stake"},{"ticker":"PFE","name":"Pfizer Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":156771090432,"sector":"Healthcare","detail":"Starboard Value (Jeff Smith) \u00b7 0.5% stake"},{"ticker":"KDP","name":"Keurig Dr Pepper Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":36045414400,"sector":"Consumer Defensive","detail":"Starboard Value (Jeff Smith) \u00b7 1.0% stake"},{"ticker":"ALGN","name":"Align Technology, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":13612295168,"sector":"Healthcare","detail":"Elliott Investment Management \u00b7 1.5% stake"},{"ticker":"SOLV","name":"Solventum Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":12227787776,"sector":"Healthcare","detail":"Trian Partners (Nelson Peltz) \u00b7 5.0% stake"},{"ticker":"JHG","name":"Janus Henderson Group plc","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":7944138752,"sector":"Financial Services","detail":"Trian Fund Management \u00b7 20.6% stake"},{"ticker":"CVS","name":"CVS Health Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":99068018688,"sector":"Healthcare","detail":"Glenview Capital (Larry Robbins) \u00b7 0.7% stake"},{"ticker":"COO","name":"The Cooper Companies, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":13669713920,"sector":"Healthcare","detail":"Browning West LP \u00b7 4.0% stake"},{"ticker":"TFX","name":"Teleflex Incorporated","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":5824439296,"sector":"Healthcare","detail":"Irenic Capital Management \u00b7 2.0% stake"},{"ticker":"SNAP","name":"Snap Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":10184380416,"sector":"Communication Services","detail":"Irenic Capital Management \u00b7 2.5% stake"},{"ticker":"CSGP","name":"CoStar Group, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":16834241536,"sector":"Real Estate","detail":"D. E. Shaw Group \u00b7 1.5% stake"},{"ticker":"EEFT","name":"Euronet Worldwide, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":3120766208,"sector":"Technology","detail":"Voss Capital \u00b7 4.2% stake"},{"ticker":"SGRY","name":"Surgery Partners, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":1811877760,"sector":"Healthcare","detail":"Ortelius Advisors \u00b7 2.0% stake"},{"ticker":"RGR","name":"Sturm, Ruger & Company, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":673008896,"sector":"Industrials","detail":"Beretta Holding S.A. \u00b7 9.95% stake"},{"ticker":"RPAY","name":"Repay Holdings Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":359443424,"sector":"Technology","detail":"Veradace Partners \u00b7 8.4% stake"},{"ticker":"OPRT","name":"Oportun Financial Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":261661584,"sector":"Financial Services","detail":"Bradley Radoff & Joshua Schechter \u00b7 9.9% stake"},{"ticker":"CVEO","name":"Civeo Corporation","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":330479968,"sector":"Consumer Cyclical","detail":"Engine Capital \u00b7 9.8% stake"},{"ticker":"ECAT","name":"BlackRock ESG Capital Allocation Term Trust","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":1455221248,"sector":"Financial Services","detail":"Saba Capital Management (Boaz Weinstein) \u00b7 22.57% stake"},{"ticker":"BCAT","name":"BlackRock Capital Allocation Term Trust","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":1550674048,"sector":"Financial Services","detail":"Saba Capital Management (Boaz Weinstein) \u00b7 5.11% stake"},{"ticker":"BSTZ","name":"BlackRock Science and Technology Term Trust","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":1716541440,"sector":"Financial Services","detail":"Saba Capital Management (Boaz Weinstein) \u00b7 7.94% stake"},{"ticker":"HFRO","name":"Highland Opportunities and Income Fund","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":336760704,"sector":"Financial Services","detail":"Saba Capital Management (Boaz Weinstein) \u00b7 9.4% stake"},{"ticker":"MXF","name":"The Mexico Fund, Inc.","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":315366848,"sector":"Financial Services","detail":"Saba Capital Management (Boaz Weinstein) \u00b7 8.35% stake"},{"ticker":"BMEZ","name":"BlackRock Health Sciences Term Trust","bucket":"Active Activist Campaigns","category":"activists","tierName":"","marketCap":914395520,"sector":"Financial Services","detail":"Saba Capital Management (Boaz Weinstein)"},{"ticker":"EXOSF","name":"Exor N.V. (Agnelli family holding)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":25500000000,"sector":null,"detail":"53% NAV discount"},{"ticker":"VIVHY","name":"Vivendi SE (post-spin remaining stub) -- ADR","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":2251348736,"sector":"Communication Services","detail":"50% NAV discount"},{"ticker":"CNNE","name":"Cannae Holdings, Inc. (Bill Foley vehicle)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":676219840,"sector":"Consumer Cyclical","detail":"46% NAV discount"},{"ticker":"IAC","name":"IAC Inc.","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":3411637504,"sector":"Communication Services","detail":"41% NAV discount"},{"ticker":"L","name":"Loews Corporation (Tisch family)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":22943987712,"sector":"Financial Services","detail":"23% NAV discount"},{"ticker":"BN","name":"Brookfield Corporation","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":105366044672,"sector":"Financial Services","detail":"26% NAV discount"},{"ticker":"LBTYK","name":"Liberty Global Ltd.","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":4083999744,"sector":"Communication Services","detail":"53% NAV discount"},{"ticker":"LILAK","name":"Liberty Latin America Ltd.","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":1756859392,"sector":"Communication Services","detail":"45% NAV discount"},{"ticker":"LLYVK","name":"Liberty Live Holdings, Inc. (Liberty Live Group)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":8874164224,"sector":"Communication Services","detail":"26% NAV discount"},{"ticker":"BATRK","name":"Atlanta Braves Holdings, Inc. (Series C)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":3116759040,"sector":"Communication Services","detail":"27% NAV discount"},{"ticker":"HHH","name":"Howard Hughes Holdings Inc.","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":3932420608,"sector":"Real Estate","detail":"31% NAV discount"},{"ticker":"PSHZF","name":"Pershing Square Holdings, Ltd.","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":12832187392,"sector":null,"detail":"24% NAV discount"},{"ticker":"NL","name":"NL Industries, Inc. (Harold Simmons / Contran)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":285847008,"sector":"Industrials","detail":"45% NAV discount"},{"ticker":"GLPG","name":"Galapagos NV","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":1966424192,"sector":"Healthcare","detail":"43% NAV discount"},{"ticker":"HUYA","name":"HUYA Inc. (Tencent-controlled Chinese game streamer)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":710835904,"sector":"Communication Services","detail":"21% NAV discount"},{"ticker":"MSGS","name":"Madison Square Garden Sports Corp. (Dolan family)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":8087776768,"sector":"Communication Services","detail":"31% NAV discount"},{"ticker":"NWSA","name":"News Corporation (Murdoch family - Class A)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":14987316224,"sector":"Communication Services","detail":"34% NAV discount"},{"ticker":"REINY","name":"Reinet Investments S.C.A. (Johann Rupert vehicle)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":5200000000,"sector":null,"detail":"35% NAV discount"},{"ticker":"BOIVF","name":"Bollor\u00e9 SE (Vincent Bollor\u00e9 family)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":16774291456,"sector":"Communication Services","detail":"40% NAV discount"},{"ticker":"PROSY","name":"Prosus N.V. (Naspers tech holding)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":111814385664,"sector":"Consumer Cyclical","detail":"38% NAV discount"},{"ticker":"GBLBF","name":"Groupe Bruxelles Lambert (Fr\u00e8re/Desmarais families)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":11864904704,"sector":"Financial Services","detail":"31% NAV discount"},{"ticker":"SFTBF","name":"Sofina S.A. (Bo\u00ebl family Belgian holdco)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":162015854592,"sector":"Communication Services","detail":"25% NAV discount"},{"ticker":"CODI","name":"Compass Diversified Holdings (Berkshire-style mid-market)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":790730048,"sector":"Industrials","detail":"53% NAV discount"},{"ticker":"BOC","name":"Boston Omaha Corporation (Buffett grandnephew)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":385304576,"sector":"Industrials","detail":"30% NAV discount"},{"ticker":"SPNT","name":"SiriusPoint Ltd. (Dan Loeb / Third Point reinsurer)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":2635189504,"sector":"Financial Services","detail":"26% NAV discount"},{"ticker":"GLRE","name":"Greenlight Capital Re Ltd. (David Einhorn vehicle)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":618501632,"sector":"Financial Services","detail":"27% NAV discount"},{"ticker":"TRC","name":"Tejon Ranch Co. (270,000-acre California land bank)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":535493952,"sector":"Industrials","detail":"39% NAV discount"},{"ticker":"ITOCY","name":"ITOCHU Corporation (Japanese sogo shosha) -- ADR","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":88421597184,"sector":"Industrials","detail":"27% NAV discount"},{"ticker":"MSBHF","name":"Mitsubishi Corporation (Buffett's largest sogo shosha)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":116186161152,"sector":"Industrials","detail":"25% NAV discount"},{"ticker":"POW.TO","name":"Power Corporation of Canada (Desmarais family)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":46670262272,"sector":"Financial Services","detail":"20% NAV discount"},{"ticker":"ONEX.TO","name":"Onex Corporation (Gerry Schwartz vehicle)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":8881271808,"sector":"Financial Services","detail":"27% NAV discount"},{"ticker":"SEB","name":"Seaboard Corporation (Bresky family)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":5305504256,"sector":"Industrials","detail":"48% NAV discount"},{"ticker":"DNDCF","name":"Dundee Corporation (Goodman family mining holdco)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":95000000,"sector":null,"detail":"65% NAV discount"},{"ticker":"WED.TO","name":"Westaim Corporation (HG Vora-backed financial services holdco)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":530000000,"sector":null,"detail":"30% NAV discount"},{"ticker":"FWONK","name":"Liberty Media Corp - Formula One Group (Series C)","bucket":"Holding Company / NAV Discounts","category":"holdcos","tierName":"","marketCap":22662959104,"sector":"Communication Services","detail":"24% NAV discount"},{"ticker":"KVUE","name":"Kenvue Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":33809727488,"sector":"Consumer Defensive","detail":"Kimberly-Clark Corporation (KMB) \u00b7 19.31% spread \u00b7 close 2026-Q3"},{"ticker":"EA","name":"Electronic Arts Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":51009216512,"sector":"Communication Services","detail":"PIF / Silver Lake / Affinity Partners consortium (private) \u00b7 3.03% spread \u00b7 close 2026-Q2"},{"ticker":"PEN","name":"Penumbra, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":13033794560,"sector":"Healthcare","detail":"Boston Scientific Corporation (BSX) \u00b7 12.61% spread \u00b7 close 2026-Q4"},{"ticker":"AES","name":"The AES Corporation","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":10318146560,"sector":"Utilities","detail":"Global Infrastructure Partners (BlackRock) / EQT / CalPERS / QIA \u00b7 3.66% spread \u00b7 close 2027-Q1"},{"ticker":"TXNM","name":"TXNM Energy, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":6423092736,"sector":"Utilities","detail":"Blackstone Infrastructure Partners \u00b7 3.87% spread \u00b7 close 2026-Q3"},{"ticker":"WBD","name":"Warner Bros. Discovery, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":68860928000,"sector":"Communication Services","detail":"Paramount Skydance Corporation (PSKY) \u00b7 12.85% spread \u00b7 close 2026-Q3"},{"ticker":"GTLS","name":"Chart Industries, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":9970403328,"sector":"Industrials","detail":"Baker Hughes Company (BKR) \u00b7 0.82% spread \u00b7 close 2026-Q2"},{"ticker":"CTRA","name":"Coterra Energy Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":23456403456,"sector":"Energy","detail":"Devon Energy Corporation (DVN) \u00b7 0.23% spread \u00b7 close 2026-Q2"},{"ticker":"WBS","name":"Webster Financial Corporation","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":11829893120,"sector":"Financial Services","detail":"Banco Santander, S.A. (SAN) \u00b7 3.03% spread \u00b7 close 2026-Q4"},{"ticker":"AVNS","name":"Avanos Medical, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":1149118208,"sector":"Healthcare","detail":"American Industrial Partners (private) \u00b7 1.54% spread \u00b7 close 2026-Q4"},{"ticker":"TWO","name":"Two Harbors Investment Corp.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":1168080256,"sector":"Real Estate","detail":"CrossCountry Mortgage (private) \u00b7 -2.88% spread \u00b7 close 2026-Q4"},{"ticker":"OGN","name":"Organon & Co.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":2540680704,"sector":"Healthcare","detail":"Sun Pharmaceutical Industries / Gr\u00fcnenthal (binding bids only) \u00b7 22.95% spread \u00b7 close 2027-Q1"},{"ticker":"SBAC","name":"SBA Communications Corporation","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":23666765824,"sector":"Real Estate","detail":"KKR / Brookfield (rumored, no definitive) \u00b7 12.04% spread \u00b7 close 2027-Q2"},{"ticker":"CVLT","name":"Commvault Systems, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":4181908992,"sector":"Technology","detail":"Multiple PE bidders (no definitive) \u00b7 16.74% spread \u00b7 close 2026-Q4"},{"ticker":"CWAN","name":"Clearwater Analytics Holdings, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":7180582912,"sector":"Technology","detail":"Permira / Warburg Pincus / Francisco Partners / Temasek consortium \u00b7 1.83% spread \u00b7 close 2026-Q2"},{"ticker":"BHF","name":"Brighthouse Financial, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":3573974528,"sector":"Financial Services","detail":"Aquarian Capital LLC (private) \u00b7 12.5% spread \u00b7 close 2026-Q4"},{"ticker":"JHG","name":"Janus Henderson Group plc","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":7944138752,"sector":"Financial Services","detail":"Trian Fund Management / General Catalyst \u00b7 0.85% spread \u00b7 close 2026-Q3"},{"ticker":"CCO","name":"Clear Channel Outdoor Holdings, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":1186401536,"sector":"Communication Services","detail":"Mubadala Capital / TWG Global \u00b7 2.1% spread \u00b7 close 2026-Q3"},{"ticker":"APLS","name":"Apellis Pharmaceuticals, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":5228722688,"sector":"Healthcare","detail":"Biogen Inc. (BIIB) \u00b7 0.24% spread \u00b7 close 2026-Q3"},{"ticker":"CNTA","name":"Centessa Pharmaceuticals plc","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":6133898752,"sector":"Healthcare","detail":"Eli Lilly and Company (LLY) \u00b7 -4.18% spread \u00b7 close 2026-Q3"},{"ticker":"WSR","name":"Whitestone REIT","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":985949120,"sector":"Real Estate","detail":"Ares Management Corporation (ARES) \u00b7 0.26% spread \u00b7 close 2026-Q3"},{"ticker":"BLX.TO","name":"Boralex Inc. (Canadian-listed; cross-border arb candidate)","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":3764956416,"sector":"Utilities","detail":"Brookfield (BAM) / La Caisse \u00b7 1.66% spread \u00b7 close 2026-Q4"},{"ticker":"KW","name":"Kennedy Wilson Holdings, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":1507878528,"sector":"Real Estate","detail":"Fairfax Financial Holdings / KW Management Group \u00b7 0.09% spread \u00b7 close 2026-Q2"},{"ticker":"FFIC","name":"Flushing Financial Corporation","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":551964352,"sector":"Financial Services","detail":"OceanFirst Financial Corp. (OCFC) \u00b7 0.31% spread \u00b7 close 2026-Q2"},{"ticker":"EQH","name":"Equitable Holdings, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":11742375936,"sector":"Financial Services","detail":"Corebridge Financial Inc. (CRBG) - all-stock combination (merger of equals) \u00b7 -0.29% spread \u00b7 close 2026-Q4"},{"ticker":"CRBG","name":"Corebridge Financial Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":12885097472,"sector":"Financial Services","detail":"Equitable Holdings (EQH) - all-stock combination \u00b7 0.04% spread \u00b7 close 2026-Q4"},{"ticker":"HCBN","name":"HCB Financial Corp.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":72420000,"sector":"Financial Services","detail":"Independent Bank Corporation (IBCP) \u00b7 2.55% spread \u00b7 close 2026-Q3"},{"ticker":"LNKB","name":"LINKBANCORP, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":334960288,"sector":"Financial Services","detail":"Burke & Herbert Financial Services Corp. (BHRB) \u00b7 close 2026-Q2"},{"ticker":"ONTF","name":"ON24, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":348249024,"sector":"Technology","detail":"Cvent (private, owned by Blackstone) \u00b7 close 2026-Q2"},{"ticker":"PLTK","name":"Playtika Holding Corp.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":1373190144,"sector":"Communication Services","detail":"TBD (special committee formed) \u00b7 38.12% spread \u00b7 close 2026-Q4"},{"ticker":"RPAY","name":"Repay Holdings Corporation","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":359443424,"sector":"Technology","detail":"Forager Capital (proposal, not definitive) \u00b7 16.79% spread \u00b7 close 2026-Q4"},{"ticker":"PATK","name":"Patrick Industries / LCI Industries (proposed merger of equals)","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":3553788160,"sector":"Consumer Cyclical","detail":"LCI Industries (LCII) - merger of equals discussions \u00b7 7.55% spread \u00b7 close 2026-Q4"},{"ticker":"GSAT","name":"Globalstar, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":10289861632,"sector":"Communication Services","detail":"Amazon.com, Inc. (AMZN) \u00b7 12.47% spread \u00b7 close 2027-Q1"},{"ticker":"NSC","name":"Norfolk Southern Corporation","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":67906093056,"sector":"Industrials","detail":"Union Pacific Corporation (UNP) \u00b7 5.83% spread \u00b7 close 2027-Q2"},{"ticker":"AAL","name":"American Airlines / United Airlines (early discussions)","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":8438692352,"sector":"Industrials","detail":"United Airlines Holdings (UAL) \u00b7 40.85% spread \u00b7 close 2027-Q4"},{"ticker":"CMRC","name":"Commerce.com, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":242009728,"sector":"Technology","detail":"Rezolve AI (RZLV) - open letter offer, not definitive \u00b7 36.05% spread \u00b7 close 2026-Q4"},{"ticker":"FOLD","name":"Amicus Therapeutics, Inc.","bucket":"M&A Arbitrage","category":"ma_arb","tierName":"","marketCap":4540450304,"sector":"Healthcare","detail":"BioMarin Pharmaceutical Inc. (BMRN) \u00b7 0.28% spread \u00b7 close 2026-Q2"},{"ticker":"WBD","name":"Warner Bros. Discovery, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":68860928000,"sector":"Communication Services","detail":"Paramount Skydance Corporation \u00b7 Going-Private (Cash Merger) \u00b7 close 2026-Q3"},{"ticker":"JHG","name":"Janus Henderson Group plc","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":7944138752,"sector":"Financial Services","detail":"Trian Fund Management & General Catalyst \u00b7 Take-Private LBO \u00b7 close 2026-Q2"},{"ticker":"TXNM","name":"TXNM Energy, Inc. (PNM/TNMP parent)","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":6423092736,"sector":"Utilities","detail":"Blackstone Infrastructure \u00b7 Take-Private LBO (Regulated Utility) \u00b7 close 2026-H2"},{"ticker":"EA","name":"Electronic Arts Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":51009216512,"sector":"Communication Services","detail":"Silver Lake / Saudi PIF / Affinity Partners \u00b7 Take-Private LBO \u00b7 close 2026-Q2"},{"ticker":"CWAN","name":"Clearwater Analytics Holdings, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":7180582912,"sector":"Technology","detail":"Permira & Warburg Pincus (w/ Francisco Partners, Temasek) \u00b7 Take-Private LBO \u00b7 close 2026-H1"},{"ticker":"AES","name":"The AES Corporation","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":10318146560,"sector":"Utilities","detail":"Global Infrastructure Partners (BlackRock) & EQT Infrastructure VI (w/ CalPERS, QIA) \u00b7 Take-Private LBO (Utility/IPP) \u00b7 close 2026-Q4 / 2027-Q1"},{"ticker":"OS","name":"OneStream, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":5900146688,"sector":"Technology","detail":"Hg Capital (w/ General Atlantic, Tidemark) \u00b7 Take-Private LBO \u00b7 close 2026-H1"},{"ticker":"SEM","name":"Select Medical Holdings Corporation","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":2032659968,"sector":"Healthcare","detail":"Robert Ortenzio / Martin Jackson / Welsh Carson Anderson & Stowe \u00b7 Going-Private (MBO with PE) \u00b7 close 2026-mid"},{"ticker":"MCW","name":"Mister Car Wash, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":2302638336,"sector":"Consumer Cyclical","detail":"Leonard Green & Partners (LGP) \u00b7 Take-Private LBO \u00b7 close 2026-H1"},{"ticker":"EWCZ","name":"European Wax Center, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":319465632,"sector":"Consumer Defensive","detail":"General Atlantic \u00b7 Going-Private (Sponsor takeout) \u00b7 close 2026-mid"},{"ticker":"VRE","name":"Veris Residential, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":1934568064,"sector":"Real Estate","detail":"Affinius Capital w/ Vista Hill Partners \u00b7 Take-Private (REIT) \u00b7 close 2026-Q2"},{"ticker":"KORE","name":"KORE Group Holdings, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":160744608,"sector":"Communication Services","detail":"Searchlight Capital Partners & Abry Partners \u00b7 Take-Private LBO \u00b7 close 2026-Q2/Q3"},{"ticker":"FORA","name":"Forian Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":67169784,"sector":"Healthcare","detail":"Max Wygod consortium (CEO-led) \u00b7 Going-Private (CEO-led tender + merger) \u00b7 close 2026-Q2"},{"ticker":"FONR","name":"FONAR Corporation","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":118452384,"sector":"Healthcare","detail":"Timothy Damadian-led acquisition group \u00b7 Going-Private (CEO-led MBO) \u00b7 close 2026-Q3"},{"ticker":"APLS","name":"Apellis Pharmaceuticals, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":5228722688,"sector":"Healthcare","detail":"Biogen Inc. \u00b7 Tender Offer + Merger (with CVR) \u00b7 close 2026-Q2"},{"ticker":"DAWN","name":"Day One Biopharmaceuticals, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":2217801216,"sector":"Healthcare","detail":"Servier Pharmaceuticals LLC \u00b7 Tender Offer + Merger \u00b7 close 2026-Q2"},{"ticker":"KZR","name":"Kezar Life Sciences, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":54033292,"sector":"Healthcare","detail":"Aurinia Pharmaceuticals Inc. \u00b7 Tender Offer + Merger (with CVR) \u00b7 close 2026-Q2"},{"ticker":"TERN","name":"Terns Pharmaceuticals, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":6076515328,"sector":"Healthcare","detail":"Merck & Co., Inc. \u00b7 Tender Offer + Merger \u00b7 close 2026-Q2"},{"ticker":"GLDD","name":"Great Lakes Dredge & Dock Corporation","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":1135273600,"sector":"Industrials","detail":"Saltchuk Resources, Inc. \u00b7 Tender Offer + Merger (Take-Private) \u00b7 close 2026-Q2"},{"ticker":"ULY","name":"Urgent.ly Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":11787284,"sector":"Technology","detail":"Agero, Inc. (subsidiary Medford Hawk, Inc.) \u00b7 Tender Offer + Merger (Take-Private) \u00b7 close 2026-05"},{"ticker":"ACLX","name":"Arcellx, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":6728102400,"sector":"Healthcare","detail":"Gilead Sciences, Inc. \u00b7 Tender Offer + Merger (with CVR) \u00b7 close 2026-Q2"},{"ticker":"SLNO","name":"Soleno Therapeutics, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":2729683712,"sector":"Healthcare","detail":"Neurocrine Biosciences \u00b7 Tender Offer + Merger \u00b7 close 2026-Q2"},{"ticker":"APTOF","name":"Aptose Biosciences Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":4415702,"sector":"Healthcare","detail":"Hanmi Pharmaceutical Co. Ltd. (HS North America) \u00b7 Take-Private (Plan of Arrangement, Alberta) \u00b7 close 2026-04"},{"ticker":"BLX","name":"Boralex Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":3764956416,"sector":"Utilities","detail":"Brookfield Asset Management & La Caisse \u00b7 Take-Private (Plan of Arrangement, all-cash) \u00b7 close 2026-Q4"},{"ticker":"GBCS","name":"Selectis Health, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":13495064,"sector":"Healthcare","detail":"Black Pearl Equities, LLC \u00b7 Hostile Tender Offer (SC TO-T) \u00b7 close 2026-05"},{"ticker":"SCHL","name":"Scholastic Corporation","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":1002911424,"sector":"Communication Services","detail":"Scholastic (self-tender / share buyback) \u00b7 Modified Dutch Auction (SC TO-I) \u00b7 close 2026-04-20"},{"ticker":"WIX","name":"Wix.com Ltd.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":3979357696,"sector":"Technology","detail":"Wix.com (self-tender) \u00b7 Modified Dutch Auction (SC TO-I) \u2014 COMPLETED \u00b7 close 2026-04-01"},{"ticker":"YEXT","name":"Yext, Inc.","bucket":"PE Take-Privates & Tender Offers","category":"take_privates","tierName":"","marketCap":457610432,"sector":"Technology","detail":"Yext (self-tender) \u00b7 Modified Dutch Auction (SC TO-I) \u2014 COMPLETED \u00b7 close 2026-03-18"},{"ticker":"WW","name":"WW International, Inc. (WeightWatchers)","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":109761216,"sector":"Healthcare","detail":"Emerged 2025-06-24"},{"ticker":"VRM","name":"Vroom, Inc.","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":80329704,"sector":"Financial Services","detail":"Emerged 2025-01-14"},{"ticker":"WOLF","name":"Wolfspeed, Inc.","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":1235535616,"sector":"Technology","detail":"Emerged 2025-09-29"},{"ticker":"FLYYQ","name":"Spirit Aviation Holdings, Inc. (Spirit Airlines)","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":6088975,"sector":"Industrials","detail":"Emerged 2025-03-12"},{"ticker":"MCKPF","name":"Mallinckrodt plc / Keenova Therapeutics (post-Endo merger)","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":4520000,"sector":null,"detail":"Emerged 2023-11-14"},{"ticker":"PARH","name":"Par Health (spinoff from Mallinckrodt-Endo)","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":null,"sector":null,"detail":"Emerged 2025-11-10"},{"ticker":"LUMN","name":"Lumen Technologies, Inc.","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":8828457984,"sector":"Communication Services","detail":"Emerged 2024-03-31"},{"ticker":"DBD","name":"Diebold Nixdorf, Incorporated","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":3122310656,"sector":"Technology","detail":"Emerged 2023-08-11"},{"ticker":"HTZ","name":"Hertz Global Holdings, Inc.","bucket":"Post-Bankruptcy Emergences","category":"post_bankruptcy","tierName":"","marketCap":2340844032,"sector":"Industrials","detail":"Emerged 2021-06-30"},{"ticker":"ECAT","name":"BlackRock ESG Capital Allocation Term Trust","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":1455221248,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 5.4% discount"},{"ticker":"BSTZ","name":"BlackRock Science and Technology Term Trust","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":1716541440,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 9.1% discount"},{"ticker":"BCAT","name":"BlackRock Capital Allocation Term Trust","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":1550674048,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 -1.6% discount"},{"ticker":"MXF","name":"The Mexico Fund, Inc.","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":315366848,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 14.95% discount"},{"ticker":"ASA","name":"ASA Gold and Precious Metals Limited","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":1312150784,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 10.0% discount"},{"ticker":"HFRO","name":"Highland Opportunities and Income Fund (NexPoint)","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":336760704,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 54.9% discount"},{"ticker":"PEO","name":"Adams Natural Resources Fund, Inc.","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":704159168,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 18.1% discount"},{"ticker":"BMEZ","name":"BlackRock Health Sciences Term Trust","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":914395520,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 9.7% discount"},{"ticker":"BIGZ","name":"BlackRock Innovation and Growth Term Trust","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":null,"sector":null,"detail":"Saba Capital (Boaz Weinstein)"},{"ticker":"MPA","name":"BlackRock MuniYield Pennsylvania Quality Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":146201328,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 9.7% discount"},{"ticker":"DSM","name":"BNY Mellon Strategic Municipal Bond Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":302009312,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 6.3% discount"},{"ticker":"LEO","name":"BNY Mellon Strategic Municipals, Inc.","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":410440480,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 7.5% discount"},{"ticker":"DMB","name":"BNY Mellon Municipal Bond Infrastructure Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":202097568,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 9.3% discount"},{"ticker":"NFJ","name":"Virtus Dividend, Interest & Premium Strategy Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":1277369984,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 10.5% discount"},{"ticker":"IIF","name":"Morgan Stanley India Investment Fund, Inc.","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":219395728,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 10.9% discount"},{"ticker":"ADX","name":"Adams Diversified Equity Fund, Inc.","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":2938392064,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 11.5% discount"},{"ticker":"BFZ","name":"BlackRock California Municipal Income Trust","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":null,"sector":null,"detail":"Saba Capital (Boaz Weinstein) \u00b7 11.6% discount"},{"ticker":"NXJ","name":"Nuveen New Jersey Quality Municipal Income Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":512113056,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 10.3% discount"},{"ticker":"NQP","name":"Nuveen Pennsylvania Quality Municipal Income Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":449963200,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 9.4% discount"},{"ticker":"PCF","name":"High Income Securities Fund (formerly Putnam High Income Securities)","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":107058088,"sector":"Financial Services","detail":"Bulldog Investors (Phillip Goldstein) \u00b7 10.6% discount"},{"ticker":"SWZ","name":"Total Return Securities Fund (formerly Swiss Helvetia)","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":103201088,"sector":null,"detail":"Bulldog Investors (Phillip Goldstein) \u00b7 12.5% discount"},{"ticker":"LGI","name":"Lazard Global Total Return & Income Fund, Inc.","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":229027808,"sector":"Financial Services","detail":"Bulldog Investors (Phillip Goldstein) \u00b7 11.3% discount"},{"ticker":"ASGI","name":"abrdn Global Infrastructure Income Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":774113280,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 -6.2% discount"},{"ticker":"AOD","name":"abrdn Total Dynamic Dividend Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":1076608768,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 4.2% discount"},{"ticker":"AGD","name":"abrdn Global Dynamic Dividend Fund","bucket":"Closed-End Fund Discount Activism","category":"cef_activism","tierName":"","marketCap":319954656,"sector":"Financial Services","detail":"Saba Capital (Boaz Weinstein) \u00b7 -6.9% discount"},{"ticker":"GAB","name":"Gabelli Equity Trust","bucket":"Misc Special Situations","category":"misc","tierName":"Rights Offering","marketCap":1808459136,"sector":"Financial Services","detail":"Rights Offering"},{"ticker":"HYT","name":"BlackRock Corporate High Yield Fund","bucket":"Misc Special Situations","category":"misc","tierName":"Rights Offering","marketCap":1408734592,"sector":"Financial Services","detail":"Rights Offering"},{"ticker":"TSI","name":"TCW Strategic Income Fund","bucket":"Misc Special Situations","category":"misc","tierName":"Rights Offering","marketCap":217901600,"sector":"Financial Services","detail":"Rights Offering"},{"ticker":"BUI","name":"BlackRock Utilities, Infrastructure & Power Opportunities Trust","bucket":"Misc Special Situations","category":"misc","tierName":"Rights Offering","marketCap":659655808,"sector":"Financial Services","detail":"Rights Offering"},{"ticker":"CRF","name":"Cornerstone Total Return Fund","bucket":"Misc Special Situations","category":"misc","tierName":"Rights Offering","marketCap":1177570304,"sector":"Financial Services","detail":"Rights Offering"},{"ticker":"AACB","name":"Artius II Acquisition Inc","bucket":"Misc Special Situations","category":"misc","tierName":"SPAC Liquidation","marketCap":286989760,"sector":"Financial Services","detail":"SPAC Liquidation"},{"ticker":"ATMC","name":"AlphaTime Acquisition Corp","bucket":"Misc Special Situations","category":"misc","tierName":"SPAC Liquidation","marketCap":75000000,"sector":null,"detail":"SPAC Liquidation"},{"ticker":"REEUF","name":"Cartesian Growth Corporation II","bucket":"Misc Special Situations","category":"misc","tierName":"SPAC Liquidation","marketCap":38000000,"sector":"Financial Services","detail":"SPAC Liquidation"},{"ticker":"DYNX","name":"Dynamix Corporation","bucket":"Misc Special Situations","category":"misc","tierName":"SPAC Liquidation","marketCap":60000000,"sector":null,"detail":"SPAC Liquidation"},{"ticker":"ASPC","name":"A SPAC III Acquisition Corp","bucket":"Misc Special Situations","category":"misc","tierName":"SPAC Liquidation","marketCap":25736778,"sector":"Financial Services","detail":"SPAC Liquidation"},{"ticker":"RDDT","name":"Reddit Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":31291660288,"sector":"Communication Services","detail":"Post-Lockup"},{"ticker":"VG","name":"Venture Global Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":28450238464,"sector":"Energy","detail":"Post-Lockup"},{"ticker":"CRWV","name":"CoreWeave Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":62498672640,"sector":"Technology","detail":"Post-Lockup"},{"ticker":"ALAB","name":"Astera Labs Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":29625833472,"sector":"Technology","detail":"Post-Lockup"},{"ticker":"NMAX","name":"Newsmax Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":897512256,"sector":"Communication Services","detail":"Post-Lockup"},{"ticker":"CART","name":"Maplebear Inc (Instacart)","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":9959057408,"sector":"Consumer Cyclical","detail":"Post-Lockup"},{"ticker":"ARM","name":"Arm Holdings plc","bucket":"Misc Special Situations","category":"misc","tierName":"Post-Lockup","marketCap":177067016192,"sector":"Technology","detail":"Post-Lockup"},{"ticker":"TVTX","name":"Travere Therapeutics","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":3765917184,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"AXSM","name":"Axsome Therapeutics","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":9667460096,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"LNTH","name":"Lantheus Holdings","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":5456900096,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"DNLI","name":"Denali Therapeutics","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":3262226944,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"REPL","name":"Replimune Group","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":179182576,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"VKTX","name":"Viking Therapeutics","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":4079467008,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"IONS","name":"Ionis Pharmaceuticals","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":12506687488,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"TGTX","name":"TG Therapeutics","bucket":"Misc Special Situations","category":"misc","tierName":"FDA Binary","marketCap":5641786368,"sector":"Healthcare","detail":"FDA Binary"},{"ticker":"KVUE","name":"Kenvue Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Litigation Resolution","marketCap":33809727488,"sector":"Consumer Defensive","detail":"Litigation Resolution"},{"ticker":"JNJ","name":"Johnson & Johnson","bucket":"Misc Special Situations","category":"misc","tierName":"Litigation Resolution","marketCap":564350156800,"sector":"Healthcare","detail":"Litigation Resolution"},{"ticker":"BAYRY","name":"Bayer AG","bucket":"Misc Special Situations","category":"misc","tierName":"Litigation Resolution","marketCap":47549083648,"sector":"Healthcare","detail":"Litigation Resolution"},{"ticker":"VRT","name":"Vertiv Holdings","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":117587812352,"sector":"Industrials","detail":"Index Rebalance"},{"ticker":"LITE","name":"Lumentum Holdings","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":63836598272,"sector":"Technology","detail":"Index Rebalance"},{"ticker":"COHR","name":"Coherent Corp","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":64684986368,"sector":"Technology","detail":"Index Rebalance"},{"ticker":"MTCH","name":"Match Group Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":7800000000,"sector":"Communication Services","detail":"Index Rebalance"},{"ticker":"LW","name":"Lamb Weston Holdings","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":6224596480,"sector":"Consumer Defensive","detail":"Index Rebalance"},{"ticker":"WIX","name":"Wix.com Ltd","bucket":"Misc Special Situations","category":"misc","tierName":"Self-Tender","marketCap":3979357696,"sector":"Technology","detail":"Self-Tender"},{"ticker":"SCHL","name":"Scholastic Corporation","bucket":"Misc Special Situations","category":"misc","tierName":"Self-Tender","marketCap":1002911424,"sector":"Communication Services","detail":"Self-Tender"},{"ticker":"YEXT","name":"Yext Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Self-Tender","marketCap":457610432,"sector":"Technology","detail":"Self-Tender"},{"ticker":"NAKA","name":"Nakamoto","bucket":"Misc Special Situations","category":"misc","tierName":"Reverse Split","marketCap":182164816,"sector":"Financial Services","detail":"Reverse Split"},{"ticker":"VCIG","name":"VCI Global Limited","bucket":"Misc Special Situations","category":"misc","tierName":"Reverse Split","marketCap":4349419,"sector":"Industrials","detail":"Reverse Split"},{"ticker":"NXPL","name":"NextPlat Corp","bucket":"Misc Special Situations","category":"misc","tierName":"Reverse Split","marketCap":14633600,"sector":"Technology","detail":"Reverse Split"},{"ticker":"MSAI","name":"MultiSensor AI Holdings","bucket":"Misc Special Situations","category":"misc","tierName":"Reverse Split","marketCap":12596986,"sector":"Technology","detail":"Reverse Split"},{"ticker":"CABO","name":"Cable One Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Convertible Maturity","marketCap":600000000,"sector":"Communication Services","detail":"Convertible Maturity"},{"ticker":"DUK","name":"Duke Energy","bucket":"Misc Special Situations","category":"misc","tierName":"Convertible Maturity","marketCap":99635085312,"sector":"Utilities","detail":"Convertible Maturity"},{"ticker":"ETSY","name":"Etsy Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Convertible Maturity","marketCap":6109901824,"sector":"Consumer Cyclical","detail":"Convertible Maturity"},{"ticker":"TWLO","name":"Twilio Inc","bucket":"Misc Special Situations","category":"misc","tierName":"Convertible Maturity","marketCap":21242472448,"sector":"Technology","detail":"Convertible Maturity"},{"ticker":"SATS","name":"EchoStar Corp","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":38481158144,"sector":"Communication Services","detail":"Index Rebalance"},{"ticker":"MOH","name":"Molina Healthcare","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":7760007168,"sector":"Healthcare","detail":"Index Rebalance"},{"ticker":"CIEN","name":"Ciena Corp","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":71782801408,"sector":"Technology","detail":"Index Rebalance"},{"ticker":"PAYC","name":"Paycom Software","bucket":"Misc Special Situations","category":"misc","tierName":"Index Rebalance","marketCap":6889138176,"sector":"Technology","detail":"Index Rebalance"},{"ticker":"ABEO","name":"ABEO","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ACAD","name":"ACAD","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ACCO","name":"ACCO","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ACGL","name":"ACGL","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ALCO","name":"ALCO","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ALOT","name":"ALOT","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"AMPH","name":"AMPH","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"AMPY","name":"AMPY","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ANF","name":"ANF","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"AUPH","name":"AUPH","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BBW","name":"BBW","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BDTX","name":"BDTX","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BEOB","name":"BEOB","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BKE","name":"BKE","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BLKB","name":"BLKB","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BMBN","name":"BMBN","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"BSET","name":"BSET","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CAAS","name":"CAAS","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CALM","name":"CALM","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CGEN","name":"CGEN","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CHCI","name":"CHCI","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CHE","name":"CHE","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CIX","name":"CIX","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CPAY","name":"CPAY","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CPRX","name":"CPRX","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"CPSS","name":"CPSS","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"DJCO","name":"DJCO","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"DLNG","name":"DLNG","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"DSX","name":"DSX","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"DUOL","name":"DUOL","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ENBP","name":"ENBP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ENSG","name":"ENSG","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"EVER","name":"EVER","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FBLA","name":"FBLA","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FDBC","name":"FDBC","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FDS","name":"FDS","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FFH","name":"FFH","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FLX","name":"FLX","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FNWD","name":"FNWD","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FOA","name":"FOA","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"FOTB","name":"FOTB","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"GBLI","name":"GBLI","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"GDEV","name":"GDEV","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"GENC","name":"GENC","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"GRND","name":"GRND","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"HERE","name":"HERE","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"HQI","name":"HQI","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"HRB","name":"HRB","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"IMPP","name":"IMPP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ING","name":"ING","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"INGR","name":"INGR","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"IOSP","name":"IOSP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"IPAR","name":"IPAR","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"JFIN","name":"JFIN","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"JILL","name":"JILL","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"KINS","name":"KINS","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"LCNB","name":"LCNB","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"LMNR","name":"LMNR","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"MITT","name":"MITT","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"MNDY","name":"MNDY","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"MNSB","name":"MNSB","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"MPAA","name":"MPAA","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"MUSA","name":"MUSA","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"NLCP","name":"NLCP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"NPK","name":"NPK","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"NRP","name":"NRP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"NXST","name":"NXST","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"OFLX","name":"OFLX","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"OMSE","name":"OMSE","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ORMP","name":"ORMP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"OSPN","name":"OSPN","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"PBH","name":"PBH","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"PERF","name":"PERF","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"QLYS","name":"QLYS","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"QSR","name":"QSR","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"RDCM","name":"RDCM","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"REFI","name":"REFI","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"RICK","name":"RICK","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"RIGL","name":"RIGL","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"ROP","name":"ROP","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"SEVN","name":"SEVN","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"SITC","name":"SITC","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"SNFCA","name":"SNFCA","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"SRBK","name":"SRBK","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"THRY","name":"THRY","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"TRVG","name":"TRVG","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"TYFG","name":"TYFG","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"UTGN","name":"UTGN","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"UTMD","name":"UTMD","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"VEEV","name":"VEEV","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"WLY","name":"WLY","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"XYF","name":"XYF","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null},{"ticker":"YALA","name":"YALA","bucket":"Extended Watchlist","category":"extended","tierName":"","marketCap":"","sector":null}];
-
-</script>
-<script id="inline-buckets">
-window.TQL_BUCKETS = {"order":["Recent Spinoffs","Active Activist Campaigns","Holding Company / NAV Discounts","M&A Arbitrage","PE Take-Privates & Tender Offers","Post-Bankruptcy Emergences","Closed-End Fund Discount Activism","Misc Special Situations","Extended Watchlist"],"slugs":{"Recent Spinoffs":"spinoffs","Active Activist Campaigns":"activist-situations","Holding Company / NAV Discounts":"holdco-discounts","M&A Arbitrage":"merger-arbitrage","PE Take-Privates & Tender Offers":"take-privates","Post-Bankruptcy Emergences":"post-bankruptcy","Closed-End Fund Discount Activism":"cef-activism","Misc Special Situations":"misc-special-situations","Extended Watchlist":"extended"},"meta":{"Recent Spinoffs":{"desc":"Recent or pending spinoffs where forced index selling, management independence, and clean balance sheets create the Greenblatt setup. 52 names."},"Active Activist Campaigns":{"desc":"Credentialed activists in 13D-filed campaigns \u2014 operational turnarounds, capital-return programs, sales, and breakups. Hard catalysts with defined timelines."},"Holding Company / NAV Discounts":{"desc":"Holding companies trading at persistent discounts to NAV. Family-controlled compounders, asset-rich structures, and hidden-asset conglomerates."},"M&A Arbitrage":{"desc":"Announced deals, tender offers, self-tenders, take-privates, and litigation-resolution arbs. Short-duration, defined-risk, defined-upside situations."},"PE Take-Privates & Tender Offers":{"desc":"Private equity buyouts, management-led go-privates, and tender offers with defined closing timelines and regulatory catalysts."},"Post-Bankruptcy Emergences":{"desc":"Companies that have emerged from Chapter 11 with clean balance sheets, forced selling from old equity holders, and fresh capital structures."},"Closed-End Fund Discount Activism":{"desc":"Closed-end funds trading at wide, persistent discounts with activist pressure, tender offers, or capital-return programs underway."},"Misc Special Situations":{"desc":"Rights offerings, SPAC liquidations, post-lockup secondaries, FDA binaries, litigation resolutions, index rebalances, self-tenders, and convertible maturities."},"Extended Watchlist":{"desc":"Additional names from the original screening universe. Deep-value, below-book, and cash-fortress situations that did not fit neatly into the 8 special-situation categories."}}};
-
-</script>
-<script>
-  (function() {
-    const BUCKET_META = window.TQL_BUCKETS;
-    const idx = window.TQL_INDEX || [];
-
-    // Group index by bucket
-    const grouped = {};
-    for (const b of BUCKET_META.order) grouped[b] = [];
-    for (const d of idx) {
-      const b = d.bucket || 'Cyclicals & CEFs';
-      if (!grouped[b]) grouped[b] = [];
-      grouped[b].push(d);
-    }
-    // sort each bucket: score desc, then name asc
-    for (const k of Object.keys(grouped)) {
-      grouped[k].sort((a, b) => (b.score || 0) - (a.score || 0) || a.ticker.localeCompare(b.ticker));
-    }
-
-    function row(d) {
-      const meta = [d.marketCap].filter(Boolean).join(' · ');
-      const detail = d.detail ? `<div class="detail" style="font-family:var(--italic);font-style:italic;font-size:12px;color:var(--ink-mute);margin-top:2px;">${d.detail}</div>` : '';
-      return `<a class="ticker-row" href="stocks/${d.ticker}.html">
-        <div class="sym"><span>${d.ticker}</span></div>
-        <div class="co">${d.name}${detail}</div>
-        <div class="meta">${meta}</div>
-      </a>`;
-    }
-
-    const PREVIEW = 8;
-    let html = '';
-    BUCKET_META.order.forEach((name, i) => {
-      const items = grouped[name] || [];
-      if (!items.length) return;
-      const meta = BUCKET_META.meta[name];
-      const slug = BUCKET_META.slugs[name];
-      const preview = items.slice(0, PREVIEW);
-      const more = items.length - preview.length;
-      html += `
-      <section class="bucket-section" id="b-${slug}">
-        <div class="bucket-head">
-          <span class="num">№ ${String(i + 1).padStart(2, '0')}</span>
-          <h3><a href="tiers/${slug}.html">${name}</a></h3>
-          <span class="count">${items.length} name${items.length === 1 ? '' : 's'}</span>
-        </div>
-        <p class="bucket-desc">${meta.desc}</p>
-        <div class="ticker-grid">${preview.map(row).join('')}</div>
-        ${more > 0 ? `<div class="bucket-more"><a href="tiers/${slug}.html">See all ${items.length} in ${name} →</a></div>` : ''}
-      </section>`;
-    });
-    document.getElementById('bucket-sections').innerHTML = html;
-
-    // Footer links
-    const fb = document.getElementById('footer-buckets');
-    if (fb) {
-      fb.innerHTML = BUCKET_META.order.map(n => {
-        const slug = BUCKET_META.slugs[n];
-        return `<li><a href="tiers/${slug}.html">${n}</a></li>`;
-      }).join('') + `<li><a href="watchlist.html">Full List (351)</a></li>`;
-    }
-  })();
-</script>
-<script id="inline-site">
-/* The Quarterly Ledger — shared site JS
-   Free access. Personal watchlist via localStorage. Homepage ticker search.
-*/
-(function(){
-  // ---------- Homepage / site-wide search ----------
-  function initSearch() {
-    const input = document.getElementById('ticker-search');
-    const results = document.getElementById('search-results');
-    if (!input || !results || !window.TQL_INDEX) return;
-    const index = window.TQL_INDEX;
-
-    function render(matches) {
-      if (!matches.length) {
-        results.innerHTML = `<div class="search-result"><span class="co" style="color:var(--ink-mute)">No matches.</span></div>`;
-      } else {
-        // Resolve relative path depending on page depth
-        const prefix = location.pathname.includes('/stocks/') || location.pathname.includes('/tiers/') ? '../stocks/' : 'stocks/';
-        results.innerHTML = matches.slice(0, 40).map(m => `
-          <a class="search-result" href="${prefix}${m.ticker}.html">
-            <span class="sym">${m.ticker}</span>
-            <span class="co">${m.name}</span>
-            <span class="tag">${m.bucket || m.tierName || m.sector || ''}</span>
-          </a>
-        `).join('');
-      }
-      results.classList.add('open');
-    }
-
-    input.addEventListener('input', (e) => {
-      const q = e.target.value.trim().toLowerCase();
-      if (!q) { results.classList.remove('open'); return; }
-      const matches = index.filter(s =>
-        s.ticker.toLowerCase().startsWith(q) ||
-        s.ticker.toLowerCase().includes(q) ||
-        s.name.toLowerCase().includes(q)
-      );
-      render(matches);
-    });
-
-    input.addEventListener('focus', () => {
-      if (input.value.trim()) input.dispatchEvent(new Event('input'));
-    });
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.search-wrap')) results.classList.remove('open');
-    });
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        const first = results.querySelector('.search-result[href]');
-        if (first) window.location.href = first.getAttribute('href');
-      }
-      if (e.key === 'Escape') { results.classList.remove('open'); input.blur(); }
-    });
+// ─── localStorage adapter ──────────────────────────────────────────────────
+const storage = {
+  async get(key) {
+    const v = localStorage.getItem(key);
+    if (v === null) throw new Error('Key not found: ' + key);
+    return { key, value: v };
+  },
+  async set(key, value) {
+    localStorage.setItem(key, value);
+    return { key, value };
+  },
+  async delete(key) {
+    const existed = localStorage.getItem(key) !== null;
+    localStorage.removeItem(key);
+    return { key, deleted: existed };
+  },
+  async list(prefix = '') {
+    const keys = Object.keys(localStorage).filter(k => k.startsWith(prefix));
+    return { keys };
   }
+};
 
-  // ---------- Watchlist badge in nav ----------
-  function mountWatchBadge() {
+// ─── Icons (inline SVG) ────────────────────────────────────────────────────
+const Icon = ({ children, size = 16, className = '', style = {} }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24"
+    fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+    className={className} style={style}>
+    {children}
+  </svg>
+);
+const Check = (p) => <Icon {...p}><polyline points="20 6 9 17 4 12"/></Icon>;
+const XIcon = (p) => <Icon {...p}><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></Icon>;
+const Minus = (p) => <Icon {...p}><line x1="5" y1="12" x2="19" y2="12"/></Icon>;
+const ChevronDown = (p) => <Icon {...p}><polyline points="6 9 12 15 18 9"/></Icon>;
+const ChevronUp = (p) => <Icon {...p}><polyline points="18 15 12 9 6 15"/></Icon>;
+const Plus = (p) => <Icon {...p}><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></Icon>;
+const Trash2 = (p) => <Icon {...p}><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></Icon>;
+const Edit3 = (p) => <Icon {...p}><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></Icon>;
+const Save = (p) => <Icon {...p}><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></Icon>;
+const Bookmark = (p) => <Icon {...p}><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></Icon>;
+const Inbox = (p) => <Icon {...p}><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></Icon>;
+const CircleDot = (p) => <Icon {...p}><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="1"/></Icon>;
+
+// ─── THE CHECKLIST ─────────────────────────────────────────────────────────
+const CHECKLIST = [
+  {
+    id: 'competence', roman: 'I',
+    title: 'Circle of Competence',
+    subtitle: 'Do I actually understand this?',
+    items: [
+      'I can explain how it makes money in two sentences — without jargon',
+      'This business will look roughly the same in 10 years',
+      'I can name the moat specifically (brand / switching costs / network / scale / regulatory)',
+      'It has pricing power — could raise prices 10% without losing customers',
+    ],
+  },
+  {
+    id: 'numbers', roman: 'II',
+    title: 'The Numbers',
+    subtitle: "Buffett's hard floor",
+    items: [
+      'Ten years of revenue and earnings look like a staircase, not a rollercoaster',
+      'ROE consistently above ~15% — without leverage juicing it',
+      'Owner earnings (NI + D&A − maintenance capex) close to GAAP earnings',
+      'Gross margins stable or expanding — the pricing-power tell',
+      'Long-term debt manageable in a 24-month credit drought',
+      'Each $1 of retained earnings has produced ≥$1 of market value over a decade',
+    ],
+  },
+  {
+    id: 'management', roman: 'III',
+    title: 'Management & Incentives',
+    subtitle: '"Show me the incentive and I\'ll show you the outcome"',
+    items: [
+      'Comp tied to per-share intrinsic value — not stock price gaming or revenue at any cost',
+      'Insiders bought stock with their own cash, not just received options',
+      'CEO letter is plain English and partner-style, not corporate twaddle',
+      'Management names mistakes specifically — not passive-voice apologies',
+      'No "one-time" charges that somehow happen every year',
+      'No excessive self-regard signals (jets, magazine covers, name on building, empire-building M&A)',
+      'No suspicious CFO or auditor turnover',
+    ],
+  },
+  {
+    id: 'crowd', roman: 'IV',
+    title: 'The Crowd',
+    subtitle: 'What is everyone else doing, and why?',
+    items: [
+      'NOT a hot story stock everyone is piling into right now',
+      'NOT buying because some authority (Buffett, Burry, a podcast) bought it',
+      "NOT riding a fashion-sector halo (AI, GLP-1, nuclear) it didn't earn",
+      'Low twaddle ratio in 10-K and earnings calls — content > buzzwords',
+    ],
+  },
+  {
+    id: 'head', roman: 'V',
+    title: 'My Own Head',
+    subtitle: 'Invert, always invert',
+    items: [
+      'NOT rushing to escape the discomfort of uncertainty (doubt-avoidance)',
+      "Haven't already told people I like this name (commitment bias)",
+      "Haven't fallen for the CEO/product/story so much I stopped looking for problems",
+      'NOT buying because it ran without me (FOMO / deprival superreaction)',
+      'NOT overweighting whatever happened in the last two weeks (availability)',
+      'NOT making this call right after a big win, big loss, or three drinks in',
+    ],
+  },
+  {
+    id: 'premortem', roman: 'VI',
+    title: 'The Pre-Mortem',
+    subtitle: 'Inversion in practice — write before buying',
+    items: [
+      'I have written down the most likely path to zero in 5 years',
+      'I have written down what would have to be true to lose 90%',
+      'I have honestly tried to break my own thesis — best short argument identified',
+    ],
+  },
+  {
+    id: 'lollapalooza', roman: 'VII',
+    title: 'Lollapalooza Check',
+    subtitle: 'Things rarely go right or wrong for one reason',
+    items: [
+      '3+ independent BULLISH tailwinds aligning (moat + capital allocator + valuation + runway)',
+      'NOT seeing 3+ stacked RED FLAGS (margin decline + serial M&A + insider selling + auditor change)',
+    ],
+  },
+  {
+    id: 'gut', roman: 'VIII',
+    title: 'The Five-Year Gut Check',
+    subtitle: 'The final question',
+    items: [
+      'I would be comfortable owning this if the market closed for five years tomorrow',
+    ],
+  },
+];
+
+const TOTAL_ITEMS = CHECKLIST.reduce((s, sec) => s + sec.items.length, 0);
+
+// ─── Helpers ───────────────────────────────────────────────────────────────
+const blankAnalysis = () => ({
+  id: 'a_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8),
+  ticker: '', company: '', thesis: '',
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+  answers: {},
+  verdict: 'pending',
+  currentPrice: '', buyPrice: '', sellPrice: '',
+  finalNotes: '',
+});
+const keyOf = (sectionId, idx) => sectionId + '-' + idx;
+const countAnswered = (a) => Object.values(a.answers || {}).filter(x => x && x.answer && x.answer !== 'unset').length;
+const countYes = (a) => Object.values(a.answers || {}).filter(x => x && x.answer === 'yes').length;
+const countNo = (a) => Object.values(a.answers || {}).filter(x => x && x.answer === 'no').length;
+const fmtDate = (iso) => {
+  try { return new Date(iso).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); }
+  catch { return ''; }
+};
+
+// ─── MAIN ──────────────────────────────────────────────────────────────────
+function MungerChecklist() {
+  const [view, setView] = useState('analysis');
+  const [current, setCurrent] = useState(blankAnalysis());
+  const [watchlist, setWatchlist] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState('all');
+  const [expanded, setExpanded] = useState({ competence: true });
+  const [toast, setToast] = useState('');
+  const toastTimer = useRef(null);
+
+  useEffect(() => { loadAll(); }, []);
+
+  async function loadAll() {
+    setLoading(true);
     try {
-      const wl = JSON.parse(localStorage.getItem('tql_watchlist') || '[]');
-      if (!wl.length) return;
-      // Find "My Saves" nav link and append count
-      document.querySelectorAll('.nav a').forEach(a => {
-        if (/my saves/i.test(a.textContent)) {
-          a.innerHTML = a.textContent + ` <span style="font-family:var(--mono);font-size:9px;background:var(--ink);color:var(--paper);padding:1px 6px;margin-left:4px;letter-spacing:0.1em;">${wl.length}</span>`;
-        }
-      });
-    } catch(e) {}
+      const list = await storage.list('analysis:');
+      const keys = list.keys || [];
+      const items = [];
+      for (const k of keys) {
+        try {
+          const r = await storage.get(k);
+          if (r && r.value) items.push(JSON.parse(r.value));
+        } catch (e) {}
+      }
+      items.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+      setWatchlist(items);
+    } catch (e) { console.error(e); }
+    finally { setLoading(false); }
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    initSearch();
-    mountWatchBadge();
-  });
-})();
+  function showToast(msg) {
+    setToast(msg);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(''), 2200);
+  }
 
+  async function saveCurrent() {
+    if (!current.ticker.trim()) { showToast('Ticker required'); return; }
+    const updated = { ...current, updatedAt: new Date().toISOString() };
+    try {
+      await storage.set('analysis:' + updated.id, JSON.stringify(updated));
+      setCurrent(updated);
+      await loadAll();
+      showToast('Saved to watchlist');
+    } catch (e) { console.error(e); showToast('Save failed'); }
+  }
+
+  async function saveAndExit() {
+    if (!current.ticker.trim()) { showToast('Ticker required'); return; }
+    await saveCurrent();
+    setCurrent(blankAnalysis());
+    setExpanded({ competence: true });
+    setView('watchlist');
+  }
+
+  async function deleteAnalysis(id) {
+    try { await storage.delete('analysis:' + id); await loadAll(); showToast('Deleted'); }
+    catch (e) { console.error(e); }
+  }
+
+  function newAnalysis() {
+    setCurrent(blankAnalysis());
+    setExpanded({ competence: true });
+    setView('analysis');
+  }
+
+  function loadIntoEditor(item) {
+    setCurrent(item);
+    setExpanded({ competence: true });
+    setView('analysis');
+  }
+
+  function setField(key, value) { setCurrent(c => ({ ...c, [key]: value })); }
+  function setAnswer(sectionId, idx, answer) {
+    const k = keyOf(sectionId, idx);
+    setCurrent(c => {
+      const prev = c.answers[k] || { answer: 'unset', note: '' };
+      return { ...c, answers: { ...c.answers, [k]: { ...prev, answer: prev.answer === answer ? 'unset' : answer } } };
+    });
+  }
+  function setNote(sectionId, idx, note) {
+    const k = keyOf(sectionId, idx);
+    setCurrent(c => {
+      const prev = c.answers[k] || { answer: 'unset', note: '' };
+      return { ...c, answers: { ...c.answers, [k]: { ...prev, note } } };
+    });
+  }
+  function toggleSection(id) { setExpanded(e => ({ ...e, [id]: !e[id] })); }
+
+  const filteredWatchlist = watchlist.filter(a => filter === 'all' ? true : a.verdict === filter);
+
+  return (
+    <div className="mc-root">
+      <header className="px-6 md:px-12 pt-10 pb-6 max-w-6xl mx-auto">
+        <div className="flex items-baseline justify-between flex-wrap gap-3">
+          <div>
+            <div className="mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--gold)' }}>
+              The Quarterly Ledger
+            </div>
+            <h1 className="mc-display text-4xl md:text-6xl font-black mt-1" style={{ color: 'var(--ink)' }}>
+              Munger's Checklist
+            </h1>
+            <p className="italic mt-2 text-base md:text-lg" style={{ color: 'var(--ink-2)' }}>
+              Read the report. Invert the thesis. Wait for the fat pitch.
+            </p>
+          </div>
+          <div className="mc-mono text-xs" style={{ color: 'var(--ink-3)' }}>
+            {watchlist.length} ENTR{watchlist.length === 1 ? 'Y' : 'IES'} ON FILE
+          </div>
+        </div>
+        <div className="mc-rule-thick mt-6" />
+        <div className="flex items-center mt-4">
+          <button className={'mc-tab ' + (view === 'analysis' ? 'active' : '')} onClick={() => setView('analysis')}>New Analysis</button>
+          <button className={'mc-tab ' + (view === 'watchlist' ? 'active' : '')} onClick={() => setView('watchlist')}>Watchlist</button>
+          <div className="ml-auto">
+            {view === 'watchlist' && (
+              <button className="mc-btn" onClick={newAnalysis}>
+                <Plus size={12} className="inline mr-1.5 -mt-0.5" /> New Analysis
+              </button>
+            )}
+          </div>
+        </div>
+      </header>
+
+      <main className="px-6 md:px-12 pb-24 max-w-6xl mx-auto">
+        {view === 'analysis' ? (
+          <AnalysisView
+            current={current} setField={setField} setAnswer={setAnswer} setNote={setNote}
+            expanded={expanded} toggleSection={toggleSection}
+            saveCurrent={saveCurrent} saveAndExit={saveAndExit}
+          />
+        ) : (
+          <WatchlistView
+            loading={loading} items={filteredWatchlist} allCount={watchlist.length}
+            filter={filter} setFilter={setFilter}
+            onOpen={loadIntoEditor} onDelete={deleteAnalysis} onNew={newAnalysis}
+          />
+        )}
+      </main>
+
+      {toast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+          <div className="mc-toast">{toast}</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function AnalysisView({ current, setField, setAnswer, setNote, expanded, toggleSection, saveCurrent, saveAndExit }) {
+  const answered = countAnswered(current);
+  const yes = countYes(current);
+  const no = countNo(current);
+  const pct = Math.round((answered / TOTAL_ITEMS) * 100);
+
+  return (
+    <div className="mt-6">
+      <div className="mc-card p-6 md:p-8">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+          <div className="md:col-span-3">
+            <label className="mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--ink-3)' }}>Ticker</label>
+            <input className="mc-input mc-mono w-full mt-1.5 px-3 py-2.5 text-2xl font-bold tracking-wider uppercase"
+              placeholder="LNSR" value={current.ticker}
+              onChange={e => setField('ticker', e.target.value.toUpperCase())} maxLength={8} />
+          </div>
+          <div className="md:col-span-6">
+            <label className="mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--ink-3)' }}>Company</label>
+            <input className="mc-input w-full mt-1.5 px-3 py-2.5 text-xl"
+              placeholder="LENSAR, Inc." value={current.company}
+              onChange={e => setField('company', e.target.value)} />
+          </div>
+          <div className="md:col-span-3">
+            <label className="mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--ink-3)' }}>Status</label>
+            <div className="mt-1.5"><VerdictBadge v={current.verdict} large /></div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <label className="mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--ink-3)' }}>One-line thesis</label>
+          <input className="mc-input w-full mt-1.5 px-3 py-2.5 italic"
+            placeholder="Why this is supposedly worth my time…" value={current.thesis}
+            onChange={e => setField('thesis', e.target.value)} />
+        </div>
+
+        <div className="mt-6">
+          <div className="flex justify-between mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--ink-3)' }}>
+            <span>Progress · {answered} / {TOTAL_ITEMS}</span>
+            <span>
+              <span style={{ color: 'var(--moss)' }}>✓ {yes}</span>
+              <span className="mx-2">·</span>
+              <span style={{ color: 'var(--oxblood)' }}>✗ {no}</span>
+            </span>
+          </div>
+          <div className="mt-2 h-1" style={{ background: 'var(--paper-line)' }}>
+            <div className="h-1" style={{ width: pct + '%', background: 'var(--gold)', transition: 'width 200ms' }} />
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 space-y-3">
+        {CHECKLIST.map(section => (
+          <Section
+            key={section.id} section={section} answers={current.answers}
+            expanded={!!expanded[section.id]} onToggle={() => toggleSection(section.id)}
+            onAnswer={(idx, v) => setAnswer(section.id, idx, v)}
+            onNote={(idx, v) => setNote(section.id, idx, v)}
+          />
+        ))}
+      </div>
+
+      <div className="mt-10">
+        <div className="flex items-baseline gap-3">
+          <div className="mc-roman text-4xl">§</div>
+          <div>
+            <h2 className="mc-display text-3xl font-bold" style={{ color: 'var(--ink)' }}>The Verdict</h2>
+            <p className="italic" style={{ color: 'var(--ink-2)' }}>Decide. Set the prices. Walk away if neither hits.</p>
+          </div>
+        </div>
+
+        <div className="mc-card mt-4 p-6 md:p-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {[
+              { v: 'pass', label: 'Pass — On the Watchlist', sub: 'Worth tracking and waiting for the price' },
+              { v: 'fail', label: 'Not Pass — Reject', sub: 'In the "too hard" pile. Move on.' },
+              { v: 'pending', label: 'Pending — Need More Work', sub: 'Open questions remain' },
+            ].map(opt => (
+              <button key={opt.v} onClick={() => setField('verdict', opt.v)}
+                className={'text-left p-4 transition ' + (current.verdict === opt.v ? 'mc-card' : '')}
+                style={{
+                  border: '1px solid ' + (current.verdict === opt.v ? 'var(--ink)' : 'var(--rule)'),
+                  background: current.verdict === opt.v
+                    ? (opt.v === 'pass' ? 'var(--moss-tint)' : opt.v === 'fail' ? 'var(--crimson-tint)' : 'var(--paper-2)')
+                    : 'transparent',
+                  cursor: 'pointer',
+                }}>
+                <div className="mc-display font-bold tracking-wide uppercase text-sm"
+                  style={{ color: opt.v === 'pass' ? 'var(--moss)' : opt.v === 'fail' ? 'var(--oxblood)' : 'var(--ink-2)' }}>
+                  {opt.label}
+                </div>
+                <div className="text-sm italic mt-1" style={{ color: 'var(--ink-3)' }}>{opt.sub}</div>
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <PriceField label="Current price" hint="What it costs today" value={current.currentPrice} onChange={v => setField('currentPrice', v)} />
+            <PriceField label="My buy price" hint="Below this, I act" accent="var(--moss)" value={current.buyPrice} onChange={v => setField('buyPrice', v)} />
+            <PriceField label="My sell price" hint="Fair value / exit" accent="var(--oxblood)" value={current.sellPrice} onChange={v => setField('sellPrice', v)} />
+          </div>
+
+          <div className="mt-6">
+            <label className="mc-display text-xs tracking-widest uppercase" style={{ color: 'var(--ink-3)' }}>
+              Final notes — the pre-mortem in plain English
+            </label>
+            <textarea className="mc-input w-full mt-1.5 px-3 py-2.5 italic" rows={4}
+              placeholder="Why I'd own this. What kills it. What I'm waiting for."
+              value={current.finalNotes} onChange={e => setField('finalNotes', e.target.value)} />
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3 items-center">
+            <button className="mc-btn" onClick={saveAndExit}>
+              <Save size={12} className="inline mr-1.5 -mt-0.5" /> Save &amp; Go to Watchlist
+            </button>
+            <button className="mc-btn mc-btn-ghost" onClick={saveCurrent}>
+              <Bookmark size={12} className="inline mr-1.5 -mt-0.5" /> Save Draft
+            </button>
+            <div className="ml-auto mc-mono text-xs" style={{ color: 'var(--ink-3)' }}>
+              ID · {current.id.slice(0, 14)}
+            </div>
+          </div>
+        </div>
+
+        <p className="mt-6 italic text-sm" style={{ color: 'var(--ink-3)' }}>
+          "The big money is not in the buying or the selling, but in the waiting." — Munger
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Section({ section, answers, expanded, onToggle, onAnswer, onNote }) {
+  const total = section.items.length;
+  const answered = section.items.filter((_, i) => {
+    const a = answers[keyOf(section.id, i)];
+    return a && a.answer && a.answer !== 'unset';
+  }).length;
+  const yes = section.items.filter((_, i) => answers[keyOf(section.id, i)]?.answer === 'yes').length;
+  const no = section.items.filter((_, i) => answers[keyOf(section.id, i)]?.answer === 'no').length;
+
+  return (
+    <div className="mc-card">
+      <button onClick={onToggle} className="mc-section-toggle w-full p-5 md:p-6 flex items-start gap-5">
+        <div className="mc-roman text-4xl md:text-5xl shrink-0 w-12 md:w-16">{section.roman}</div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline justify-between gap-4 flex-wrap">
+            <h3 className="mc-display text-xl md:text-2xl font-bold" style={{ color: 'var(--ink)' }}>
+              {section.title}
+            </h3>
+            <div className="mc-mono text-xs" style={{ color: 'var(--ink-3)' }}>
+              {answered} / {total}
+              {(yes > 0 || no > 0) && (
+                <span className="ml-3">
+                  <span style={{ color: 'var(--moss)' }}>✓{yes}</span>
+                  <span className="mx-1">·</span>
+                  <span style={{ color: 'var(--oxblood)' }}>✗{no}</span>
+                </span>
+              )}
+            </div>
+          </div>
+          <p className="italic mt-0.5" style={{ color: 'var(--ink-2)' }}>{section.subtitle}</p>
+        </div>
+        <div className="shrink-0 mt-1" style={{ color: 'var(--ink-3)' }}>
+          {expanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+        </div>
+      </button>
+
+      {expanded && (
+        <div className="px-5 md:px-6 pb-6">
+          <div className="mc-rule mb-5" />
+          <div className="space-y-5">
+            {section.items.map((item, idx) => {
+              const a = answers[keyOf(section.id, idx)] || { answer: 'unset', note: '' };
+              return (
+                <div key={idx} className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                  <div className="md:col-span-7">
+                    <div className="flex gap-3">
+                      <div className="mc-mono text-xs pt-0.5" style={{ color: 'var(--gold)' }}>
+                        {String(idx + 1).padStart(2, '0')}
+                      </div>
+                      <p className="text-base leading-snug" style={{ color: 'var(--ink)' }}>{item}</p>
+                    </div>
+                  </div>
+                  <div className="md:col-span-5">
+                    <div className="grid grid-cols-3 gap-2">
+                      <button className={'mc-answer-btn py-2 ' + (a.answer === 'yes' ? 'active-yes' : '')}
+                        onClick={() => onAnswer(idx, 'yes')}>
+                        <Check size={12} className="inline mr-1 -mt-0.5" /> Yes
+                      </button>
+                      <button className={'mc-answer-btn py-2 ' + (a.answer === 'no' ? 'active-no' : '')}
+                        onClick={() => onAnswer(idx, 'no')}>
+                        <XIcon size={12} className="inline mr-1 -mt-0.5" /> No
+                      </button>
+                      <button className={'mc-answer-btn py-2 ' + (a.answer === 'skip' ? 'active-skip' : '')}
+                        onClick={() => onAnswer(idx, 'skip')}>
+                        <Minus size={12} className="inline mr-1 -mt-0.5" /> N/A
+                      </button>
+                    </div>
+                    <textarea className="mc-input w-full mt-2 px-2.5 py-2 text-sm italic" rows={2}
+                      placeholder="Notes — evidence, page numbers, doubts…"
+                      value={a.note} onChange={e => onNote(idx, e.target.value)} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function PriceField({ label, hint, accent, value, onChange }) {
+  return (
+    <div>
+      <label className="mc-display text-xs tracking-widest uppercase" style={{ color: accent || 'var(--ink-3)' }}>
+        {label}
+      </label>
+      <div className="relative mt-1.5">
+        <span className="absolute left-3 top-1/2 -translate-y-1/2 mc-mono text-lg" style={{ color: 'var(--ink-3)' }}>$</span>
+        <input className="mc-input mc-mono w-full pl-8 pr-3 py-2.5 text-lg font-bold"
+          placeholder="0.00" value={value} onChange={e => onChange(e.target.value)} />
+      </div>
+      <div className="text-xs italic mt-1" style={{ color: 'var(--ink-3)' }}>{hint}</div>
+    </div>
+  );
+}
+
+function WatchlistView({ loading, items, allCount, filter, setFilter, onOpen, onDelete, onNew }) {
+  return (
+    <div className="mt-6">
+      <div className="flex items-center gap-1 flex-wrap">
+        {[
+          { v: 'all', label: 'All' },
+          { v: 'pass', label: 'Pass' },
+          { v: 'pending', label: 'Pending' },
+          { v: 'fail', label: 'Not Pass' },
+        ].map(f => (
+          <button key={f.v} onClick={() => setFilter(f.v)}
+            className="mc-display text-xs tracking-widest uppercase px-3 py-1.5"
+            style={{
+              color: filter === f.v ? 'var(--paper)' : 'var(--ink-2)',
+              background: filter === f.v ? 'var(--ink)' : 'transparent',
+              border: '1px solid ' + (filter === f.v ? 'var(--ink)' : 'var(--rule)'),
+              cursor: 'pointer',
+            }}>
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-6 space-y-3">
+        {loading && <EmptyState icon={<CircleDot size={48} />} title="Loading…" sub="Fetching the file room" />}
+        {!loading && items.length === 0 && (
+          <EmptyState icon={<Inbox size={48} />}
+            title={filter === 'all' ? 'Empty file room' : 'Nothing here'}
+            sub={filter === 'all' ? 'Run an analysis. Save it. It lands here.' : 'No entries marked "' + filter + '" yet.'}
+            cta={filter === 'all' ? <button className="mc-btn mt-4" onClick={onNew}>Begin First Analysis</button> : null}
+          />
+        )}
+        {!loading && items.map(a => (
+          <WatchlistRow key={a.id} item={a} onOpen={() => onOpen(a)} onDelete={() => onDelete(a.id)} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function WatchlistRow({ item, onOpen, onDelete }) {
+  const answered = countAnswered(item);
+  const yes = countYes(item);
+  const no = countNo(item);
+
+  return (
+    <div className="mc-card p-5 md:p-6">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+        <div className="md:col-span-3">
+          <div className="mc-mono text-3xl font-bold tracking-wider" style={{ color: 'var(--ink)' }}>
+            {item.ticker || '—'}
+          </div>
+          <div className="text-sm mt-0.5" style={{ color: 'var(--ink-2)' }}>
+            {item.company || <span className="italic" style={{ color: 'var(--ink-3)' }}>Unnamed</span>}
+          </div>
+          <div className="mt-2"><VerdictBadge v={item.verdict} /></div>
+        </div>
+
+        <div className="md:col-span-5">
+          {item.thesis && (
+            <div className="italic text-sm mb-2" style={{ color: 'var(--ink-2)' }}>"{item.thesis}"</div>
+          )}
+          <div className="mc-mono text-xs" style={{ color: 'var(--ink-3)' }}>
+            {answered}/{TOTAL_ITEMS} ANSWERED
+            <span className="mx-2">·</span>
+            <span style={{ color: 'var(--moss)' }}>✓ {yes}</span>
+            <span className="mx-1">·</span>
+            <span style={{ color: 'var(--oxblood)' }}>✗ {no}</span>
+            <span className="mx-2">·</span>
+            UPDATED {fmtDate(item.updatedAt).toUpperCase()}
+          </div>
+          {item.finalNotes && (
+            <div className="text-sm mt-2" style={{ color: 'var(--ink-2)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+              {item.finalNotes}
+            </div>
+          )}
+        </div>
+
+        <div className="md:col-span-2">
+          <PriceMini label="Current" value={item.currentPrice} />
+          <PriceMini label="Buy at" value={item.buyPrice} accent="var(--moss)" />
+          <PriceMini label="Sell at" value={item.sellPrice} accent="var(--oxblood)" />
+        </div>
+
+        <div className="md:col-span-2 flex md:flex-col gap-2 md:items-stretch">
+          <button className="mc-btn mc-btn-ghost text-xs" onClick={onOpen}>
+            <Edit3 size={11} className="inline mr-1 -mt-0.5" /> Open
+          </button>
+          <button className="mc-btn mc-btn-ghost text-xs"
+            onClick={() => { if (confirm('Delete ' + (item.ticker || 'this entry') + '?')) onDelete(); }}
+            style={{ color: 'var(--oxblood)', borderColor: 'var(--oxblood-soft)' }}>
+            <Trash2 size={11} className="inline mr-1 -mt-0.5" /> Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PriceMini({ label, value, accent }) {
+  return (
+    <div className="flex items-baseline justify-between gap-2 py-0.5">
+      <span className="mc-display text-xs tracking-wide uppercase" style={{ color: 'var(--ink-3)' }}>{label}</span>
+      <span className="mc-mono text-sm font-bold" style={{ color: accent || 'var(--ink)' }}>
+        {value ? '$' + value : '—'}
+      </span>
+    </div>
+  );
+}
+
+function VerdictBadge({ v, large }) {
+  const labelMap = { pass: 'Pass', fail: 'Not Pass', pending: 'Pending' };
+  const cls = v === 'pass' ? 'mc-pill-pass' : v === 'fail' ? 'mc-pill-fail' : 'mc-pill-pending';
+  return (
+    <span className={'mc-pill ' + cls} style={large ? { fontSize: '0.78rem', padding: '0.35rem 0.7rem' } : {}}>
+      {labelMap[v] || 'Pending'}
+    </span>
+  );
+}
+
+function EmptyState({ icon, title, sub, cta }) {
+  return (
+    <div className="mc-card text-center py-16 px-6">
+      <div className="mc-empty-icon flex justify-center">{icon}</div>
+      <h3 className="mc-display text-2xl font-bold mt-4" style={{ color: 'var(--ink)' }}>{title}</h3>
+      <p className="italic mt-1" style={{ color: 'var(--ink-2)' }}>{sub}</p>
+      {cta && <div>{cta}</div>}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<MungerChecklist />);
 </script>
-
-<nav class="page-nav" style="max-width:var(--page-max);margin:0 auto;padding:32px 40px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--rule-soft);position:relative;z-index:2;">
-  <span></span>
-  <a href="watchlist.html" style="font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule-soft);padding:10px 20px;transition:all 120ms ease;">Full List →</a>
-</nav>
-
 </body>
 </html>
